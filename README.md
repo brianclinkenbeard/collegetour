@@ -4,13 +4,13 @@ CS1D Project 1
 ## Coding Standards
 
 ### Namespaces
-* use scope resolution operator (no `using namespace std`)
+* Use scope resolution operator (no `using namespace std`)
 
 ### Variables
-* descriptive names
+* Descriptive names
 
 ### Functions
-* opening bracket on following line for functions only
+* Opening bracket on following line for functions only
 
 Example:
 ```
@@ -23,16 +23,16 @@ if (boolVal) {
 ```
 
 ### Classes
-* start with a capital letter
-* follow encapsulation paradigm (keep data members and helper functions private)
+* Name classes to begin with a capital letter
+* Follow encapsulation paradigm (keep data members and helper functions private)
 
 ### Misc.
-* include guards in header file
-* test build and features before pushing to avoid compilation errors or crashes
-* verify data from file after implementation
-* descriptive commit messages
+* Include guards in header file
+* Test build and features before pushing to avoid compilation errors or crashes
+* Verify data from file after implementation
+* Descriptive commit messages
 
 ## Team Rules
-* notify others before working on a user story
-* let others know when you've completed something
-* no fighting
+* Notify others before working on a user story
+* Let others know when you've completed something
+* No fighting
