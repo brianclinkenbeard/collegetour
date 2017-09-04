@@ -8,5 +8,5 @@ before_install:
  - sudo apt-get install -qq g++-6 qt59tools qt59svg qt59webengine qt59script
  - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-6 50
 script:
- - /opt/qt59/bin/qmake pamphlet.pro
+ - /opt/qt59/bin/qmake $(basename $TRAVIS_REPO_SLUG).pro
  - make
