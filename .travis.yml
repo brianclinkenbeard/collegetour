@@ -9,4 +9,4 @@ before_install:
  - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-6 50
 script:
  - /opt/qt59/bin/qmake $(basename $TRAVIS_REPO_SLUG).pro
-- make
+ - make
