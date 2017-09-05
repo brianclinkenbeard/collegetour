@@ -5,19 +5,16 @@ colleges::colleges()
 
 }
 
-void colleges::addCollegeName(QString collegeName)
+void colleges::addCollege(int collegeId, QString collegeName)
 {
     this->collegeName.push_back(collegeName);
-}
+    this->collegeId.push_back(collegeId);
 
-void colleges::addCollegeID(int collegeID)
-{
-    this->collegeID.push_back(collegeID);
 }
 
 int colleges::getCollegeIDsSize()
 {
-    return this->collegeID.size();
+    return this->collegeId.size();
 }
 
 
@@ -28,6 +25,10 @@ int colleges::getCollegeNamesSize()
 
 int colleges::getCollegeIDsValue(int index)
 {
-    return this->collegeID.at(index);
+    return this->collegeId.at(index);
 }
 
+QString colleges::getCollegeNamesValue(int index)
+{
+    return this->collegeName.at(index);
+}

@@ -39,3 +39,6 @@ HEADERS += \
 FORMS += \
     src/mainwindow.ui \
     src/displaycolleges.ui
+
+RESOURCES += \
+    resources.qrc

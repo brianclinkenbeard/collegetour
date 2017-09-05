@@ -9,6 +9,7 @@
 #include <QFileInfo>
 #include "displaycolleges.h"
 #include "colleges.h"
+#include "souvenirs.h"
 
 namespace Ui
 {
@@ -31,9 +32,12 @@ public:
 private slots:
     void on_display_college_button_clicked();
 
+    void on_display_college_list_button_clicked();
+
 private:
     Ui::MainWindow *ui;
     colleges collegesList;
+    souvenirs souvenirsList;
 };
 
 #endif // MAINWINDOW_H

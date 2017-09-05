@@ -7,14 +7,13 @@ class colleges
 {
 private:
 
-    QVector<int> collegeID;
+    QVector<int> collegeId;
     QVector<QString> collegeName;
 
 public:
     colleges();
 
-    void addCollegeName(QString collegName);
-    void addCollegeID(int collegeID);
+    void addCollege(int collegeId, QString collegName);
     void deleteCollege(QString collegeName);
     bool findCollege(QString collegeName);
     int getCollegeIDsSize();

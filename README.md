@@ -1,4 +1,4 @@
-# collegetour [![Build Status](https://travis-ci.com/brianclinkenbeard/collegetour.svg?token=YYjD2LYA5ynr5RiEDZiN&branch=master)](https://travis-ci.com/brianclinkenbeard/collegetour) [![waffle.io](https://img.shields.io/badge/waffle-io-78BDF2.svg)](https://waffle.io/brianclinkenbeard/collegetour)
+# collegetour
 CS1D Project 1
 
 ## Coding Standards
