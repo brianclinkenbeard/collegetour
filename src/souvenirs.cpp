@@ -5,15 +5,16 @@ souvenirs::souvenirs()
 
 }
 
-void souvenirs::addSouvenir(int id, QString souvenirName, double souvenirPrice, int souvenirQuantity)
+void souvenirs::addSouvenir(int id, QString souvenirCollegeName, QString souvenirName, double souvenirPrice, int souvenirQuantity)
 {
     this->id.push_back(id);
+    this->souvenirCollegeName.push_back(souvenirCollegeName);
     this->souvenirName.push_back(souvenirName);
     this->souvenirPrice.push_back(souvenirPrice);
     this->souvenirQuantity.push_back(souvenirQuantity);
 }
 
-int souvenirs::getSouvenirsIdSize()
+int souvenirs::getSouvenirsContainerSize()
 {
     return this->id.size();
 }
@@ -21,6 +22,11 @@ int souvenirs::getSouvenirsIdSize()
 int souvenirs::getSouvenirCollegeId(int index)
 {
     return this->id.at(index);
+}
+
+QString souvenirs::getSouvenirCollegeName(int index)
+{
+    return this->souvenirCollegeName.at(index);
 }
 
 QString souvenirs::getSouvenirName(int index)

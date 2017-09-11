@@ -7,9 +7,11 @@
 #include <QtSql>
 #include <QtDebug>
 #include <QFileInfo>
+#include <QMessageBox>
 #include "displaycolleges.h"
 #include "colleges.h"
 #include "souvenirs.h"
+#include "distances.h"
 
 namespace Ui
 {
@@ -30,14 +32,24 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_display_college_button_clicked();
 
+    void readDatabase();
+    void on_display_college_button_clicked();
     void on_display_college_list_button_clicked();
+    void on_find_campus_push_button_clicked();
+
+    int findCollegeIdByName(QString collegeNameSearched);
+    int findCollegeIdById(int collegIdSearched);
+    void displayCollegeFoundTable(int collegeIdFound, int collegeId);
+
+
 
 private:
     Ui::MainWindow *ui;
     colleges collegesList;
     souvenirs souvenirsList;
+    distances distancesList;
+
 };
 
 #endif // MAINWINDOW_H

@@ -10,17 +10,20 @@ private:
     QVector<QString> souvenirName;
     QVector<double>  souvenirPrice;
     QVector<int> souvenirQuantity;
+    QVector<QString> souvenirCollegeName;
+
 public:
     souvenirs();
 
-    void addSouvenir(int id, QString souvenirName, double souvenirPrice, int souvenirQuantity);
+    void addSouvenir(int id, QString souvenirCollegeName, QString souvenirName, double souvenirPrice, int souvenirQuantity);
 
-    int getSouvenirsIdSize();
+    int getSouvenirsContainerSize();
     void deleteSouvenir(QString souvenir);
     void addPrice(double price);
     void editPrice(double price);
     int getSouvenirCollegeId(int index);
     QString getSouvenirName(int index);
+    QString getSouvenirCollegeName(int index);
     double getSouvenirPrice(int index);
     int getSouvenirQuantity(int index);
 };

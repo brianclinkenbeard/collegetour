@@ -28,13 +28,15 @@ SOURCES += \
     src/mainwindow.cpp \
     src/colleges.cpp \
     src/souvenirs.cpp \
-    src/displaycolleges.cpp
+    src/displaycolleges.cpp \
+    src/distances.cpp
 
 HEADERS += \
     src/mainwindow.h \
     src/colleges.h \
     src/souvenirs.h \
-    src/displaycolleges.h
+    src/displaycolleges.h \
+    src/distances.h
 
 FORMS += \
     src/mainwindow.ui \
