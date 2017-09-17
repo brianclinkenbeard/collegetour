@@ -44,6 +44,8 @@ private slots:
 
 
 
+    void on_actionLogin_triggered();
+
 private:
     Ui::MainWindow *ui;
     colleges collegesList;

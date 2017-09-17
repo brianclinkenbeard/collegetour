@@ -29,18 +29,21 @@ SOURCES += \
     src/colleges.cpp \
     src/souvenirs.cpp \
     src/displaycolleges.cpp \
-    src/distances.cpp
+    src/distances.cpp \
+    src/adminlogin.cpp
 
 HEADERS += \
     src/mainwindow.h \
     src/colleges.h \
     src/souvenirs.h \
     src/displaycolleges.h \
-    src/distances.h
+    src/distances.h \
+    src/adminlogin.h
 
 FORMS += \
     src/mainwindow.ui \
-    src/displaycolleges.ui
+    src/displaycolleges.ui \
+    src/adminlogin.ui
 
 RESOURCES += \
     resources.qrc

@@ -1,6 +1,6 @@
-
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "adminlogin.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -69,7 +69,7 @@ bool MainWindow::connectionOpen()
     myDatabase = QSqlDatabase::addDatabase("QSQLITE");
 
     // Proided the database path and name
-    myDatabase.setDatabaseName("C:/Users/sfoto/Documents/collegetour/Database/project.sqlite.sqlite");
+    myDatabase.setDatabaseName("Database/project.sqlite.sqlite");
 
     // If the database is not open the following message will be displayed otherwise it says connected
     if(!myDatabase.open())
@@ -357,4 +357,11 @@ void MainWindow::displayCollegeFoundTable(int collegeIdFound, int collegeId)
             }
         }
     }
+}
+
+void MainWindow::on_actionLogin_triggered()
+{
+    AdminLogin *login_window = new AdminLogin;
+    login_window->show();
+    this->close();
 }
