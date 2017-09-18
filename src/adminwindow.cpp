@@ -1,4 +1,5 @@
 #include "adminwindow.h"
+#include "mainwindow.h"
 #include "ui_adminwindow.h"
 #include "collegeeditwindow.h"
 
@@ -19,4 +20,11 @@ void AdminWindow::on_addCollege_clicked()
     CollegeEditWindow *collegeWindow = new CollegeEditWindow();
     collegeWindow->show();
     this->close();
+}
+
+void AdminWindow::on_pushButton_2_clicked()
+{
+   MainWindow *main = new MainWindow;
+   main->show();
+   this->close();
 }

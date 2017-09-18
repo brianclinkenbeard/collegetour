@@ -26,11 +26,7 @@ void AdminLogin::on_password_edit_returnPressed()
        AdminWindow *adminWindow = new AdminWindow();
        adminWindow->show();
        this->close();
-
-       ui->error_label->setStyleSheet("color:green");
-       ui->error_label->setText("Success");
    } else {
-       ui->error_label->setStyleSheet("color:red"); /* TODO: remove after AdminWindow class is added; redundant */
        ui->error_label->setText("Invalid username or password");
    }
 }
