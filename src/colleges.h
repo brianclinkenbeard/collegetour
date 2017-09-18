@@ -1,6 +1,6 @@
 #ifndef COLLEGES_H
 #define COLLEGES_H
-
+#include <QString>
 #include <QVector>
 
 class colleges
@@ -9,9 +9,12 @@ private:
 
     QVector<int> collegeId;
     QVector<QString> collegeName;
+    QString id;
+    QString collegeNameE;
 
 public:
     colleges();
+    colleges(QString collegeNameE, QString id);
 
     void addCollege(int collegeId, QString collegName);
     void deleteCollege(QString collegeName);

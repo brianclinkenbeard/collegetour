@@ -1,7 +1,8 @@
 #include "adminlogin.h"
+#include "adminwindow.h"
+#include "ui_adminwindow.h"
 #include "ui_adminlogin.h"
 #include "mainwindow.h"
-/* TODO: #include "adminwindow.h" */
 
 AdminLogin::AdminLogin(QWidget *parent) :
     QWidget(parent),
@@ -22,11 +23,10 @@ void AdminLogin::on_password_edit_returnPressed()
    const QString ADMIN_PASSWORD = "A";
 
    if (ui->username_edit->text() == ADMIN_USERNAME && ui->password_edit->text() == ADMIN_PASSWORD) {
-       /* TODO: remove success message and add AdminWindow
-        * AdminWindow *adminWindow = new AdminWindow;
-        * adminWindow->show();
-        * this->close();
-        */
+       AdminWindow *adminWindow = new AdminWindow();
+       adminWindow->show();
+       this->close();
+
        ui->error_label->setStyleSheet("color:green");
        ui->error_label->setText("Success");
    } else {

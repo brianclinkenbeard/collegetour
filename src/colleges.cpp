@@ -5,11 +5,16 @@ colleges::colleges()
 
 }
 
+colleges::colleges(QString collegeNameE, QString id)
+{
+    this->collegeNameE = collegeNameE;
+    this->id = id;
+}
+
 void colleges::addCollege(int collegeId, QString collegeName)
 {
     this->collegeName.push_back(collegeName);
     this->collegeId.push_back(collegeId);
-
 }
 
 int colleges::getCollegeIDsSize()
