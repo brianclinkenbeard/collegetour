@@ -12,6 +12,8 @@ MainWindow::MainWindow(QWidget *parent) :
     readDatabase();
 
     ui->progressBar->hide();
+    ui->progressBar_2->hide();
+
 }
 
 MainWindow::~MainWindow()
@@ -69,7 +71,7 @@ bool MainWindow::connectionOpen()
     myDatabase = QSqlDatabase::addDatabase("QSQLITE");
 
     // Proided the database path and name
-    myDatabase.setDatabaseName("C:/Users/Lee/Documents/collegetour/Database/project.sqlite.sqlite");
+    myDatabase.setDatabaseName("Database/project.sqlite.sqlite");
 
     // If the database is not open the following message will be displayed otherwise it says connected
     if(!myDatabase.open())
@@ -289,6 +291,27 @@ int MainWindow::findCollegeIdById(int collegeIdSearched)
 
 void MainWindow::displayCollegeFoundTable(int collegeIdFound, int collegeId)
 {
+    ui->progressBar_2->setValue(0);
+    ui->progressBar_2->show();
+
+    for (int i = 0; i < 40000000; ++i)
+    {
+        if (i % 100 == 0)
+        {
+            qApp->processEvents();
+        }
+    }
+
+    ui->progressBar_2->setValue(50);
+    for (int i = 0; i < 40000000; ++i)
+    {
+        if (i % 100 == 0)
+        {
+           qApp->processEvents();
+        }
+    }
+    ui->progressBar_2->hide();
+
     if(collegeIdFound >= collegesList.getCollegeIDsSize())
     {
         qDebug() << "Name was not found";

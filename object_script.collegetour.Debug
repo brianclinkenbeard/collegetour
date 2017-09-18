@@ -1,0 +1,17 @@
+INPUT(
+./debug\main.o
+./debug\mainwindow.o
+./debug\colleges.o
+./debug\souvenirs.o
+./debug\displaycolleges.o
+./debug\distances.o
+./debug\adminlogin.o
+./debug\adminwindow.o
+./debug\collegeeditwindow.o
+./debug\qrc_resources.o
+./debug\moc_mainwindow.o
+./debug\moc_displaycolleges.o
+./debug\moc_adminlogin.o
+./debug\moc_adminwindow.o
+./debug\moc_collegeeditwindow.o
+);

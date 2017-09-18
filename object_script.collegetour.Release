@@ -1,0 +1,17 @@
+INPUT(
+./release\main.o
+./release\mainwindow.o
+./release\colleges.o
+./release\souvenirs.o
+./release\displaycolleges.o
+./release\distances.o
+./release\adminlogin.o
+./release\adminwindow.o
+./release\collegeeditwindow.o
+./release\qrc_resources.o
+./release\moc_mainwindow.o
+./release\moc_displaycolleges.o
+./release\moc_adminlogin.o
+./release\moc_adminwindow.o
+./release\moc_collegeeditwindow.o
+);
