@@ -1,6 +1,7 @@
 #include "collegeeditwindow.h"
 #include "ui_collegeeditwindow.h"
 #include "mainwindow.h"
+#include "adminwindow.h"
 #include <QString>
 #include <QSqlQuery>
 
@@ -74,4 +75,11 @@ void CollegeEditWindow::on_pushButton_clicked()
             qDebug() << "Delete college from souvenirs failed: " << query.lastError();
         }
     }
+}
+
+void CollegeEditWindow::on_pushButton_2_clicked()
+{
+    AdminWindow *admin = new AdminWindow;
+    admin->show();
+    this->close();
 }

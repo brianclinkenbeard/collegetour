@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'collegeeditwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 5.6.2
+** Created by: Qt User Interface Compiler version 5.8.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -31,12 +31,14 @@ public:
     QLineEdit *collegeName;
     QLabel *label_2;
     QPushButton *pushButton;
+    QPushButton *pushButton_2;
+    QLabel *title_label;
 
     void setupUi(QDialog *CollegeEditWindow)
     {
         if (CollegeEditWindow->objectName().isEmpty())
             CollegeEditWindow->setObjectName(QStringLiteral("CollegeEditWindow"));
-        CollegeEditWindow->resize(538, 421);
+        CollegeEditWindow->resize(272, 208);
         label = new QLabel(CollegeEditWindow);
         label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(40, 60, 47, 13));
@@ -58,6 +60,16 @@ public:
         pushButton = new QPushButton(CollegeEditWindow);
         pushButton->setObjectName(QStringLiteral("pushButton"));
         pushButton->setGeometry(QRect(140, 140, 81, 23));
+        pushButton_2 = new QPushButton(CollegeEditWindow);
+        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        pushButton_2->setGeometry(QRect(10, 10, 51, 23));
+        title_label = new QLabel(CollegeEditWindow);
+        title_label->setObjectName(QStringLiteral("title_label"));
+        title_label->setGeometry(QRect(0, 20, 271, 20));
+        QFont font;
+        font.setPointSize(9);
+        title_label->setFont(font);
+        title_label->setAlignment(Qt::AlignCenter);
 
         retranslateUi(CollegeEditWindow);
 
@@ -66,12 +78,14 @@ public:
 
     void retranslateUi(QDialog *CollegeEditWindow)
     {
-        CollegeEditWindow->setWindowTitle(QApplication::translate("CollegeEditWindow", "Dialog", 0));
-        label->setText(QApplication::translate("CollegeEditWindow", "Name:", 0));
-        addCollegeButton->setText(QApplication::translate("CollegeEditWindow", "Add College", 0));
+        CollegeEditWindow->setWindowTitle(QApplication::translate("CollegeEditWindow", "Dialog", Q_NULLPTR));
+        label->setText(QApplication::translate("CollegeEditWindow", "Name:", Q_NULLPTR));
+        addCollegeButton->setText(QApplication::translate("CollegeEditWindow", "Add College", Q_NULLPTR));
         labelError->setText(QString());
-        label_2->setText(QApplication::translate("CollegeEditWindow", "ID:", 0));
-        pushButton->setText(QApplication::translate("CollegeEditWindow", "Delete College", 0));
+        label_2->setText(QApplication::translate("CollegeEditWindow", "ID:", Q_NULLPTR));
+        pushButton->setText(QApplication::translate("CollegeEditWindow", "Delete College", Q_NULLPTR));
+        pushButton_2->setText(QApplication::translate("CollegeEditWindow", "Back", Q_NULLPTR));
+        title_label->setText(QApplication::translate("CollegeEditWindow", "Add and Delete Colleges", Q_NULLPTR));
     } // retranslateUi
 
 };

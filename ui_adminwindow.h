@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'adminwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 5.6.2
+** Created by: Qt User Interface Compiler version 5.8.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -26,6 +26,8 @@ public:
     QPushButton *addCollege;
     QPushButton *pushButton_2;
     QLabel *label;
+    QPushButton *pushButton;
+    QPushButton *pushButton_3;
 
     void setupUi(QDialog *AdminWindow)
     {
@@ -34,7 +36,7 @@ public:
         AdminWindow->resize(400, 300);
         addCollege = new QPushButton(AdminWindow);
         addCollege->setObjectName(QStringLiteral("addCollege"));
-        addCollege->setGeometry(QRect(160, 110, 75, 23));
+        addCollege->setGeometry(QRect(120, 100, 151, 31));
         pushButton_2 = new QPushButton(AdminWindow);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
         pushButton_2->setGeometry(QRect(10, 10, 75, 23));
@@ -44,6 +46,12 @@ public:
         QFont font;
         font.setPointSize(15);
         label->setFont(font);
+        pushButton = new QPushButton(AdminWindow);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setGeometry(QRect(120, 200, 151, 31));
+        pushButton_3 = new QPushButton(AdminWindow);
+        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
+        pushButton_3->setGeometry(QRect(120, 150, 151, 31));
 
         retranslateUi(AdminWindow);
 
@@ -52,10 +60,12 @@ public:
 
     void retranslateUi(QDialog *AdminWindow)
     {
-        AdminWindow->setWindowTitle(QApplication::translate("AdminWindow", "Dialog", 0));
-        addCollege->setText(QApplication::translate("AdminWindow", "Add College", 0));
-        pushButton_2->setText(QApplication::translate("AdminWindow", "Logout", 0));
-        label->setText(QApplication::translate("AdminWindow", "Admin Window", 0));
+        AdminWindow->setWindowTitle(QApplication::translate("AdminWindow", "Dialog", Q_NULLPTR));
+        addCollege->setText(QApplication::translate("AdminWindow", "Add and Delete Colleges", Q_NULLPTR));
+        pushButton_2->setText(QApplication::translate("AdminWindow", "Logout", Q_NULLPTR));
+        label->setText(QApplication::translate("AdminWindow", "Admin Window", Q_NULLPTR));
+        pushButton->setText(QApplication::translate("AdminWindow", "Souvenir Prices", Q_NULLPTR));
+        pushButton_3->setText(QApplication::translate("AdminWindow", "Add and Delete Souvenirs", Q_NULLPTR));
     } // retranslateUi
 
 };
