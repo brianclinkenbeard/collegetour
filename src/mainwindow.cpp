@@ -382,7 +382,7 @@ void MainWindow::displayCollegeFoundTable(int collegeIdFound, int collegeId)
     }
 }
 
-void MainWindow::on_actionLogin_triggered()
+void MainWindow::on_pushButton_8_clicked()
 {
     AdminLogin *login_window = new AdminLogin;
     login_window->show();

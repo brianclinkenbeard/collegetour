@@ -17,6 +17,7 @@ CollegeEditWindow::~CollegeEditWindow()
     delete ui;
 }
 
+/*
 void CollegeEditWindow::on_addCollegeButton_clicked()
 {
     QString collegeName = ui->collegeName->text();
@@ -76,6 +77,7 @@ void CollegeEditWindow::on_pushButton_clicked()
         }
     }
 }
+*/
 
 void CollegeEditWindow::on_pushButton_2_clicked()
 {

@@ -41,10 +41,7 @@ private slots:
     int findCollegeIdByName(QString collegeNameSearched);
     int findCollegeIdById(int collegIdSearched);
     void displayCollegeFoundTable(int collegeIdFound, int collegeId);
-
-
-
-    void on_actionLogin_triggered();
+    void on_pushButton_8_clicked();
 
 private:
     Ui::MainWindow *ui;

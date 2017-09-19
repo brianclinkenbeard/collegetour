@@ -16,9 +16,9 @@ public:
     ~CollegeEditWindow();
 
 private slots:
-    void on_addCollegeButton_clicked();
+    //void on_addCollegeButton_clicked();
 
-    void on_pushButton_clicked();
+    //void on_pushButton_clicked();
 
     void on_pushButton_2_clicked();
 
