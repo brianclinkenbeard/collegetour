@@ -38,6 +38,9 @@ void CollegeEditWindow::on_addCollegeButton_clicked()
 
         if(query.exec()){
             qDebug() << "Add college successful";
+            ui->labelError->setStyleSheet("color:red");
+            ui->labelError->setText("College Added!");
+            ui->labelError->show();
         } else {
             qDebug() << "Add college failed: " << query.lastError();
         }
@@ -63,6 +66,9 @@ void CollegeEditWindow::on_pushButton_clicked()
 
         if(query.exec()){
             qDebug() << "Delete college successful";
+            ui->labelError->setStyleSheet("color:green");
+            ui->labelError->setText("College Deleted!");
+            ui->labelError->show();
         } else {
             qDebug() << "Delete college failed: " << query.lastError();
         }
