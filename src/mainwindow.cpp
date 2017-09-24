@@ -98,12 +98,14 @@ bool MainWindow::connectionOpen()
     // If the database is not open the following message will be displayed otherwise it says connected
     if(!myDatabase.open())
     {
-        ui->status->setText("Database is not Connected");
+        ui->status->setStyleSheet("color:red");
+        ui->status->setText("Error: Failed to connect to database");
         return false;
     }
     else
     {
-        ui->status->setText("Database is Connected seccessfully");
+        ui->status->setStyleSheet("color:green");
+        ui->status->setText("Database connected successfully");
         return true;
     }
 }
