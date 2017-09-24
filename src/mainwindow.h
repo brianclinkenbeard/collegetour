@@ -34,7 +34,6 @@ public:
 private slots:
 
     void readDatabase();
-    void on_display_college_button_clicked();
     void on_display_college_list_button_clicked();
     void on_find_campus_push_button_clicked();
 
