@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "adminlogin.h"
+#include "purchasesouvenirs.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -36,6 +37,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->display_college_table->setEditTriggers(QAbstractItemView::NoEditTriggers);
     ui->search_college_table->setEditTriggers(QAbstractItemView::NoEditTriggers);
     ui->college_souvenirs_table->setEditTriggers(QAbstractItemView::NoEditTriggers);
+
+    ui->pushButton_purchase->hide();
 }
 
 MainWindow::~MainWindow()
@@ -218,7 +221,6 @@ void MainWindow::on_display_college_list_button_clicked()
     }
 }
 
-
 void MainWindow::on_find_campus_push_button_clicked()
 {
     QString collegeNameSearched = ui->campusName_lineEdit->text().toLower();
@@ -231,11 +233,13 @@ void MainWindow::on_find_campus_push_button_clicked()
     {
         collegeIdFoundById = findCollegeIdById(collegeIdSearched);
         displayCollegeFoundTable(collegeIdFoundById, collegesList.getCollegeIDsValue(collegeIdFoundById));
+        ui->pushButton_purchase->show();
     }
     else if(!ui->campusName_lineEdit->text().isEmpty() && ui->campusId_lineEdit->text().isEmpty())
     {
         collegeIdFoundByName = findCollegeIdByName(collegeNameSearched);
         displayCollegeFoundTable(collegeIdFoundByName, collegesList.getCollegeIDsValue(collegeIdFoundByName));
+        ui->pushButton_purchase->show();
     }
     else if(!ui->campusId_lineEdit->text().isEmpty() && !ui->campusName_lineEdit->text().isEmpty())
     {
@@ -245,6 +249,7 @@ void MainWindow::on_find_campus_push_button_clicked()
         if(collegeIdFoundById == collegeIdFoundByName)
         {
             displayCollegeFoundTable(collegeIdFoundById, collegesList.getCollegeIDsValue(collegeIdFoundById));
+            ui->pushButton_purchase->show();
         }
         else
         {
@@ -395,4 +400,11 @@ void MainWindow::on_pushButton_8_clicked()
     AdminLogin *login_window = new AdminLogin;
     login_window->show();
     this->close();
+}
+
+void MainWindow::on_pushButton_purchase_clicked()
+{
+    purchaseSouvenirs *purchase_souvenirs = new purchaseSouvenirs;
+    purchase_souvenirs->show();
+
 }

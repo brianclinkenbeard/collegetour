@@ -42,6 +42,8 @@ private slots:
     void displayCollegeFoundTable(int collegeIdFound, int collegeId);
     void on_pushButton_8_clicked();
 
+    void on_pushButton_purchase_clicked();
+
 private:
     Ui::MainWindow *ui;
     colleges collegesList;

@@ -32,7 +32,8 @@ SOURCES += \
     src/distances.cpp \
     src/adminlogin.cpp \
     src/adminwindow.cpp \
-    src/collegeeditwindow.cpp
+    src/collegeeditwindow.cpp \
+    purchasesouvenirs.cpp
 
 HEADERS += \
     src/mainwindow.h \
@@ -42,14 +43,16 @@ HEADERS += \
     src/distances.h \
     src/adminlogin.h \
     src/adminwindow.h \
-    src/collegeeditwindow.h
+    src/collegeeditwindow.h \
+    purchasesouvenirs.h
 
 FORMS += \
     src/mainwindow.ui \
     src/displaycolleges.ui \
     src/adminlogin.ui \
     src/adminwindow.ui \
-    src/collegeeditwindow.ui
+    src/collegeeditwindow.ui \
+    purchasesouvenirs.ui
 
 RESOURCES += \
     resources.qrc
