@@ -37,14 +37,14 @@ SOURCES += \
 
 HEADERS += \
     src/mainwindow.h \
-    src/colleges.h \
-    src/souvenirs.h \
     src/displaycolleges.h \
-    src/distances.h \
     src/adminlogin.h \
     src/adminwindow.h \
     src/collegeeditwindow.h \
-    src/purchasesouvenirs.h
+    src/purchasesouvenirs.h \
+    src/college.h \
+    src/distance.h \
+    src/souvenir.h
 
 FORMS += \
     src/mainwindow.ui \

@@ -9,9 +9,9 @@
 #include <QFileInfo>
 #include <QMessageBox>
 #include "displaycolleges.h"
-#include "colleges.h"
-#include "souvenirs.h"
-#include "distances.h"
+#include "college.h"
+#include "souvenir.h"
+#include "distance.h"
 
 namespace Ui
 {
