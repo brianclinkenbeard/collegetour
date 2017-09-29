@@ -51,42 +51,35 @@ void MainWindow::readDatabase()
     // Reading from the Sql Database to the campuses vectors
     QSqlQuery colleges_qry("SELECT * FROM College_Touring");
 
-    while(colleges_qry.next())
-    {
-        collegesList.addCollege(colleges_qry.record().value("ID").toInt(),
-                                colleges_qry.record().value("Universities").toString());
+    while(colleges_qry.next()) {
+        /* push back College */
+        collegesList.push_back(College(colleges_qry.record().value("ID").toInt(),
+                                colleges_qry.record().value("Universities").toString()));
     }
-    qDebug() << collegesList.getCollegeIDsSize();
-
 
     //Reading from the Sql Database to the souvenirs vectors
     QSqlQuery souvenirs_qry("SELECT * FROM colleges_souvenirs");
 
-
-    while(souvenirs_qry.next())
-    {
-        souvenirsList.addSouvenir(souvenirs_qry.record().value("ID").toInt(),
-                                  souvenirs_qry.record().value("Universities").toString(),
-                                  souvenirs_qry.record().value("souvenir").toString(),
-                                  souvenirs_qry.record().value("price").toDouble(),
-                                  souvenirs_qry.record().value("Quantity").toInt());
+    while(souvenirs_qry.next()) {
+        /* push back Souvenir */
+        souvenirsList.push_back(Souvenir(College(souvenirs_qry.record().value("ID").toInt(),
+                                                 souvenirs_qry.record().value("Universities").toString()),
+                                         souvenirs_qry.record().value("souvenir").toString(),
+                                         souvenirs_qry.record().value("price").toDouble()));
     }
 
     //Reading from the Sql Database to the distances vectors
     QSqlQuery distances_qry("SELECT * FROM distances");
 
-        int index = 0;
-
     while(distances_qry.next())
     {
-        distancesList.addDistances(distances_qry.record().value("startingPointCollegeId").toInt(),
-                                   distances_qry.record().value("endingPointCollegeId").toInt(),
-                                   distances_qry.record().value("startingPointCollegeName").toString(),
-                                   distances_qry.record().value("endingPointCollegeId").toString(),
-                                   distances_qry.record().value("distance").toDouble());
+        /* find College by ID from existing list */
+        College startCollege(distances_qry.record().value("startingPointCollegeId").toInt(),
+                             distances_qry.record().value("startingPointCollegeName").toString());
+        College endCollege(distances_qry.record().value("endingPointCollegeId").toInt(),
+                             distances_qry.record().value("endingPointCollegeName").toString());
 
-        qDebug() << distancesList.getStartingPointCollegeIdValue(index);
-        index++;
+        distancesList.push_back(Distance(startCollege, endCollege, souvenirs_qry.record().value("distance").toInt()));
     }
 }
 
@@ -146,7 +139,7 @@ void MainWindow::on_display_college_list_button_clicked()
     if(ui->display_colleges_radio_button->isChecked())
     {
         ui->display_college_table->setColumnCount(2);
-        ui->display_college_table->setRowCount(collegesList.getCollegeIDsSize());
+        ui->display_college_table->setRowCount(collegesList.size());
 
         ui->display_college_table->setHorizontalHeaderItem(0, new QTableWidgetItem("IDs"));
         ui->display_college_table->setHorizontalHeaderItem(1, new QTableWidgetItem("Colleges"));
@@ -154,11 +147,10 @@ void MainWindow::on_display_college_list_button_clicked()
         /* stretch college name */
         ui->display_college_table->horizontalHeader()->setSectionResizeMode(1, QHeaderView::Stretch);
 
-        for(int row = 0; row < collegesList.getCollegeIDsSize(); row++)
+        for(int row = 0; row < collegesList.size(); row++)
         {
-            qDebug() << collegesList.getCollegeIDsValue(0);
-            ui->display_college_table->setItem(row, 0, new QTableWidgetItem(QString::number(collegesList.getCollegeIDsValue(row))));
-            ui->display_college_table->setItem(row, 1, new QTableWidgetItem(collegesList.getCollegeNamesValue(row)));
+            ui->display_college_table->setItem(row, 0, new QTableWidgetItem(QString::number(collegesList.at(row).getCollegeID())));
+            ui->display_college_table->setItem(row, 1, new QTableWidgetItem(collegesList.at(row).getCollegeName()));
 
             ui->display_college_table->item(row, 0)->setTextAlignment(Qt::AlignCenter);
             ui->display_college_table->item(row, 1)->setTextAlignment(Qt::AlignCenter);
@@ -166,53 +158,36 @@ void MainWindow::on_display_college_list_button_clicked()
     }
     else if(ui->display_souvenirs_radio_button->isChecked())
     {
-        ui->display_college_table->setColumnCount(5);
-        ui->display_college_table->setRowCount(souvenirsList.getSouvenirsContainerSize());
+        ui->display_college_table->setColumnCount(4);
+        ui->display_college_table->setRowCount(souvenirsList.size());
 
         ui->display_college_table->setHorizontalHeaderItem(0, new QTableWidgetItem("IDs"));
         ui->display_college_table->setHorizontalHeaderItem(1, new QTableWidgetItem("Campuses"));
         ui->display_college_table->setHorizontalHeaderItem(2, new QTableWidgetItem("Souvenirs"));
         ui->display_college_table->setHorizontalHeaderItem(3, new QTableWidgetItem("Prices"));
-        ui->display_college_table->setHorizontalHeaderItem(4, new QTableWidgetItem("Quantities"));
 
         /* stretch campus name */
         ui->display_college_table->horizontalHeader()->setSectionResizeMode(1, QHeaderView::Stretch);
 
         int row = 0;
 
-        for(int i = 0; i < collegesList.getCollegeIDsSize(); i++)
+        for(int i = 0; i < collegesList.size(); i++)
         {
-            int currentId = collegesList.getCollegeIDsValue(i);
+            int currentId = collegesList.at(i).getCollegeID();
 
-            for(int j = 0; j < souvenirsList.getSouvenirsContainerSize(); j++)
+            for(int j = 0; j < souvenirsList.size(); j++)
             {
-                if(currentId == souvenirsList.getSouvenirCollegeId(j))
+                if(currentId == souvenirsList.at(j).getSouvenirCollege().getCollegeID())
                 {
-                    qDebug() << souvenirsList.getSouvenirCollegeId(row);
-                    ui->display_college_table->setItem(row, 0, new QTableWidgetItem(QString::number(souvenirsList.getSouvenirCollegeId(j))));
-                    ui->display_college_table->setItem(row, 1, new QTableWidgetItem(souvenirsList.getSouvenirCollegeName(j)));
-                    ui->display_college_table->setItem(row, 2, new QTableWidgetItem(souvenirsList.getSouvenirName(j)));
-                    ui->display_college_table->setItem(row, 3, new QTableWidgetItem("$" + QString::number(souvenirsList.getSouvenirPrice(j))));
-
-                    if(souvenirsList.getSouvenirQuantity(j) == 0)
-                    {
-                        ui->display_college_table->setItem(row, 4, new QTableWidgetItem("Out of Stock"));
-
-                        for(int p = 0; p < 5; p++)
-                        {
-                            ui->display_college_table->item(row, p)->setBackgroundColor(Qt::cyan);
-                        }
-                    }
-                    else
-                    {
-                        ui->display_college_table->setItem(row, 4, new QTableWidgetItem(QString::number(souvenirsList.getSouvenirQuantity(j))));
-                    }
+                    ui->display_college_table->setItem(row, 0, new QTableWidgetItem(QString::number(souvenirsList.at(j).getSouvenirCollege().getCollegeID())));
+                    ui->display_college_table->setItem(row, 1, new QTableWidgetItem(souvenirsList.at(j).getSouvenirCollege().getCollegeName()));
+                    ui->display_college_table->setItem(row, 2, new QTableWidgetItem(souvenirsList.at(j).getSouvenirName()));
+                    ui->display_college_table->setItem(row, 3, new QTableWidgetItem("$" + QString::number(souvenirsList.at(j).getSouvenirPrice())));
 
                     ui->display_college_table->item(row, 0)->setTextAlignment(Qt::AlignCenter);
                     ui->display_college_table->item(row, 1)->setTextAlignment(Qt::AlignCenter);
                     ui->display_college_table->item(row, 2)->setTextAlignment(Qt::AlignCenter);
                     ui->display_college_table->item(row, 3)->setTextAlignment(Qt::AlignCenter);
-                    ui->display_college_table->item(row, 4)->setTextAlignment(Qt::AlignCenter);
 
                     row++;
                 }
@@ -232,13 +207,13 @@ void MainWindow::on_find_campus_push_button_clicked()
     if(ui->campusName_lineEdit->text().isEmpty() && !ui->campusId_lineEdit->text().isEmpty())
     {
         collegeIdFoundById = findCollegeIdById(collegeIdSearched);
-        displayCollegeFoundTable(collegeIdFoundById, collegesList.getCollegeIDsValue(collegeIdFoundById));
+        displayCollegeFoundTable(collegeIdFoundById, collegesList.at(collegeIdFoundById).getCollegeID());
         ui->pushButton_purchase->show();
     }
     else if(!ui->campusName_lineEdit->text().isEmpty() && ui->campusId_lineEdit->text().isEmpty())
     {
         collegeIdFoundByName = findCollegeIdByName(collegeNameSearched);
-        displayCollegeFoundTable(collegeIdFoundByName, collegesList.getCollegeIDsValue(collegeIdFoundByName));
+        displayCollegeFoundTable(collegeIdFoundByName, collegesList.at(collegeIdFoundByName).getCollegeID());
         ui->pushButton_purchase->show();
     }
     else if(!ui->campusId_lineEdit->text().isEmpty() && !ui->campusName_lineEdit->text().isEmpty())
@@ -248,7 +223,7 @@ void MainWindow::on_find_campus_push_button_clicked()
 
         if(collegeIdFoundById == collegeIdFoundByName)
         {
-            displayCollegeFoundTable(collegeIdFoundById, collegesList.getCollegeIDsValue(collegeIdFoundById));
+            displayCollegeFoundTable(collegeIdFoundById, collegesList.at(collegeIdFoundById).getCollegeID());
             ui->pushButton_purchase->show();
         }
         else
@@ -266,44 +241,32 @@ void MainWindow::on_find_campus_push_button_clicked()
 
 int MainWindow::findCollegeIdByName(QString collegeNameSearched)
 {
-    bool found = false;
-    int index  = 0;
-    QString currentName;
+    QVector<College>::iterator foundCollege = std::find_if(collegesList.begin(), collegesList.end(), [&] (const College &c)
+                                                          { return c.getCollegeName().toLower().contains(collegeNameSearched); });
 
-    while(index < collegesList.getCollegeIDsSize() && !found)
-    {
-        currentName = collegesList.getCollegeNamesValue(index).toLower();
-
-        if(collegeNameSearched == collegesList.getCollegeNamesValue(index).toLower() ||
-           currentName.contains(collegeNameSearched ))
-        {
-            found = true;
-        }
-        else
-        {
-            index++;
-        }
+    /* check if college is found */
+    if (foundCollege != collegesList.end()) {
+        /* calculate and return index from iterator */
+        return foundCollege - collegesList.begin();
+    } else {
+        /* TODO: return -1 instead of 0 and check for success on find campus button click */
+        return 0;
     }
-    return index;
 }
 
 int MainWindow::findCollegeIdById(int collegeIdSearched)
 {
-    bool found = false;
-    int index  = 0;
+    QVector<College>::iterator foundCollege = std::find_if(collegesList.begin(), collegesList.end(), [&] (const College &c)
+                                                          { return c.getCollegeID() == collegeIdSearched; });
 
-    while(index < collegesList.getCollegeIDsSize() && !found)
-    {
-        if(collegeIdSearched == collegesList.getCollegeIDsValue(index))
-        {
-            found = true;
-        }
-        else
-        {
-            index++;
-        }
+    /* check if college is found */
+    if (foundCollege != collegesList.end()) {
+        /* calculate and return index from iterator */
+        return foundCollege - collegesList.begin();
+    } else {
+        /* TODO: return -1 instead of 0 and check for success on find campus button click */
+        return 0;
     }
-    return index;
 }
 
 void MainWindow::displayCollegeFoundTable(int collegeIdFound, int collegeId)
@@ -329,7 +292,7 @@ void MainWindow::displayCollegeFoundTable(int collegeIdFound, int collegeId)
     }
     ui->progressBar_2->hide();
 
-    if(collegeIdFound >= collegesList.getCollegeIDsSize())
+    if(collegeIdFound >= collegesList.size())
     {
         qDebug() << "Name was not found";
     }
@@ -344,17 +307,16 @@ void MainWindow::displayCollegeFoundTable(int collegeIdFound, int collegeId)
         /* stretch college name */
         ui->search_college_table->horizontalHeader()->setSectionResizeMode(1, QHeaderView::Stretch);
 
-        ui->search_college_table->setItem(0, 0, new QTableWidgetItem(QString::number(collegesList.getCollegeIDsValue(collegeIdFound))));
-        ui->search_college_table->setItem(0, 1, new QTableWidgetItem(collegesList.getCollegeNamesValue(collegeIdFound)));
+        ui->search_college_table->setItem(0, 0, new QTableWidgetItem(QString::number(collegesList.at(collegeIdFound).getCollegeID())));
+        ui->search_college_table->setItem(0, 1, new QTableWidgetItem(collegesList.at(collegeIdFound).getCollegeName()));
 
         ui->search_college_table->item(0, 0)->setTextAlignment(Qt::AlignCenter);
         ui->search_college_table->item(0, 1)->setTextAlignment(Qt::AlignCenter);
 
-        ui->college_souvenirs_table->setColumnCount(3);
+        ui->college_souvenirs_table->setColumnCount(2);
 
         ui->college_souvenirs_table->setHorizontalHeaderItem(0, new QTableWidgetItem("Souvenirs"));
         ui->college_souvenirs_table->setHorizontalHeaderItem(1, new QTableWidgetItem("Prices"));
-        ui->college_souvenirs_table->setHorizontalHeaderItem(2, new QTableWidgetItem("Quantities"));
 
         /* stretch souvenir name */
         ui->college_souvenirs_table->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Stretch);
@@ -362,32 +324,17 @@ void MainWindow::displayCollegeFoundTable(int collegeIdFound, int collegeId)
         int row = 0;
         int rowCount = 0;
 
-        for(int index = 0; index < souvenirsList.getSouvenirsContainerSize(); index++)
+        for(int index = 0; index < souvenirsList.size(); index++)
         {
-            if(souvenirsList.getSouvenirCollegeId(index) == collegeId)
+            if(souvenirsList.at(index).getSouvenirCollege().getCollegeID() == collegeId)
             {
                 ui->college_souvenirs_table->setRowCount(++rowCount);
 
-                ui->college_souvenirs_table->setItem(row, 0, new QTableWidgetItem(souvenirsList.getSouvenirName(index)));
-                ui->college_souvenirs_table->setItem(row, 1, new QTableWidgetItem("$" + QString::number(souvenirsList.getSouvenirPrice(index))));
-
-                if(souvenirsList.getSouvenirQuantity(index) == 0)
-                {
-                    ui->college_souvenirs_table->setItem(row, 2, new QTableWidgetItem("Out of Stock"));
-
-                    for(int p = 0; p < 3; p++)
-                    {
-                        ui->college_souvenirs_table->item(row, p)->setBackgroundColor(Qt::cyan);
-                    }
-                }
-                else
-                {
-                    ui->college_souvenirs_table->setItem(row, 2, new QTableWidgetItem(QString::number(souvenirsList.getSouvenirQuantity(index))));
-                }
+                ui->college_souvenirs_table->setItem(row, 0, new QTableWidgetItem(souvenirsList.at(index).getSouvenirName()));
+                ui->college_souvenirs_table->setItem(row, 1, new QTableWidgetItem("$" + QString::number(souvenirsList.at(index).getSouvenirPrice())));
 
                 ui->college_souvenirs_table->item(row, 0)->setTextAlignment(Qt::AlignCenter);
                 ui->college_souvenirs_table->item(row, 1)->setTextAlignment(Qt::AlignCenter);
-                ui->college_souvenirs_table->item(row, 2)->setTextAlignment(Qt::AlignCenter);
 
                 row++;
             }
@@ -406,5 +353,4 @@ void MainWindow::on_pushButton_purchase_clicked()
 {
     purchaseSouvenirs *purchase_souvenirs = new purchaseSouvenirs;
     purchase_souvenirs->show();
-
 }

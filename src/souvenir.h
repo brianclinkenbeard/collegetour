@@ -13,15 +13,28 @@ private:
     QString souvenirName;
     double souvenirPrice;
 public:
-
+    Souvenir();
     /**
-     * @brief Souvenir Constructor for Souvenir
-     * @param initSouvenirName Name of the souvenir
-     * @param initSouvenirPrice Price of the souvenir
+     * @brief Souvenir constructor
+     * @param initSouvenirCollege College selling Souvenir
+     * @param initSouvenirName Name of Souvenir
+     * @param initSouvenirPrice Price of Souvenir
      */
-    Souvenir(QString initSouvenirName, double initSouvenirPrice);
+    Souvenir(College initSouvenirCollege, QString initSouvenirName, double initSouvenirPrice);
+    /**
+     * @brief getSouvenirCollege
+     * @return College selling the Souvenir
+     */
     College getSouvenirCollege() const;
+    /**
+     * @brief getSouvenirName
+     * @return Name of the Souvenir
+     */
     QString getSouvenirName() const;
+    /**
+     * @brief getSouvenirPrice
+     * @return Price of the Souvenir
+     */
     double getSouvenirPrice() const;
 };
 

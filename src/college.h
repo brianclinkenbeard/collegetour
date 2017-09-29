@@ -5,19 +5,29 @@
 
 /**
  * @brief The College class
- * Interacts with colleges in the database and displaying in the menus.
+ * Represents a College that may be selling Souvenirs
  */
 class College {
 private:
     int collegeID;
     QString collegeName;
 public:
+    College();
     /**
-     * @param collegeID College's ID
-     * @param collegeName College's Name
+     * @brief College constructor
+     * @param collegeID ID of College
+     * @param collegeName Name of College
      */
     College(int collegeID, QString collegeName);
+    /**
+     * @brief getCollegeID
+     * @return ID of College
+     */
     int getCollegeID() const;
+    /**
+     * @brief getCollegeName
+     * @return Name of the College
+     */
     QString getCollegeName() const;
 };
 

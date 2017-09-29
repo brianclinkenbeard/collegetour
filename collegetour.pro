@@ -26,14 +26,14 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     src/main.cpp \
     src/mainwindow.cpp \
-    src/colleges.cpp \
-    src/souvenirs.cpp \
     src/displaycolleges.cpp \
-    src/distances.cpp \
     src/adminlogin.cpp \
     src/adminwindow.cpp \
     src/collegeeditwindow.cpp \
-    src/purchasesouvenirs.cpp
+    src/purchasesouvenirs.cpp \
+    src/college.cpp \
+    src/distance.cpp \
+    src/souvenir.cpp
 
 HEADERS += \
     src/mainwindow.h \

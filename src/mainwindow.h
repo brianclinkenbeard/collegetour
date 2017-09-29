@@ -8,6 +8,7 @@
 #include <QtDebug>
 #include <QFileInfo>
 #include <QMessageBox>
+#include <QVector>
 #include "displaycolleges.h"
 #include "college.h"
 #include "souvenir.h"
@@ -18,8 +19,7 @@ namespace Ui
     class MainWindow;
 }
 
-class MainWindow : public QMainWindow
-{
+class MainWindow : public QMainWindow {
     Q_OBJECT
 
 public:
@@ -46,9 +46,9 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    colleges collegesList;
-    souvenirs souvenirsList;
-    distances distancesList;
+    QVector<College> collegesList;
+    QVector<Souvenir> souvenirsList;
+    QVector<Distance> distancesList;
 
 };
 
