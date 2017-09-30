@@ -80,7 +80,7 @@ bool MainWindow::connectionOpen()
     myDatabase = QSqlDatabase::addDatabase("QSQLITE");
 
     // provide the database path and name
-    myDatabase.setDatabaseName("db/project.sqlite");
+    myDatabase.setDatabaseName("res/project.sqlite");
 
     // display whether or not database is connected
     if(!myDatabase.open())
