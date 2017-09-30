@@ -232,7 +232,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>Search:</string>
+       <string>Search by College name:</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>

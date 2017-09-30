@@ -18,7 +18,6 @@ MainWindow::MainWindow(QWidget *parent) :
     // stretch vertical headers to fit table
     //ui->display_college_table->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 
-
     // center header text
     ui->display_college_table->horizontalHeader()->setDefaultAlignment(Qt::AlignCenter);
 
@@ -129,7 +128,6 @@ void MainWindow::on_display_comboBox_currentIndexChanged(int index)
 {
     ui->purchase_button->hide();
     ui->tour_button->hide();
-    ui->search_label->setText("Search:");
 
     switch (index) {
     case 0:
@@ -138,7 +136,6 @@ void MainWindow::on_display_comboBox_currentIndexChanged(int index)
         break;
     case 1:
         ui->tour_button->show();
-        ui->search_label->setText("Search by University name:");
 
         ui->display_college_table->setRowCount(0);
 
@@ -167,7 +164,6 @@ void MainWindow::on_display_comboBox_currentIndexChanged(int index)
         break;
     case 2:
         ui->purchase_button->show();
-        ui->search_label->setText("Search by Souvenir name:");
 
         ui->display_college_table->setRowCount(0);
 
@@ -248,7 +244,7 @@ void MainWindow::on_search_edit_textEdited(const QString &arg1)
         case 2:
             for (int i = 0; i < souvenirsList.size(); ++i) {
                 // add matching colleges
-                if (souvenirsList.at(i).getSouvenirName().toLower().contains(arg1.toLower())) {
+                if (souvenirsList.at(i).getSouvenirCollege().getCollegeName().toLower().contains(arg1.toLower())) {
                     ui->display_college_table->insertRow(ui->display_college_table->rowCount());
 
                     ui->display_college_table->setItem(ui->display_college_table->rowCount() - 1, 0,
