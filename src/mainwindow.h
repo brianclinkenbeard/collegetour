@@ -41,6 +41,8 @@ private slots:
     void on_purchase_button_clicked();
 
 private:
+    int distance_by_ID(int);
+
     Ui::MainWindow *ui;
     QVector<College> collegesList;
     QVector<Souvenir> souvenirsList;

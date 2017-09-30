@@ -70,7 +70,7 @@ void MainWindow::readDatabase()
         College endCollege(distances_qry.record().value("endingPointCollegeId").toInt(),
                              distances_qry.record().value("endingPointCollegeName").toString());
 
-        distancesList.push_back(Distance(startCollege, endCollege, souvenirs_qry.record().value("distance").toInt()));
+        distancesList.push_back(Distance(startCollege, endCollege, distances_qry.record().value("distance").toInt()));
     }
 }
 
@@ -103,6 +103,28 @@ void MainWindow::connectionClose()
     myDatabase.removeDatabase(QSqlDatabase::defaultConnection);
 }
 
+int MainWindow::distance_by_ID(int ID)
+{
+    // find Distance object that starts at Saddleback and ends at our College
+    int distance = -1;
+
+    // if our College is Saddleback than distance to Saddleback is 0
+    if (ID == 8918) {
+        distance = 0;
+    } else {
+        for (int j = 0; j < distancesList.size(); ++j) {
+            // if start College is Saddleback and end College is our College get distance
+            if (distancesList.at(j).getStartCollege().getCollegeID() == 8918 &&
+                    distancesList.at(j).getEndCollege().getCollegeID() == ID) {
+                distance = distancesList.at(j).getDistance(); // set distance to distance of object that matches
+                break;
+            }
+        }
+    }
+
+    return distance;
+}
+
 void MainWindow::on_display_comboBox_currentIndexChanged(int index)
 {
     ui->purchase_button->hide();
@@ -120,11 +142,12 @@ void MainWindow::on_display_comboBox_currentIndexChanged(int index)
 
         ui->display_college_table->setRowCount(0);
 
-        ui->display_college_table->setColumnCount(2);
+        ui->display_college_table->setColumnCount(3);
         ui->display_college_table->setHorizontalHeaderItem(0, new QTableWidgetItem("IDs"));
         ui->display_college_table->setHorizontalHeaderItem(1, new QTableWidgetItem("Colleges"));
+        ui->display_college_table->setHorizontalHeaderItem(2, new QTableWidgetItem("Distance from Saddleback"));
 
-        // stretch college name
+        // stretch College name
         ui->display_college_table->horizontalHeader()->setSectionResizeMode(1, QHeaderView::Stretch);
 
         for (int i = 0; i < collegesList.size(); ++i) {
@@ -134,9 +157,11 @@ void MainWindow::on_display_comboBox_currentIndexChanged(int index)
                                                new QTableWidgetItem(QString::number(collegesList.at(i).getCollegeID())));
             ui->display_college_table->setItem(ui->display_college_table->rowCount() - 1, 1,
                                                new QTableWidgetItem(collegesList.at(i).getCollegeName()));
+            ui->display_college_table->setItem(ui->display_college_table->rowCount() - 1, 2,
+                                               new QTableWidgetItem(QString::number(distance_by_ID(collegesList.at(i).getCollegeID()))));
 
             // center text
-            for (int col = 0; col < 2; ++col)
+            for (int col = 0; col < ui->display_college_table->columnCount(); ++col)
                 ui->display_college_table->item(ui->display_college_table->rowCount() - 1, col)->setTextAlignment(Qt::AlignCenter);
         }
         break;
@@ -168,7 +193,7 @@ void MainWindow::on_display_comboBox_currentIndexChanged(int index)
                                                new QTableWidgetItem("$" + QString::number(souvenirsList.at(i).getSouvenirPrice())));
 
             // center text
-            for (int col = 0; col < 2; ++col)
+            for (int col = 0; col < ui->display_college_table->columnCount(); ++col)
                 ui->display_college_table->item(ui->display_college_table->rowCount() - 1, col)->setTextAlignment(Qt::AlignCenter);
         }
         // fall through
@@ -211,10 +236,12 @@ void MainWindow::on_search_edit_textEdited(const QString &arg1)
                                                        new QTableWidgetItem(QString::number(collegesList.at(i).getCollegeID())));
                     ui->display_college_table->setItem(ui->display_college_table->rowCount() - 1, 1,
                                                        new QTableWidgetItem(collegesList.at(i).getCollegeName()));
+                    ui->display_college_table->setItem(ui->display_college_table->rowCount() - 1, 2,
+                                                       new QTableWidgetItem(QString::number(distance_by_ID(collegesList.at(i).getCollegeID()))));
 
                     // center text
-                    for (int row = 0; row < 2; ++row)
-                        ui->display_college_table->item(ui->display_college_table->rowCount() - 1, row)->setTextAlignment(Qt::AlignCenter);
+                    for (int col = 0; col < ui->display_college_table->columnCount(); ++col)
+                        ui->display_college_table->item(ui->display_college_table->rowCount() - 1, col)->setTextAlignment(Qt::AlignCenter);
                 }
             }
             break;
@@ -234,12 +261,11 @@ void MainWindow::on_search_edit_textEdited(const QString &arg1)
                                                        new QTableWidgetItem("$" + QString::number(souvenirsList.at(i).getSouvenirPrice())));
 
                     // center text
-                    for (int row = 0; row < 4; ++row)
-                        ui->display_college_table->item(ui->display_college_table->rowCount() - 1, row)->setTextAlignment(Qt::AlignCenter);
+                    for (int col = 0; col < ui->display_college_table->columnCount(); ++col)
+                        ui->display_college_table->item(ui->display_college_table->rowCount() - 1, col)->setTextAlignment(Qt::AlignCenter);
                 }
             }
-        // fall through
+            // fall through
         }
     }
-
 }
