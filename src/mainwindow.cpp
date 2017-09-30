@@ -24,6 +24,9 @@ MainWindow::MainWindow(QWidget *parent) :
     // no editing elements
     ui->display_college_table->setEditTriggers(QAbstractItemView::NoEditTriggers);
 
+    // select entire rows instead of single cells
+    ui->display_college_table->setSelectionBehavior(QAbstractItemView::SelectRows);
+
     /*
      * horizontal headers will stretch according to element size, certain columns
      * will later be selected to stretch to fit the remaining width of the table
@@ -128,6 +131,12 @@ void MainWindow::on_display_comboBox_currentIndexChanged(int index)
 {
     ui->purchase_button->hide();
     ui->tour_button->hide();
+
+    /* show search items if search_edit is not empty then return */
+    if (!ui->search_edit->text().isEmpty()) {
+        on_search_edit_textEdited(ui->search_edit->text());
+        return;
+    }
 
     switch (index) {
     case 0:
