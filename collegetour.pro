@@ -26,7 +26,6 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     src/main.cpp \
     src/mainwindow.cpp \
-    src/displaycolleges.cpp \
     src/adminlogin.cpp \
     src/adminwindow.cpp \
     src/collegeeditwindow.cpp \
@@ -37,7 +36,6 @@ SOURCES += \
 
 HEADERS += \
     src/mainwindow.h \
-    src/displaycolleges.h \
     src/adminlogin.h \
     src/adminwindow.h \
     src/collegeeditwindow.h \
@@ -48,7 +46,6 @@ HEADERS += \
 
 FORMS += \
     src/mainwindow.ui \
-    src/displaycolleges.ui \
     src/adminlogin.ui \
     src/adminwindow.ui \
     src/collegeeditwindow.ui \

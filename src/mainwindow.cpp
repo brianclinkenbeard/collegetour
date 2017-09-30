@@ -9,9 +9,10 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    connectionOpen();
-    readDatabase();
+    // populate vectors
+    populate();
 
+    // hide display window buttons for tours and souvenir purchases
     ui->tour_button->hide();
     ui->purchase_button->hide();
 
@@ -39,12 +40,25 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::readDatabase()
+void MainWindow::populate()
 {
+    // default connection
+    QSqlDatabase db = QSqlDatabase::database();
+
+    // show database status
+    if (!db.isOpen()) {
+        ui->status->setStyleSheet("color:red");
+        ui->status->setText("Error: Failed to connect to database");
+        return; // exit
+    } else {
+        ui->status->setStyleSheet("color:green");
+        ui->status->setText("Database connected successfully");
+    }
+
     // reading from the SQL database into the College vector
     QSqlQuery colleges_qry("SELECT * FROM College_Touring");
 
-    while(colleges_qry.next()) {
+    while (colleges_qry.next()) {
         // push back College
         collegesList.push_back(College(colleges_qry.record().value("ID").toInt(),
                                 colleges_qry.record().value("Universities").toString()));
@@ -53,7 +67,7 @@ void MainWindow::readDatabase()
     // read from the SQL Database into the Souvenir vector
     QSqlQuery souvenirs_qry("SELECT * FROM colleges_souvenirs");
 
-    while(souvenirs_qry.next()) {
+    while (souvenirs_qry.next()) {
         // push back Souvenir
         souvenirsList.push_back(Souvenir(College(souvenirs_qry.record().value("ID").toInt(),
                                                  souvenirs_qry.record().value("Universities").toString()),
@@ -64,8 +78,7 @@ void MainWindow::readDatabase()
     // reading from the SQL Database into the Distance vector
     QSqlQuery distances_qry("SELECT * FROM distances");
 
-    while(distances_qry.next())
-    {
+    while (distances_qry.next()) {
         // find College by ID from existing list
         College startCollege(distances_qry.record().value("startingPointCollegeId").toInt(),
                              distances_qry.record().value("startingPointCollegeName").toString());
@@ -74,35 +87,6 @@ void MainWindow::readDatabase()
 
         distancesList.push_back(Distance(startCollege, endCollege, distances_qry.record().value("distance").toInt()));
     }
-}
-
-bool MainWindow::connectionOpen()
-{
-    // create a Database object
-    myDatabase = QSqlDatabase::addDatabase("QSQLITE");
-
-    // provide the database path and name
-    myDatabase.setDatabaseName("res/project.sqlite");
-
-    // display whether or not database is connected
-    if(!myDatabase.open())
-    {
-        ui->status->setStyleSheet("color:red");
-        ui->status->setText("Error: Failed to connect to database");
-        return false;
-    }
-    else
-    {
-        ui->status->setStyleSheet("color:green");
-        ui->status->setText("Database connected successfully");
-        return true;
-    }
-}
-
-void MainWindow::connectionClose()
-{
-    myDatabase.close();
-    myDatabase.removeDatabase(QSqlDatabase::defaultConnection);
 }
 
 int MainWindow::distance_by_ID(int ID)
