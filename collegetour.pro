@@ -53,6 +53,3 @@ FORMS += \
     src/adminwindow.ui \
     src/collegeeditwindow.ui \
     src/purchasesouvenirs.ui
-
-RESOURCES += \
-    resources.qrc
