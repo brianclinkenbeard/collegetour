@@ -34,15 +34,11 @@ public:
 private slots:
 
     void readDatabase();
-    void on_display_college_list_button_clicked();
-    void on_find_campus_push_button_clicked();
 
-    int findCollegeIdByName(QString collegeNameSearched);
-    int findCollegeIdById(int collegIdSearched);
-    void displayCollegeFoundTable(int collegeIdFound, int collegeId);
-    void on_pushButton_8_clicked();
-
-    void on_pushButton_purchase_clicked();
+    void on_search_edit_textEdited(const QString &arg1);
+    void on_display_comboBox_currentIndexChanged(int index);
+    void on_login_button_clicked();
+    void on_purchase_button_clicked();
 
 private:
     Ui::MainWindow *ui;
