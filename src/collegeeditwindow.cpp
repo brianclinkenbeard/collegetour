@@ -34,8 +34,9 @@ void CollegeEditWindow::on_addCollegeButton_clicked()
     QSqlDatabase db = QSqlDatabase::database();
 
     if (!db.open()) {
-        success = false;
         qDebug() << "Failed to open database";
+        fail();
+        return;
     }
 
     QSqlQuery college_query;
@@ -44,8 +45,9 @@ void CollegeEditWindow::on_addCollegeButton_clicked()
     college_query.bindValue(":collegeName", collegeName);
 
     if (!college_query.exec()) {
-        success = false;
         qDebug() << "Add college failed: " << college_query.lastError();
+        fail();
+        return;
     }
 
     // souvenir struct
@@ -83,18 +85,21 @@ void CollegeEditWindow::on_addCollegeButton_clicked()
         souvenir_query.bindValue(":collegeName", souvenirs.at(i).collegeName);
 
         if (!souvenir_query.exec()) {
-            success = false;
             qDebug() << "Add college failed: " << college_query.lastError();
+            fail();
+            return;
         }
     }
 
-    if (success) {
-        ui->error_label->setStyleSheet("color:green");
-        ui->error_label->setText("Success");
-    } else {
-        ui->error_label->setStyleSheet("color:red");
-        ui->error_label->setText("Failed to add College");
-    }
+    // success
+    ui->error_label->setStyleSheet("color:green");
+    ui->error_label->setText("Success");
+}
+
+void CollegeEditWindow::fail()
+{
+    ui->error_label->setStyleSheet("color:red");
+    ui->error_label->setText("Failed to add College");
 }
 
 void CollegeEditWindow::on_pushButton_2_clicked()

@@ -22,6 +22,7 @@ private slots:
 
 private:
     Ui::CollegeEditWindow *ui;
+    void fail();
 };
 
 #endif // COLLEGEEDITWINDOW_H
