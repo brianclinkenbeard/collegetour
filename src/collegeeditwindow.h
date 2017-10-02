@@ -13,7 +13,6 @@ class CollegeEditWindow : public QDialog
 
 public:
     explicit CollegeEditWindow(QWidget *parent = 0);
-    void addSouvenirsForCollege(int collegeID, QString souvenirName, double price, int quantity, QString collegeName);
     ~CollegeEditWindow();
 
 private slots:
