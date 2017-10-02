@@ -32,7 +32,8 @@ SOURCES += \
     src/purchasesouvenirs.cpp \
     src/college.cpp \
     src/distance.cpp \
-    src/souvenir.cpp
+    src/souvenir.cpp \
+    src/souvenireditwindow.cpp
 
 HEADERS += \
     src/mainwindow.h \
@@ -42,11 +43,13 @@ HEADERS += \
     src/purchasesouvenirs.h \
     src/college.h \
     src/distance.h \
-    src/souvenir.h
+    src/souvenir.h \
+    src/souvenireditwindow.h
 
 FORMS += \
     src/mainwindow.ui \
     src/adminlogin.ui \
     src/adminwindow.ui \
     src/collegeeditwindow.ui \
-    src/purchasesouvenirs.ui
+    src/purchasesouvenirs.ui \
+    src/souvenireditwindow.ui

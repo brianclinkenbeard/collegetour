@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SouvenirEditWindow</class>
+ <widget class="QDialog" name="SouvenirEditWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>492</width>
+    <height>416</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QPushButton" name="addSouvenirButton">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>340</y>
+     <width>93</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Add Souvenir</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="deleteSouvenirButton">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>340</y>
+     <width>101</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Delete Souvenir</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_3">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>93</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Back</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="souvenirBox">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>160</y>
+     <width>241</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Coaster Set</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Lawn Chair</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Reclining Chair</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Temporary Tattoos</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Water Bottle</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Car Magnet</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Cufflinks</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Ring</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Watch</string>
+    </property>
+   </item>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
