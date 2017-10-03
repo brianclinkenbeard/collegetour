@@ -64,6 +64,8 @@ void purchaseSouvenirs::populate()
 
 void purchaseSouvenirs::on_comboBox_college_currentIndexChanged(int index)
 {
+    ui->comboBox_souvenir->clear();
+
     if(index > 0) {
         ui->label_3->show();
         ui->comboBox_souvenir->show();
