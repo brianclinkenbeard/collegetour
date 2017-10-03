@@ -25,10 +25,10 @@ void CollegeEditWindow::on_addCollegeButton_clicked()
     QString collegeName = ui->collegeBox->currentText();
     int collegeID = -1;
 
-    if (collegeName == "University of Wisconsin")
-        collegeID = 3897;
-    else if (collegeName == "University of the Pacific")
-        collegeID = 1329;
+    if (collegeName == "University of Texas")
+        collegeID = 3658;
+    else if (collegeName == "California State University, Fullerton")
+        collegeID = 1137;
 
     // default connection
     QSqlDatabase db = QSqlDatabase::database();
@@ -61,17 +61,17 @@ void CollegeEditWindow::on_addCollegeButton_clicked()
 
     // add respective souvenirs to souvenir struct vector
     QVector<DBSouvenir> souvenirs;
-    if (collegeName == "University of Wisconsin") {
-        souvenirs.push_back({3897, "Car Magnet", 7.86, 3, "University of Wisconsin"});
-        souvenirs.push_back({3897, "Cufflinks", 56.87, 1, "University of Wisconsin"});
-        souvenirs.push_back({3897, "Ring", 88.98, 3, "University of Wisconsin"});
-        souvenirs.push_back({3897, "Watch", 104.69, 4, "University of Wisconsin"});
-    } else if (collegeName == "University of the Pacific") {
-        souvenirs.push_back({1329, "Coaster Set",	12.73, 0, "University of the Pacific"});
-        souvenirs.push_back({1329, "Lawn Chair", 88.79, 1, "University of the Pacific"});
-        souvenirs.push_back({1329, "Reclininig Chair", 165.99, 1, "University of the Pacific"});
-        souvenirs.push_back({1329, "Temporary tattoos", 7.99, 3, "University of the Pacific"});
-        souvenirs.push_back({1329, "Water Bottle", 9.85, 6, "University of the Pacific"});
+    if (collegeName == "University of Texas") {
+        souvenirs.push_back({3897, "Car Magnet", 7.86, 3, "University of Texas"});
+        souvenirs.push_back({3897, "Cufflinks", 56.87, 1, "University of Texas"});
+        souvenirs.push_back({3897, "Ring", 88.98, 3, "University of Texas"});
+        souvenirs.push_back({3897, "Watch", 104.69, 4, "University of Texas"});
+    } else if (collegeName == "California State University, Fullerton") {
+        souvenirs.push_back({1329, "Coaster Set",	12.73, 0, "California State University, Fullerton"});
+        souvenirs.push_back({1329, "Lawn Chair", 88.79, 1, "California State University, Fullerton"});
+        souvenirs.push_back({1329, "Reclininig Chair", 165.99, 1, "California State University, Fullerton"});
+        souvenirs.push_back({1329, "Temporary tattoos", 7.99, 3, "California State University, Fullerton"});
+        souvenirs.push_back({1329, "Water Bottle", 9.85, 6, "California State University, Fullerton"});
     }
 
     // write souvenirs to database
