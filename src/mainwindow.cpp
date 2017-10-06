@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "adminlogin.h"
+#include "tourcampuses.h"
 #include "purchasesouvenirs.h"
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -33,6 +34,9 @@ MainWindow::MainWindow(QWidget *parent) :
      * will later be selected to stretch to fit the remaining width of the table
      */
     ui->display_college_table->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
+
+    ui->display_college_table->verticalHeader()->hide();
+
 }
 
 MainWindow::~MainWindow()
@@ -47,12 +51,12 @@ void MainWindow::populate()
 
     // show database status
     if (!db.isOpen()) {
-        ui->status->setStyleSheet("color:red");
-        ui->status->setText("Error: Failed to connect to database");
+        //ui->status->setStyleSheet("color:red");
+        //ui->status->setText("Error: Failed to connect to database");
         return; // exit
     } else {
-        ui->status->setStyleSheet("color:green");
-        ui->status->setText("Database connected successfully");
+        //ui->status->setStyleSheet("color:green");
+        //ui->status->setText("Database connected successfully");
     }
 
     // reading from the SQL database into the College vector
@@ -71,8 +75,8 @@ void MainWindow::populate()
         // push back Souvenir
         souvenirsList.push_back(Souvenir(College(souvenirs_qry.record().value("ID").toInt(),
                                                  souvenirs_qry.record().value("Universities").toString()),
-                                         souvenirs_qry.record().value("souvenir").toString(),
-                                         souvenirs_qry.record().value("price").toDouble()));
+                                                 souvenirs_qry.record().value("souvenir").toString(),
+                                                 souvenirs_qry.record().value("price").toDouble()));
     }
 
     // reading from the SQL Database into the Distance vector
@@ -257,4 +261,158 @@ void MainWindow::on_search_edit_textEdited(const QString &arg1)
             // fall through
         }
     }
+}
+
+void MainWindow::on_tour_button_clicked()
+{
+    tourCampuses *tourWindow = new tourCampuses;
+    tourWindow->show();
+    this->close();
+}
+
+void MainWindow::on_nextPage_2_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
+}
+
+void MainWindow::on_backPage_1_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
+void MainWindow::on_nextPage_3_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(2);
+}
+
+void MainWindow::on_backPage_2_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
+}
+void MainWindow::on_nextPage_4_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(3);
+}
+
+void MainWindow::on_backPage_3_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(2);
+}
+void MainWindow::on_nextPage_5_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(4);
+}
+
+void MainWindow::on_backPage_4_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(3);
+}
+void MainWindow::on_nextPage_6_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(5);
+}
+
+void MainWindow::on_backPage_5_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(4);
+}
+void MainWindow::on_nextPage_7_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(6);
+}
+
+void MainWindow::on_backPage_6_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(5);
+}
+
+void MainWindow::on_nextPage_8_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(7);
+}
+
+void MainWindow::on_backPage_7_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(6);
+}
+void MainWindow::on_nextPage_9_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(8);
+}
+
+void MainWindow::on_backPage_8_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(7);
+}
+
+void MainWindow::on_nextPage_10_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(9);
+}
+
+void MainWindow::on_backPage_9_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(8);
+}
+
+void MainWindow::on_nextPage_11_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(10);
+}
+
+void MainWindow::on_backPage_10_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(9);
+}
+
+void MainWindow::on_nextPage_12_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(11);
+}
+
+void MainWindow::on_backPage_11_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(10);
+}
+
+void MainWindow::on_nextPage_13_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(12);
+}
+
+void MainWindow::on_backPage_12_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(11);
+}
+
+void MainWindow::on_nextPage_14_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(13);
+}
+
+void MainWindow::on_backPage_13_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(12);
+}
+
+void MainWindow::on_nextPage_15_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(14);
+}
+
+void MainWindow::on_backPage_14_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(13);
+}
+
+
+void MainWindow::on_visitCampuses_button_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
+}
+
+void MainWindow::on_colleges_table_button_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(14);
+
 }

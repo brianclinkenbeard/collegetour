@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>559</width>
-    <height>422</height>
+    <width>662</width>
+    <height>519</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -37,7 +37,7 @@
   <widget class="QComboBox" name="comboBox_college">
    <property name="geometry">
     <rect>
-     <x>160</x>
+     <x>190</x>
      <y>70</y>
      <width>231</width>
      <height>22</height>
@@ -68,9 +68,9 @@
   <widget class="QComboBox" name="comboBox_souvenir">
    <property name="geometry">
     <rect>
-     <x>140</x>
+     <x>190</x>
      <y>110</y>
-     <width>181</width>
+     <width>231</width>
      <height>22</height>
     </rect>
    </property>
@@ -80,7 +80,7 @@
     <rect>
      <x>20</x>
      <y>100</y>
-     <width>111</width>
+     <width>161</width>
      <height>31</height>
     </rect>
    </property>
@@ -100,8 +100,8 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>140</y>
-     <width>229</width>
+     <y>150</y>
+     <width>331</width>
      <height>20</height>
     </rect>
    </property>
@@ -120,8 +120,8 @@
   <widget class="QLineEdit" name="lineEdit_quanity">
    <property name="geometry">
     <rect>
-     <x>260</x>
-     <y>140</y>
+     <x>350</x>
+     <y>150</y>
      <width>54</width>
      <height>20</height>
     </rect>
@@ -130,8 +130,8 @@
   <widget class="QPushButton" name="pushButton_add">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>180</y>
+     <x>30</x>
+     <y>230</y>
      <width>131</width>
      <height>31</height>
     </rect>
@@ -144,8 +144,8 @@
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>220</y>
-     <width>131</width>
+     <y>270</y>
+     <width>161</width>
      <height>16</height>
     </rect>
    </property>
@@ -161,10 +161,10 @@
   <widget class="QTableWidget" name="tableWidget_receipt">
    <property name="geometry">
     <rect>
-     <x>200</x>
-     <y>170</y>
-     <width>311</width>
-     <height>191</height>
+     <x>230</x>
+     <y>180</y>
+     <width>391</width>
+     <height>241</height>
     </rect>
    </property>
   </widget>
@@ -172,7 +172,7 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>310</y>
+     <y>340</y>
      <width>131</width>
      <height>41</height>
     </rect>
@@ -185,9 +185,9 @@
    <property name="geometry">
     <rect>
      <x>230</x>
-     <y>360</y>
-     <width>241</width>
-     <height>51</height>
+     <y>440</y>
+     <width>271</width>
+     <height>61</height>
     </rect>
    </property>
   </widget>
