@@ -13,3 +13,14 @@ QString College::getCollegeName() const
 {
     return this->collegeName;
 }
+
+void College::setCollegeName(QString name)
+{
+    collegeName = name;
+}
+
+void College::setCollegeId(int id)
+{
+    collegeID = id;
+}
+

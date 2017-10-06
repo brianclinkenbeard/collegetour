@@ -16,20 +16,24 @@ public:
     explicit tourCampuses(QWidget *parent = 0);
     ~tourCampuses();
 
-    void populate();
-
 private slots:
+    void populate();
     void on_back_to_main_clicked();
-
     void on_pushButton_startColleges_clicked();
     void on_endingCollege_pushButton_clicked();
     void findDistanceTwoCollege(int distanceColleges[]);
+    void displaySelectedColleges();
+    void on_distanceMode_pushButton_clicked();
+    void on_tripMode_pushButton_clicked();
+    void on_addColleges_button_clicked();
+    void on_deleteColleges_button_clicked();
 
 private:
     Ui::tourCampuses *ui;
     QVector<College>  collegeList;
     QVector<Distance> distanceList;
-   int IdsDistances[2];
+    int IdsDistances[2];
+    QVector<College> selectedColleges;
 };
 
 #endif // TOURCAMPUSES_H

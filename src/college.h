@@ -29,6 +29,9 @@ public:
      * @return Name of the College
      */
     QString getCollegeName() const;
+
+    void setCollegeName(QString name);
+    void setCollegeId(int id);
 };
 
 #endif // COLLEGE_H

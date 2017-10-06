@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1109</width>
-    <height>776</height>
+    <width>1197</width>
+    <height>760</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -29,7 +29,7 @@ QPushButton {
 }
 
 QPushButton:hover {
-	background-color: gray;	
+	backgeound-color: gray;
 	color: white;
 }
 
@@ -46,6 +46,396 @@ QLabel {
 }
 </string>
   </property>
+  <widget class="QStackedWidget" name="stackedWidget">
+   <property name="geometry">
+    <rect>
+     <x>-1</x>
+     <y>60</y>
+     <width>1191</width>
+     <height>701</height>
+    </rect>
+   </property>
+   <property name="currentIndex">
+    <number>1</number>
+   </property>
+   <widget class="QWidget" name="page">
+    <widget class="QLabel" name="startingCampus_label">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>80</y>
+       <width>201</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Monotype Corsiva</family>
+       <pointsize>12</pointsize>
+       <italic>true</italic>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">label {
+	color: white;
+}</string>
+     </property>
+     <property name="text">
+      <string>Starting Campus</string>
+     </property>
+    </widget>
+    <widget class="QTableWidget" name="distance_table">
+     <property name="geometry">
+      <rect>
+       <x>810</x>
+       <y>630</y>
+       <width>371</width>
+       <height>61</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_startColleges">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>580</y>
+       <width>271</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>MV Boli</family>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Select Starting Campus</string>
+     </property>
+    </widget>
+    <widget class="QTableWidget" name="endingCampus_table">
+     <property name="geometry">
+      <rect>
+       <x>420</x>
+       <y>130</y>
+       <width>371</width>
+       <height>441</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="endingCollege_pushButton">
+     <property name="geometry">
+      <rect>
+       <x>470</x>
+       <y>580</y>
+       <width>271</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>MV Boli</family>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+	border-radius: 150px;
+}</string>
+     </property>
+     <property name="text">
+      <string>Select Ending Campus</string>
+     </property>
+    </widget>
+    <widget class="QTableWidget" name="startingCampus_table">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>130</y>
+       <width>371</width>
+       <height>441</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="distance_label">
+     <property name="geometry">
+      <rect>
+       <x>950</x>
+       <y>600</y>
+       <width>91</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>MV Boli</family>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">label_4 {
+	font-color: white;
+}</string>
+     </property>
+     <property name="text">
+      <string>DISTANCE</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="endingCampus_label">
+     <property name="geometry">
+      <rect>
+       <x>420</x>
+       <y>90</y>
+       <width>201</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Monotype Corsiva</family>
+       <pointsize>12</pointsize>
+       <italic>true</italic>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">label_2 {
+	font-color: white;
+}</string>
+     </property>
+     <property name="text">
+      <string>Ending Campuse</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>10</y>
+       <width>801</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+QLabel:hover {
+	color: gray;
+}</string>
+     </property>
+     <property name="text">
+      <string>Select the Starting Point and the Ending Point for the distance to show</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_2">
+    <widget class="QTableWidget" name="trip_table">
+     <property name="geometry">
+      <rect>
+       <x>850</x>
+       <y>50</y>
+       <width>331</width>
+       <height>631</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">tableWidget_3 {
+	font-color: white;
+}</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="trip_label">
+     <property name="geometry">
+      <rect>
+       <x>850</x>
+       <y>20</y>
+       <width>131</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>MV Boli</family>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">label_3 {
+	color: white;
+}</string>
+     </property>
+     <property name="text">
+      <string>TRIP PLAN</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="beginTrip_pushButton">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>510</y>
+       <width>221</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>MV Boli</family>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string>BEGIN TRIP</string>
+     </property>
+    </widget>
+    <widget class="QTableWidget" name="selectedVisitColleges_table">
+     <property name="geometry">
+      <rect>
+       <x>470</x>
+       <y>50</y>
+       <width>361</width>
+       <height>441</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QTableWidget" name="collegeList_table">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>50</y>
+       <width>371</width>
+       <height>441</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="addColleges_button">
+     <property name="geometry">
+      <rect>
+       <x>410</x>
+       <y>220</y>
+       <width>41</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>ADD</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="trip_label_3">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>10</y>
+       <width>501</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>MV Boli</family>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">label_3 {
+	color: white;
+}</string>
+     </property>
+     <property name="text">
+      <string>Add the Colleges desired to visit and Start your Trip!</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="distance_label_2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>640</y>
+       <width>221</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>MV Boli</family>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">label_4 {
+	font-color: white;
+}</string>
+     </property>
+     <property name="text">
+      <string>Total Distance Traveled</string>
+     </property>
+    </widget>
+    <widget class="QTableWidget" name="distance_table_2">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>620</y>
+       <width>371</width>
+       <height>61</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="deleteColleges_button">
+     <property name="geometry">
+      <rect>
+       <x>410</x>
+       <y>300</y>
+       <width>41</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Delete</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="tripMode_pushButton">
+   <property name="geometry">
+    <rect>
+     <x>1090</x>
+     <y>10</y>
+     <width>93</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton:hover {
+	background-color: darkblue;
+	color: white;
+}</string>
+   </property>
+   <property name="text">
+    <string>Trip Mode</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="distanceMode_pushButton">
+   <property name="geometry">
+    <rect>
+     <x>980</x>
+     <y>10</y>
+     <width>93</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton:hover {
+	background-color: darkblue;
+	color: white;
+}</string>
+   </property>
+   <property name="text">
+    <string>Distance Mode</string>
+   </property>
+  </widget>
   <widget class="QPushButton" name="back_to_main">
    <property name="geometry">
     <rect>
@@ -59,273 +449,17 @@ QLabel {
     <string>Back</string>
    </property>
   </widget>
-  <widget class="QTableWidget" name="endingCampus_table">
-   <property name="geometry">
-    <rect>
-     <x>360</x>
-     <y>310</y>
-     <width>311</width>
-     <height>341</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QTableWidget" name="startingCampus_table">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>310</y>
-     <width>321</width>
-     <height>341</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QTableWidget" name="tableWidget_3">
-   <property name="geometry">
-    <rect>
-     <x>710</x>
-     <y>230</y>
-     <width>381</width>
-     <height>531</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">tableWidget_3 {
-	font-color: white;
-}</string>
-   </property>
-  </widget>
   <widget class="Line" name="line">
    <property name="geometry">
     <rect>
      <x>10</x>
      <y>40</y>
-     <width>1161</width>
-     <height>16</height>
+     <width>1171</width>
+     <height>20</height>
     </rect>
    </property>
    <property name="orientation">
     <enum>Qt::Horizontal</enum>
-   </property>
-  </widget>
-  <widget class="QTableWidget" name="distance_table">
-   <property name="geometry">
-    <rect>
-     <x>710</x>
-     <y>100</y>
-     <width>381</width>
-     <height>61</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="Line" name="line_2">
-   <property name="geometry">
-    <rect>
-     <x>680</x>
-     <y>60</y>
-     <width>20</width>
-     <height>701</height>
-    </rect>
-   </property>
-   <property name="orientation">
-    <enum>Qt::Vertical</enum>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>270</y>
-     <width>201</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Monotype Corsiva</family>
-     <pointsize>12</pointsize>
-     <italic>true</italic>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">label {
-	color: white;
-}</string>
-   </property>
-   <property name="text">
-    <string>Starting Campus</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_2">
-   <property name="geometry">
-    <rect>
-     <x>360</x>
-     <y>270</y>
-     <width>201</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Monotype Corsiva</family>
-     <pointsize>12</pointsize>
-     <italic>true</italic>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">label_2 {
-	font-color: white;
-}</string>
-   </property>
-   <property name="text">
-    <string>Ending Campuse</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_startColleges">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>660</y>
-     <width>271</width>
-     <height>28</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>MV Boli</family>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>Select Starting Campus</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_3">
-   <property name="geometry">
-    <rect>
-     <x>240</x>
-     <y>710</y>
-     <width>221</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>MV Boli</family>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true"/>
-   </property>
-   <property name="text">
-    <string>BEGIN TRIP</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="endingCollege_pushButton">
-   <property name="geometry">
-    <rect>
-     <x>380</x>
-     <y>660</y>
-     <width>271</width>
-     <height>28</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>MV Boli</family>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QPushButton {
-	border-radius: 150px;
-}</string>
-   </property>
-   <property name="text">
-    <string>Select Ending Campus</string>
-   </property>
-  </widget>
-  <widget class="QTextBrowser" name="textBrowser">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>60</y>
-     <width>561</width>
-     <height>191</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>-1</pointsize>
-     <weight>75</weight>
-     <italic>false</italic>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="frameShape">
-    <enum>QFrame::Box</enum>
-   </property>
-   <property name="frameShadow">
-    <enum>QFrame::Plain</enum>
-   </property>
-   <property name="lineWidth">
-    <number>5</number>
-   </property>
-   <property name="html">
-    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MV Boli'; font-size:16px; font-weight:600; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt; font-weight:400;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'mv boli'; font-size:12pt; font-weight:400;&quot;&gt;To Find the Distance between 2 campuses select the starting campus and the ending campus. If the user desires to plan a trip from any campus, one the campuses in the Starting Campus must be selected and then the Begin trip button should be selected&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_3">
-   <property name="geometry">
-    <rect>
-     <x>710</x>
-     <y>190</y>
-     <width>131</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>MV Boli</family>
-     <pointsize>11</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">label_3 {
-	color: white;
-}</string>
-   </property>
-   <property name="text">
-    <string>TRIP PLAN</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_4">
-   <property name="geometry">
-    <rect>
-     <x>710</x>
-     <y>60</y>
-     <width>91</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>MV Boli</family>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">label_4 {
-	font-color: white;
-}</string>
-   </property>
-   <property name="text">
-    <string>DISTANCE</string>
    </property>
   </widget>
  </widget>
