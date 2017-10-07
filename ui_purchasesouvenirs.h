@@ -44,64 +44,67 @@ public:
         if (purchaseSouvenirs->objectName().isEmpty())
             purchaseSouvenirs->setObjectName(QStringLiteral("purchaseSouvenirs"));
         purchaseSouvenirs->resize(662, 519);
+        purchaseSouvenirs->setStyleSheet(QLatin1String("QDialog {\n"
+"	background-image: url(\"res/shop.gif\");\n"
+"    background-repeat: no-repeat;\n"
+"    background-position: center center;\n"
+"    width: 100%;\n"
+"	height: 100%;\n"
+"}\n"
+"\n"
+"QLabel {\n"
+"	color: black;\n"
+"	font-weight: bolder;\n"
+"	font-size: 20px;\n"
+"}\n"
+""));
         label = new QLabel(purchaseSouvenirs);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(170, 10, 261, 51));
+        label->setGeometry(QRect(220, 10, 261, 51));
         QFont font;
-        font.setPointSize(17);
-        font.setBold(true);
-        font.setItalic(false);
-        font.setWeight(75);
         label->setFont(font);
         comboBox_college = new QComboBox(purchaseSouvenirs);
         comboBox_college->setObjectName(QStringLiteral("comboBox_college"));
-        comboBox_college->setGeometry(QRect(190, 70, 231, 22));
+        comboBox_college->setGeometry(QRect(230, 70, 231, 22));
         label_2 = new QLabel(purchaseSouvenirs);
         label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(20, 60, 151, 31));
-        QFont font1;
-        font1.setFamily(QStringLiteral("Rockwell"));
-        font1.setPointSize(11);
-        font1.setBold(false);
-        font1.setWeight(50);
-        label_2->setFont(font1);
+        label_2->setGeometry(QRect(20, 60, 181, 31));
+        label_2->setFont(font);
         comboBox_souvenir = new QComboBox(purchaseSouvenirs);
         comboBox_souvenir->setObjectName(QStringLiteral("comboBox_souvenir"));
-        comboBox_souvenir->setGeometry(QRect(190, 110, 231, 22));
+        comboBox_souvenir->setGeometry(QRect(230, 110, 231, 22));
         label_3 = new QLabel(purchaseSouvenirs);
         label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(20, 100, 161, 31));
-        QFont font2;
-        font2.setFamily(QStringLiteral("Rockwell"));
-        font2.setPointSize(10);
-        font2.setBold(false);
-        font2.setWeight(50);
-        label_3->setFont(font2);
+        label_3->setGeometry(QRect(20, 100, 191, 31));
+        label_3->setFont(font);
         label_4 = new QLabel(purchaseSouvenirs);
         label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setGeometry(QRect(20, 150, 331, 20));
-        label_4->setFont(font2);
+        label_4->setGeometry(QRect(20, 150, 181, 20));
+        label_4->setFont(font);
         lineEdit_quanity = new QLineEdit(purchaseSouvenirs);
         lineEdit_quanity->setObjectName(QStringLiteral("lineEdit_quanity"));
-        lineEdit_quanity->setGeometry(QRect(350, 150, 54, 20));
+        lineEdit_quanity->setGeometry(QRect(230, 150, 54, 20));
         pushButton_add = new QPushButton(purchaseSouvenirs);
         pushButton_add->setObjectName(QStringLiteral("pushButton_add"));
         pushButton_add->setGeometry(QRect(30, 230, 131, 31));
         label_add = new QLabel(purchaseSouvenirs);
         label_add->setObjectName(QStringLiteral("label_add"));
         label_add->setGeometry(QRect(30, 270, 161, 16));
-        QFont font3;
-        font3.setPointSize(7);
-        label_add->setFont(font3);
+        label_add->setFont(font);
         tableWidget_receipt = new QTableWidget(purchaseSouvenirs);
         tableWidget_receipt->setObjectName(QStringLiteral("tableWidget_receipt"));
-        tableWidget_receipt->setGeometry(QRect(230, 180, 391, 241));
+        tableWidget_receipt->setGeometry(QRect(230, 180, 371, 211));
+        tableWidget_receipt->setStyleSheet(QLatin1String("QTableWidget {\n"
+"	color: black;\n"
+"	font-weight: bold;\n"
+"	font-size: 16px;\n"
+"}"));
         pushButton_receipt = new QPushButton(purchaseSouvenirs);
         pushButton_receipt->setObjectName(QStringLiteral("pushButton_receipt"));
         pushButton_receipt->setGeometry(QRect(20, 340, 131, 41));
         tableWidget_total = new QTableWidget(purchaseSouvenirs);
         tableWidget_total->setObjectName(QStringLiteral("tableWidget_total"));
-        tableWidget_total->setGeometry(QRect(230, 440, 271, 61));
+        tableWidget_total->setGeometry(QRect(230, 420, 251, 81));
         label->raise();
         label_2->raise();
         comboBox_college->raise();
@@ -126,9 +129,9 @@ public:
         label->setText(QApplication::translate("purchaseSouvenirs", "Purchase Souvenirs", 0));
         label_2->setText(QApplication::translate("purchaseSouvenirs", "Choose a college:", 0));
         label_3->setText(QApplication::translate("purchaseSouvenirs", "Choose a souvenir:", 0));
-        label_4->setText(QApplication::translate("purchaseSouvenirs", "How many of this souvenir do you want?", 0));
+        label_4->setText(QApplication::translate("purchaseSouvenirs", "Quantity", 0));
         pushButton_add->setText(QApplication::translate("purchaseSouvenirs", "Add to Cart", 0));
-        label_add->setText(QApplication::translate("purchaseSouvenirs", "Souvenir has been added.", 0));
+        label_add->setText(QApplication::translate("purchaseSouvenirs", "Souvenir added.", 0));
         pushButton_receipt->setText(QApplication::translate("purchaseSouvenirs", "Print Receipt", 0));
     } // retranslateUi
 

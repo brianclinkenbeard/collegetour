@@ -8,6 +8,33 @@ purchaseSouvenirs::purchaseSouvenirs(QWidget *parent) :
 {
     ui->setupUi(this);
 
+
+    // stretch vertical headers to fit table
+    ui->tableWidget_receipt->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+
+    // center header text
+    ui->tableWidget_receipt->horizontalHeader()->setDefaultAlignment(Qt::AlignCenter);
+
+    // no editing elements
+    ui->tableWidget_receipt->setEditTriggers(QAbstractItemView::NoEditTriggers);
+
+    // select entire rows instead of single cells
+    ui->tableWidget_receipt->setSelectionBehavior(QAbstractItemView::SelectRows);
+
+    // stretch vertical headers to fit table
+    ui->tableWidget_total->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+
+    // center header text
+    ui->tableWidget_total->horizontalHeader()->setDefaultAlignment(Qt::AlignCenter);
+
+    // no editing elements
+    ui->tableWidget_total->setEditTriggers(QAbstractItemView::NoEditTriggers);
+
+    // select entire rows instead of single cells
+    ui->tableWidget_total->setSelectionBehavior(QAbstractItemView::SelectRows);
+    ui->tableWidget_receipt->verticalHeader()->hide();
+    ui->tableWidget_total->verticalHeader()->hide();
+
     //hide everything except choose the college label and comboBox
     ui->label_3->hide();
     ui->comboBox_souvenir->hide();
