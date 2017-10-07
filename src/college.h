@@ -32,6 +32,7 @@ public:
 
     void setCollegeName(QString name);
     void setCollegeId(int id);
+    void setCollege(QString name, int id);
 };
 
 #endif // COLLEGE_H

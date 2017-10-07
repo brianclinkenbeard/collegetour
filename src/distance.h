@@ -36,6 +36,8 @@ public:
      * @return Distance between the starting and ending College
      */
     int getDistance() const;
+    void setDistance(College initStartCollege, College initEndCollege, int initDistance);
+
 };
 
 #endif // DISTANCE_H

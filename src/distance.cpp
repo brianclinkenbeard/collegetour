@@ -19,3 +19,10 @@ int Distance::getDistance() const
 {
     return this->distance;
 }
+
+void Distance::setDistance(College initStartCollege, College initEndCollege, int initDistance)
+{
+    startCollege = initStartCollege;
+    endCollege   = initEndCollege;
+    distance     = initDistance;
+}

@@ -24,3 +24,9 @@ void College::setCollegeId(int id)
     collegeID = id;
 }
 
+void College::setCollege(QString name, int id)
+{
+    collegeID   = id;
+    collegeName = name;
+}
+
