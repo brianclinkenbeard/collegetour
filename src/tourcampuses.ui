@@ -26,6 +26,8 @@ QPushButton {
 	background-color: darkgray;
 	color: black;
 	border-radius: 100%;
+	border-style: groove;
+	border-radius: 10px;
 }
 
 QPushButton:hover {
@@ -39,6 +41,8 @@ QTableWidget, QTextBrowser {
 	color: black;
 	font-weight: bold;
 	border: 2px solid gray;
+	border-style: outset;
+	border-radius: 10px;
 }
 
 QLabel {
@@ -56,7 +60,7 @@ QLabel {
     </rect>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>2</number>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QLabel" name="startingCampus_label">
@@ -376,7 +380,7 @@ QLabel:hover {
     <widget class="QTableWidget" name="distance_table_2">
      <property name="geometry">
       <rect>
-       <x>250</x>
+       <x>190</x>
        <y>620</y>
        <width>371</width>
        <height>61</height>
@@ -394,6 +398,65 @@ QLabel:hover {
      </property>
      <property name="text">
       <string>Delete</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_UCI">
+     <property name="geometry">
+      <rect>
+       <x>590</x>
+       <y>622</y>
+       <width>101</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton:hover {
+	border-style: outset;
+	border-radius: 20px;
+	background-color: darkblue;
+	color: white;
+}</string>
+     </property>
+     <property name="text">
+      <string>UCI TOUR</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_MICHIGAN">
+     <property name="geometry">
+      <rect>
+       <x>710</x>
+       <y>620</y>
+       <width>101</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton:hover {
+	border-style: outset;
+	border-radius: 20px;
+	background-color: darkblue;
+	color: white;
+}</string>
+     </property>
+     <property name="text">
+      <string>MICHIGAN TOUR</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_3">
+    <widget class="QTableWidget" name="trip_table_uci">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>10</y>
+       <width>1011</width>
+       <height>541</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">tableWidget_3 {
+	font-color: white;
+}</string>
      </property>
     </widget>
    </widget>

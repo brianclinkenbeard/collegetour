@@ -32,6 +32,9 @@ private slots:
     void findTrip(int count, int visitedCollege);
 
 
+
+    void on_pushButton_UCI_clicked();
+
 private:
     Ui::tourCampuses *ui;
     QVector<College>  collegeList;

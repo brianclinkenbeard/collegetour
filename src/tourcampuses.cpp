@@ -292,3 +292,10 @@ void tourCampuses::findTrip(int count, int visitedCollege)
     }
 }
 
+
+
+
+void tourCampuses::on_pushButton_UCI_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(2);
+}
