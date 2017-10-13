@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>662</width>
+    <width>638</width>
     <height>519</height>
    </rect>
   </property>
@@ -27,12 +27,27 @@ QLabel {
 	font-weight: bolder;
 	font-size: 20px;
 }
-</string>
+
+QPushButton {
+	background: gray;
+	border-style: inset;
+	border-radius: 15px;
+	color: lightgray;
+}
+
+QPushButton:hover  {
+	background: balck;
+	color: lightgray;
+}
+
+QComboBox {
+	background: lightgray;
+}</string>
   </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>220</x>
+     <x>230</x>
      <y>10</y>
      <width>261</width>
      <height>51</height>
@@ -44,7 +59,7 @@ QLabel {
     </font>
    </property>
    <property name="text">
-    <string>Purchase Souvenirs</string>
+    <string>Purchase Souvenirs Online</string>
    </property>
   </widget>
   <widget class="QComboBox" name="comboBox_college">
@@ -130,6 +145,12 @@ QLabel {
      <height>20</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">QLineEdit {
+	border-style: inset;
+	border-radius: 2px;
+}</string>
+   </property>
   </widget>
   <widget class="QPushButton" name="pushButton_add">
    <property name="geometry">
@@ -176,7 +197,13 @@ QLabel {
 	color: black;
 	font-weight: bold;
 	font-size: 16px;
-}</string>
+	border-style: outset;
+	border-radius: 5px;
+}
+</string>
+   </property>
+   <property name="horizontalScrollBarPolicy">
+    <enum>Qt::ScrollBarAlwaysOff</enum>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_receipt">
@@ -200,6 +227,12 @@ QLabel {
      <width>251</width>
      <height>81</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QTableWidget {
+	border-style: outset;
+	border-radius: 5px;
+}</string>
    </property>
   </widget>
   <zorder>label</zorder>

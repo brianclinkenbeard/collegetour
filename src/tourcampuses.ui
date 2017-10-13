@@ -53,14 +53,14 @@ QLabel {
   <widget class="QStackedWidget" name="stackedWidget">
    <property name="geometry">
     <rect>
-     <x>-1</x>
+     <x>-10</x>
      <y>60</y>
      <width>1191</width>
      <height>701</height>
     </rect>
    </property>
    <property name="currentIndex">
-    <number>3</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QLabel" name="startingCampus_label">
@@ -92,7 +92,7 @@ QLabel {
      <property name="geometry">
       <rect>
        <x>810</x>
-       <y>630</y>
+       <y>320</y>
        <width>371</width>
        <height>61</height>
       </rect>
@@ -165,7 +165,7 @@ QLabel {
      <property name="geometry">
       <rect>
        <x>950</x>
-       <y>600</y>
+       <y>290</y>
        <width>91</width>
        <height>21</height>
       </rect>
@@ -290,7 +290,10 @@ QLabel:hover {
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true"/>
+      <string notr="true">QPushButton:hover {
+	background: lightgreen;
+	color: darkred;
+}</string>
      </property>
      <property name="text">
       <string>BEGIN TRIP</string>
@@ -325,6 +328,11 @@ QLabel:hover {
        <height>41</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton:hover {
+	background: lightblue;
+}</string>
+     </property>
      <property name="text">
       <string>ADD</string>
      </property>
@@ -358,7 +366,7 @@ QLabel:hover {
       <rect>
        <x>20</x>
        <y>640</y>
-       <width>221</width>
+       <width>141</width>
        <height>21</height>
       </rect>
      </property>
@@ -374,15 +382,15 @@ QLabel:hover {
 }</string>
      </property>
      <property name="text">
-      <string>Total Distance Traveled</string>
+      <string>Distance Traveled</string>
      </property>
     </widget>
-    <widget class="QTableWidget" name="distance_table_2">
+    <widget class="QTableWidget" name="totalDistanceTraveled_table">
      <property name="geometry">
       <rect>
-       <x>190</x>
+       <x>170</x>
        <y>620</y>
-       <width>371</width>
+       <width>161</width>
        <height>61</height>
       </rect>
      </property>
@@ -396,6 +404,11 @@ QLabel:hover {
        <height>41</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton:hover {
+	background: red;
+}</string>
+     </property>
      <property name="text">
       <string>Delete</string>
      </property>
@@ -403,7 +416,7 @@ QLabel:hover {
     <widget class="QPushButton" name="pushButton_UCI">
      <property name="geometry">
       <rect>
-       <x>590</x>
+       <x>350</x>
        <y>622</y>
        <width>101</width>
        <height>51</height>
@@ -424,7 +437,7 @@ QLabel:hover {
     <widget class="QPushButton" name="pushButton_MICHIGAN">
      <property name="geometry">
       <rect>
-       <x>710</x>
+       <x>470</x>
        <y>620</y>
        <width>101</width>
        <height>51</height>
@@ -442,6 +455,48 @@ QLabel:hover {
       <string>MICHIGAN TOUR</string>
      </property>
     </widget>
+    <widget class="QPushButton" name="pushButton_MICHIGAN_2">
+     <property name="geometry">
+      <rect>
+       <x>730</x>
+       <y>620</y>
+       <width>101</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton:hover {
+	border-style: outset;
+	border-radius: 20px;
+	background-color: darkgreen;
+	color: white;
+}</string>
+     </property>
+     <property name="text">
+      <string>Purchase</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_SADDLEBACK">
+     <property name="geometry">
+      <rect>
+       <x>590</x>
+       <y>620</y>
+       <width>121</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton:hover {
+	border-style: outset;
+	border-radius: 20px;
+	background-color: darkblue;
+	color: white;
+}</string>
+     </property>
+     <property name="text">
+      <string>SADDLEBACK TOUR</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="page_3">
     <widget class="QTableWidget" name="trip_table_uci">
@@ -454,7 +509,7 @@ QLabel:hover {
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">tableWidget_3 {
+      <string notr="true">QTableWidget {
 	font-color: white;
 }</string>
      </property>
@@ -501,7 +556,7 @@ QLabel:hover {
       <rect>
        <x>450</x>
        <y>20</y>
-       <width>291</width>
+       <width>341</width>
        <height>31</height>
       </rect>
      </property>
@@ -514,6 +569,43 @@ QLabel:hover {
      </property>
      <property name="text">
       <string>MICHIGAN TOUR</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_5">
+    <widget class="QLabel" name="label_saddlebackTour">
+     <property name="geometry">
+      <rect>
+       <x>420</x>
+       <y>20</y>
+       <width>401</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>22</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>SADDLEBACK TOUR</string>
+     </property>
+    </widget>
+    <widget class="QTableWidget" name="trip_table_saddleback">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>80</y>
+       <width>1011</width>
+       <height>521</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">tableWidget_3 {
+	font-color: white;
+}</string>
      </property>
     </widget>
    </widget>
@@ -564,6 +656,12 @@ QLabel:hover {
      <width>93</width>
      <height>28</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton:hover {
+	background: red;
+	color: white;
+}</string>
    </property>
    <property name="text">
     <string>Back</string>
