@@ -273,8 +273,8 @@ void tourCampuses::findTrip(int count, int visitedCollege)
             tourDistanceColleges.replace(k+1, temp);
         }
         ui->trip_table->insertRow(ui->trip_table->rowCount());
-          ui->trip_table->setItem(ui->trip_table->rowCount() - 1, 0,
-                                           new QTableWidgetItem(tourDistanceColleges.at(0).getEndCollege().getCollegeName()));
+        ui->trip_table->setItem(ui->trip_table->rowCount() - 1, 0,
+        new QTableWidgetItem(tourDistanceColleges.at(0).getEndCollege().getCollegeName()));
         int r = 0;
         while(tourDistanceColleges.at(0).getEndCollege().getCollegeID() != selectedColleges.at(r).getCollegeID()) {
             r++;
@@ -293,9 +293,183 @@ void tourCampuses::findTrip(int count, int visitedCollege)
 }
 
 
-
-
 void tourCampuses::on_pushButton_UCI_clicked()
 {
     ui->stackedWidget->setCurrentIndex(2);
+
+    //store all the colleges into the uciTourColleges
+    for(int i=0; i<collegeList.size(); i++)
+    {
+        uciTourColleges.push_back(collegeList.at(i));
+    }
+
+    //switching uci with the first element
+     College temp1 = uciTourColleges.at(0);
+     College temp2 = uciTourColleges.at(1);
+     uciTourColleges.replace(1, temp1);
+     uciTourColleges.replace(0, temp2);
+
+    findUciTrip(0,0);
+}
+
+void tourCampuses::findUciTrip(int count, int uciVisitedColleges)
+{
+
+    if(count == 0) {
+        ui->trip_table_uci->setRowCount(0);
+        ui->trip_table_uci->setColumnCount(2);
+        ui->trip_table_uci->setHorizontalHeaderItem(0, new QTableWidgetItem("Visiting Colleges"));
+        ui->trip_table_uci->setHorizontalHeaderItem(1, new QTableWidgetItem("Distance"));
+        ui->trip_table_uci->setColumnHidden(1,true);
+        ui->trip_table_uci->verticalHeader()->hide();
+        ui->trip_table_uci->insertRow(ui->trip_table_uci->rowCount());
+        ui->trip_table_uci->setItem(ui->trip_table_uci->rowCount() - 1, 0,
+                                           new QTableWidgetItem(uciTourColleges.at(0).getCollegeName()));
+        ui->trip_table_uci->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Stretch);
+    }
+
+    if(uciTourColleges.empty()) {
+        count = 0;
+        return;
+    } else {
+        Distance distObj;
+        College  initCollegeObj;
+        College  endCollegeObj;
+        int index = 0;
+        // finds the first college visited in the database
+        while(uciTourColleges.at(uciVisitedColleges).getCollegeID() !=
+              distanceList.at(index).getStartCollege().getCollegeID()) {
+            index++;
+        }
+        // creating the vector for all the visiting colleges
+        for(int counter = 1; counter < uciTourColleges.size(); counter++) {
+            for(int i = index; i < collegeList.size() - 1 + index; i++) {
+                if(uciTourColleges.at(counter).getCollegeID() == distanceList.at(i).getEndCollege().getCollegeID()) {
+                    initCollegeObj.setCollege(uciTourColleges.at(uciVisitedColleges).getCollegeName(),
+                                              uciTourColleges.at(uciVisitedColleges).getCollegeID());
+                    endCollegeObj.setCollege(distanceList.at(i).getEndCollege().getCollegeName(),
+                                             distanceList.at(i).getEndCollege().getCollegeID());
+                    distObj.setDistance(initCollegeObj, endCollegeObj, distanceList.at(i).getDistance());
+                    uciTourDistanceColleges.push_back(distObj);
+                }
+            }
+        }
+        // sorting the colleges visited
+        for(int j = 1; j < uciTourDistanceColleges.size(); j++) {
+            Distance temp = uciTourDistanceColleges.at(j);
+            int k = j - 1;
+            while(k >= 0 && uciTourDistanceColleges.at(k).getDistance() > temp.getDistance()) {
+                uciTourDistanceColleges.replace(k+1, uciTourDistanceColleges.at(k));
+                k = k - 1;
+            }
+            uciTourDistanceColleges.replace(k+1, temp);
+        }
+        ui->trip_table_uci->insertRow(ui->trip_table_uci->rowCount());
+        ui->trip_table_uci->setItem(ui->trip_table_uci->rowCount() - 1, 0,
+        new QTableWidgetItem(uciTourDistanceColleges.at(0).getEndCollege().getCollegeName()));
+        int r = 0;
+        while(uciTourDistanceColleges.at(0).getEndCollege().getCollegeID() != uciTourColleges.at(r).getCollegeID()) {
+            r++;
+        }
+        uciTourColleges.pop_front();
+        if(uciTourColleges.size() == 1) {
+            uciTourColleges.pop_front();
+        } else {
+            College tempObj = uciTourColleges.at(0);
+            uciTourColleges.replace(0, uciTourColleges.at(r - 1));
+            uciTourColleges.replace(r - 1, tempObj);
+        }
+        uciTourDistanceColleges.clear();
+        findUciTrip(count + 1, 0);
+    }
+}
+
+void tourCampuses::on_pushButton_MICHIGAN_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(3);
+
+    //store all the colleges into the uciTourColleges
+    for(int i=0; i<collegeList.size(); i++)
+    {
+        miTourColleges.push_back(collegeList.at(i));
+    }
+
+    //switching uci with the first element
+     College temp1 = miTourColleges.at(0);
+     College temp2 = miTourColleges.at(6);
+     miTourColleges.replace(6, temp1);
+     miTourColleges.replace(0, temp2);
+
+    findMichiganTrip(0,0);
+}
+
+void tourCampuses::findMichiganTrip(int count, int miVisitedColleges)
+{
+    if(count == 0) {
+        ui->trip_table_michigan->setRowCount(0);
+        ui->trip_table_michigan->setColumnCount(2);
+        ui->trip_table_michigan->setHorizontalHeaderItem(0, new QTableWidgetItem("Visiting Colleges"));
+        ui->trip_table_michigan->setHorizontalHeaderItem(1, new QTableWidgetItem("Distance"));
+        ui->trip_table_michigan->setColumnHidden(1,true);
+        ui->trip_table_michigan->verticalHeader()->hide();
+        ui->trip_table_michigan->insertRow(ui->trip_table_michigan->rowCount());
+        ui->trip_table_michigan->setItem(ui->trip_table_michigan->rowCount() - 1, 0,
+                                           new QTableWidgetItem(miTourColleges.at(0).getCollegeName()));
+        ui->trip_table_michigan->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Stretch);
+    }
+
+    if(miTourColleges.empty()) {
+        count = 0;
+        return;
+    } else {
+        Distance distObj;
+        College  initCollegeObj;
+        College  endCollegeObj;
+        int index = 0;
+        // finds the first college visited in the database
+        while(miTourColleges.at(miVisitedColleges).getCollegeID() !=
+              distanceList.at(index).getStartCollege().getCollegeID()) {
+            index++;
+        }
+        // creating the vector for all the visiting colleges
+        for(int counter = 1; counter < miTourColleges.size(); counter++) {
+            for(int i = index; i < collegeList.size() - 1 + index; i++) {
+                if(miTourColleges.at(counter).getCollegeID() == distanceList.at(i).getEndCollege().getCollegeID()) {
+                    initCollegeObj.setCollege(miTourColleges.at(miVisitedColleges).getCollegeName(),
+                                              miTourColleges.at(miVisitedColleges).getCollegeID());
+                    endCollegeObj.setCollege(distanceList.at(i).getEndCollege().getCollegeName(),
+                                             distanceList.at(i).getEndCollege().getCollegeID());
+                    distObj.setDistance(initCollegeObj, endCollegeObj, distanceList.at(i).getDistance());
+                    miTourDistanceColleges.push_back(distObj);
+                }
+            }
+        }
+        // sorting the colleges visited
+        for(int j = 1; j < miTourDistanceColleges.size(); j++) {
+            Distance temp = miTourDistanceColleges.at(j);
+            int k = j - 1;
+            while(k >= 0 && miTourDistanceColleges.at(k).getDistance() > temp.getDistance()) {
+                miTourDistanceColleges.replace(k+1, miTourDistanceColleges.at(k));
+                k = k - 1;
+            }
+            miTourDistanceColleges.replace(k+1, temp);
+        }
+        ui->trip_table_michigan->insertRow(ui->trip_table_michigan->rowCount());
+        ui->trip_table_michigan->setItem(ui->trip_table_michigan->rowCount() - 1, 0,
+        new QTableWidgetItem(miTourDistanceColleges.at(0).getEndCollege().getCollegeName()));
+        int r = 0;
+        while(miTourDistanceColleges.at(0).getEndCollege().getCollegeID() != miTourColleges.at(r).getCollegeID()) {
+            r++;
+        }
+        miTourColleges.pop_front();
+        if(miTourColleges.size() == 1) {
+            miTourColleges.pop_front();
+        } else {
+            College tempObj = miTourColleges.at(0);
+            miTourColleges.replace(0, miTourColleges.at(r - 1));
+            miTourColleges.replace(r - 1, tempObj);
+        }
+        miTourDistanceColleges.clear();
+        findMichiganTrip(count + 1, 0);
+    }
 }

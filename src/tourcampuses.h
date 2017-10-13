@@ -30,10 +30,14 @@ private slots:
 
     void on_beginTrip_pushButton_clicked();
     void findTrip(int count, int visitedCollege);
+    void findUciTrip(int count, int uciVisitedColleges);
+    void findMichiganTrip(int count, int miVisitedColleges);
 
 
 
     void on_pushButton_UCI_clicked();
+
+    void on_pushButton_MICHIGAN_clicked();
 
 private:
     Ui::tourCampuses *ui;
@@ -42,6 +46,11 @@ private:
     int IdsDistances[2];
     QVector<College> selectedColleges;
     QVector<Distance> tourDistanceColleges;
+    QVector<College> uciTourColleges;
+    QVector<Distance> uciTourDistanceColleges;
+
+    QVector<College> miTourColleges;
+    QVector<Distance> miTourDistanceColleges;
 };
 
 #endif // TOURCAMPUSES_H

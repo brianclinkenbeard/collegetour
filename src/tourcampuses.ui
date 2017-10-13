@@ -60,7 +60,7 @@ QLabel {
     </rect>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>3</number>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QLabel" name="startingCampus_label">
@@ -448,15 +448,72 @@ QLabel:hover {
      <property name="geometry">
       <rect>
        <x>80</x>
-       <y>10</y>
+       <y>80</y>
        <width>1011</width>
-       <height>541</height>
+       <height>521</height>
       </rect>
      </property>
      <property name="styleSheet">
       <string notr="true">tableWidget_3 {
 	font-color: white;
 }</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_uciTour">
+     <property name="geometry">
+      <rect>
+       <x>510</x>
+       <y>20</y>
+       <width>191</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>22</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>UCI TOUR</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_4">
+    <widget class="QTableWidget" name="trip_table_michigan">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>80</y>
+       <width>1011</width>
+       <height>521</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">tableWidget_3 {
+	font-color: white;
+}</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_michiganTour">
+     <property name="geometry">
+      <rect>
+       <x>450</x>
+       <y>20</y>
+       <width>291</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>22</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>MICHIGAN TOUR</string>
      </property>
     </widget>
    </widget>
