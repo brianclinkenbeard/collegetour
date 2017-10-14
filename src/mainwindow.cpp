@@ -29,14 +29,11 @@ MainWindow::MainWindow(QWidget *parent) :
     // select entire rows instead of single cells
     ui->display_college_table->setSelectionBehavior(QAbstractItemView::SelectRows);
 
-    /*
-     * horizontal headers will stretch according to element size, certain columns
-     * will later be selected to stretch to fit the remaining width of the table
-     */
+    // stretch horizontal headers, will later stretch elements to fit remaining width in the table
     ui->display_college_table->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
 
+    // hide vertical header
     ui->display_college_table->verticalHeader()->hide();
-
 }
 
 MainWindow::~MainWindow()
@@ -120,21 +117,15 @@ void MainWindow::on_display_comboBox_currentIndexChanged(int index)
     ui->purchase_button->hide();
     ui->tour_button->hide();
 
-    /* show search items if search_edit is not empty then return */
-    if (!ui->search_edit->text().isEmpty()) {
-        on_search_edit_textEdited(ui->search_edit->text());
-        return;
-    }
+    // clear rows
+    ui->display_college_table->setRowCount(0);
 
     switch (index) {
     case 0:
         ui->display_college_table->setColumnCount(0);
-        ui->display_college_table->setRowCount(0);
         break;
     case 1:
         ui->tour_button->show();
-
-        ui->display_college_table->setRowCount(0);
 
         ui->display_college_table->setColumnCount(3);
         ui->display_college_table->setHorizontalHeaderItem(0, new QTableWidgetItem("IDs"));
@@ -143,6 +134,12 @@ void MainWindow::on_display_comboBox_currentIndexChanged(int index)
 
         // stretch College name
         ui->display_college_table->horizontalHeader()->setSectionResizeMode(1, QHeaderView::Stretch);
+
+        // show search items if search_edit is not empty, then return
+        if (!ui->search_edit->text().isEmpty()) {
+            on_search_edit_textEdited(ui->search_edit->text());
+            return;
+        }
 
         for (int i = 0; i < collegesList.size(); ++i) {
             ui->display_college_table->insertRow(ui->display_college_table->rowCount());
@@ -162,8 +159,6 @@ void MainWindow::on_display_comboBox_currentIndexChanged(int index)
     case 2:
         ui->purchase_button->show();
 
-        ui->display_college_table->setRowCount(0);
-
         ui->display_college_table->setColumnCount(4);
         ui->display_college_table->setHorizontalHeaderItem(0, new QTableWidgetItem("IDs"));
         ui->display_college_table->setHorizontalHeaderItem(1, new QTableWidgetItem("Campuses"));
@@ -172,6 +167,12 @@ void MainWindow::on_display_comboBox_currentIndexChanged(int index)
 
         // stretch college name
         ui->display_college_table->horizontalHeader()->setSectionResizeMode(1, QHeaderView::Stretch);
+
+        // show search items if search_edit is not empty, then return
+        if (!ui->search_edit->text().isEmpty()) {
+            on_search_edit_textEdited(ui->search_edit->text());
+            return;
+        }
 
         for (int i = 0; i < souvenirsList.size(); ++i) {
             ui->display_college_table->insertRow(ui->display_college_table->rowCount());
@@ -212,54 +213,53 @@ void MainWindow::on_search_edit_textEdited(const QString &arg1)
         // display all colleges and exit
         on_display_comboBox_currentIndexChanged(ui->display_comboBox->currentIndex());
         return;
-    } else {
-        // clear the table
-        ui->display_college_table->setRowCount(0);
+    }
 
-        switch (ui->display_comboBox->currentIndex()) {
-        case 0:
-            return;
-        case 1:
-            for (int i = 0; i < collegesList.size(); ++i) {
-                // add matching colleges
-                if (collegesList.at(i).getCollegeName().toLower().contains(arg1.toLower())) {
-                    ui->display_college_table->insertRow(ui->display_college_table->rowCount());
+    ui->display_college_table->setRowCount(0);
 
-                    ui->display_college_table->setItem(ui->display_college_table->rowCount() - 1, 0,
-                                                       new QTableWidgetItem(QString::number(collegesList.at(i).getCollegeID())));
-                    ui->display_college_table->setItem(ui->display_college_table->rowCount() - 1, 1,
-                                                       new QTableWidgetItem(collegesList.at(i).getCollegeName()));
-                    ui->display_college_table->setItem(ui->display_college_table->rowCount() - 1, 2,
-                                                       new QTableWidgetItem(QString::number(distance_by_ID(collegesList.at(i).getCollegeID()))));
+    switch (ui->display_comboBox->currentIndex()) {
+    case 0:
+        return;
+    case 1:
+        for (int i = 0; i < collegesList.size(); ++i) {
+            // add matching colleges
+            if (collegesList.at(i).getCollegeName().toLower().contains(arg1.toLower())) {
+                ui->display_college_table->insertRow(ui->display_college_table->rowCount());
 
-                    // center text
-                    for (int col = 0; col < ui->display_college_table->columnCount(); ++col)
-                        ui->display_college_table->item(ui->display_college_table->rowCount() - 1, col)->setTextAlignment(Qt::AlignCenter);
-                }
+                ui->display_college_table->setItem(ui->display_college_table->rowCount() - 1, 0,
+                                                   new QTableWidgetItem(QString::number(collegesList.at(i).getCollegeID())));
+                ui->display_college_table->setItem(ui->display_college_table->rowCount() - 1, 1,
+                                                   new QTableWidgetItem(collegesList.at(i).getCollegeName()));
+                ui->display_college_table->setItem(ui->display_college_table->rowCount() - 1, 2,
+                                                   new QTableWidgetItem(QString::number(distance_by_ID(collegesList.at(i).getCollegeID()))));
+
+                // center text
+                for (int col = 0; col < ui->display_college_table->columnCount(); ++col)
+                    ui->display_college_table->item(ui->display_college_table->rowCount() - 1, col)->setTextAlignment(Qt::AlignCenter);
             }
-            break;
-        case 2:
-            for (int i = 0; i < souvenirsList.size(); ++i) {
-                // add matching colleges
-                if (souvenirsList.at(i).getSouvenirCollege().getCollegeName().toLower().contains(arg1.toLower())) {
-                    ui->display_college_table->insertRow(ui->display_college_table->rowCount());
-
-                    ui->display_college_table->setItem(ui->display_college_table->rowCount() - 1, 0,
-                                                       new QTableWidgetItem(QString::number(souvenirsList.at(i).getSouvenirCollege().getCollegeID())));
-                    ui->display_college_table->setItem(ui->display_college_table->rowCount() - 1, 1,
-                                                       new QTableWidgetItem(souvenirsList.at(i).getSouvenirCollege().getCollegeName()));
-                    ui->display_college_table->setItem(ui->display_college_table->rowCount() - 1, 2,
-                                                       new QTableWidgetItem(souvenirsList.at(i).getSouvenirName()));
-                    ui->display_college_table->setItem(ui->display_college_table->rowCount() - 1, 3,
-                                                       new QTableWidgetItem("$" + QString::number(souvenirsList.at(i).getSouvenirPrice())));
-
-                    // center text
-                    for (int col = 0; col < ui->display_college_table->columnCount(); ++col)
-                        ui->display_college_table->item(ui->display_college_table->rowCount() - 1, col)->setTextAlignment(Qt::AlignCenter);
-                }
-            }
-            // fall through
         }
+        break;
+    case 2:
+        for (int i = 0; i < souvenirsList.size(); ++i) {
+            // add matching colleges
+            if (souvenirsList.at(i).getSouvenirCollege().getCollegeName().toLower().contains(arg1.toLower())) {
+                ui->display_college_table->insertRow(ui->display_college_table->rowCount());
+
+                ui->display_college_table->setItem(ui->display_college_table->rowCount() - 1, 0,
+                                                   new QTableWidgetItem(QString::number(souvenirsList.at(i).getSouvenirCollege().getCollegeID())));
+                ui->display_college_table->setItem(ui->display_college_table->rowCount() - 1, 1,
+                                                   new QTableWidgetItem(souvenirsList.at(i).getSouvenirCollege().getCollegeName()));
+                ui->display_college_table->setItem(ui->display_college_table->rowCount() - 1, 2,
+                                                   new QTableWidgetItem(souvenirsList.at(i).getSouvenirName()));
+                ui->display_college_table->setItem(ui->display_college_table->rowCount() - 1, 3,
+                                                   new QTableWidgetItem("$" + QString::number(souvenirsList.at(i).getSouvenirPrice())));
+
+                // center text
+                for (int col = 0; col < ui->display_college_table->columnCount(); ++col)
+                    ui->display_college_table->item(ui->display_college_table->rowCount() - 1, col)->setTextAlignment(Qt::AlignCenter);
+            }
+        }
+        // fall through
     }
 }
 
