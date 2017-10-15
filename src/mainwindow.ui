@@ -85,7 +85,7 @@ QPushButton {
 </string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="page_10">
      <widget class="QFrame" name="michigan_flag">
@@ -126,7 +126,6 @@ QPushButton {
       <property name="styleSheet">
        <string notr="true">QPushButton {
 	background-image: url('res/next-xx.png');
-	background-size: 10px;    
     background-repeat: no-repeat;
     background-position: center center;
 }</string>
@@ -219,7 +218,6 @@ QPushButton {
       <property name="styleSheet">
        <string notr="true">QPushButton {
 	background-image: url('res/back-xx.png');
-	background-size: 10px;    
     background-repeat: no-repeat;
     background-position: center center;
 }</string>
@@ -242,7 +240,6 @@ QPushButton {
       <property name="styleSheet">
        <string notr="true">QPushButton {
 	background-image: url('res/back-xx.png');
-	background-size: 10px;    
     background-repeat: no-repeat;
     background-position: center center;
 }</string>
@@ -263,7 +260,6 @@ QPushButton {
       <property name="styleSheet">
        <string notr="true">QPushButton {
 	background-image: url('res/next-xx.png');
-	background-size: 10px;    
     background-repeat: no-repeat;
     background-position: center center;
 }</string>
@@ -358,7 +354,6 @@ QPushButton {
       <property name="styleSheet">
        <string notr="true">QPushButton {
 	background-image: url('res/next-xx.png');
-	background-size: 10px;    
     background-repeat: no-repeat;
     background-position: center center;
 }</string>
@@ -379,7 +374,6 @@ QPushButton {
       <property name="styleSheet">
        <string notr="true">QPushButton {
 	background-image: url('res/back-xx.png');
-	background-size: 10px;    
     background-repeat: no-repeat;
     background-position: center center;
 }</string>
@@ -487,7 +481,6 @@ QPushButton {
       <property name="styleSheet">
        <string notr="true">QPushButton {
 	background-image: url('res/next-xx.png');
-	background-size: 10px;    
     background-repeat: no-repeat;
     background-position: center center;
 }</string>
@@ -508,7 +501,6 @@ QPushButton {
       <property name="styleSheet">
        <string notr="true">QPushButton {
 	background-image: url('res/back-xx.png');
-	background-size: 10px;    
     background-repeat: no-repeat;
     background-position: center center;
 }</string>
@@ -642,7 +634,6 @@ QPushButton {
       <property name="styleSheet">
        <string notr="true">QPushButton {
 	background-image: url('res/back-xx.png');
-	background-size: 10px;    
     background-repeat: no-repeat;
     background-position: center center;
 }</string>
@@ -663,7 +654,6 @@ QPushButton {
       <property name="styleSheet">
        <string notr="true">QPushButton {
 	background-image: url('res/next-xx.png');
-	background-size: 10px;    
     background-repeat: no-repeat;
     background-position: center center;
 }</string>
@@ -706,7 +696,6 @@ QPushButton {
       <property name="styleSheet">
        <string notr="true">QPushButton {
 	background-image: url('res/back-xx.png');
-	background-size: 10px;    
     background-repeat: no-repeat;
     background-position: center center;
 }</string>
@@ -766,7 +755,6 @@ QPushButton {
       <property name="styleSheet">
        <string notr="true">QPushButton {
 	background-image: url('res/next-xx.png');
-	background-size: 10px;    
     background-repeat: no-repeat;
     background-position: center center;
 }</string>
@@ -842,7 +830,6 @@ QPushButton {
       <property name="styleSheet">
        <string notr="true">QPushButton {
 	background-image: url('res/back-xx.png');
-	background-size: 10px;    
     background-repeat: no-repeat;
     background-position: center center;
 }</string>
@@ -915,7 +902,6 @@ QPushButton {
       <property name="styleSheet">
        <string notr="true">QPushButton {
 	background-image: url('res/next-xx.png');
-	background-size: 10px;    
     background-repeat: no-repeat;
     background-position: center center;
 }</string>
@@ -938,7 +924,6 @@ QPushButton {
       <property name="styleSheet">
        <string notr="true">QPushButton {
 	background-image: url('res/next-xx.png');
-	background-size: 10px;    
     background-repeat: no-repeat;
     background-position: center center;
 }</string>
@@ -979,7 +964,6 @@ QPushButton {
       <property name="styleSheet">
        <string notr="true">QPushButton {
 	background-image: url('res/back-xx.png');
-	background-size: 10px;    
     background-repeat: no-repeat;
     background-position: center center;
 }</string>
@@ -1054,7 +1038,6 @@ QPushButton {
       <property name="styleSheet">
        <string notr="true">QPushButton {
 	background-image: url('res/back-xx.png');
-	background-size: 10px;    
     background-repeat: no-repeat;
     background-position: center center;
 }</string>
@@ -1095,7 +1078,6 @@ QPushButton {
       <property name="styleSheet">
        <string notr="true">QPushButton {
 	background-image: url('res/next-xx.png');
-	background-size: 10px;    
     background-repeat: no-repeat;
     background-position: center center;
 }</string>
@@ -1107,14 +1089,14 @@ QPushButton {
      <widget class="QLabel" name="ucla_title">
       <property name="geometry">
        <rect>
-        <x>250</x>
+        <x>300</x>
         <y>11</y>
         <width>731</width>
         <height>35</height>
        </rect>
       </property>
       <property name="text">
-       <string>UniversityUniversity of California, Los Angeles (UCLA)</string>
+       <string>University of California, Los Angeles (UCLA)</string>
       </property>
      </widget>
      <widget class="QLabel" name="ucla_address">
@@ -1190,7 +1172,6 @@ QPushButton {
       <property name="styleSheet">
        <string notr="true">QPushButton {
 	background-image: url('res/back-xx.png');
-	background-size: 10px;    
     background-repeat: no-repeat;
     background-position: center center;
 }</string>
@@ -1263,7 +1244,6 @@ QPushButton {
       <property name="styleSheet">
        <string notr="true">QPushButton {
 	background-image: url('res/next-xx.png');
-	background-size: 10px;    
     background-repeat: no-repeat;
     background-position: center center;
 }</string>
@@ -1338,7 +1318,6 @@ QPushButton {
       <property name="styleSheet">
        <string notr="true">QPushButton {
 	background-image: url('res/next-xx.png');
-	background-size: 10px;    
     background-repeat: no-repeat;
     background-position: center center;
 }</string>
@@ -1379,7 +1358,6 @@ QPushButton {
       <property name="styleSheet">
        <string notr="true">QPushButton {
 	background-image: url('res/back-xx.png');
-	background-size: 10px;    
     background-repeat: no-repeat;
     background-position: center center;
 }</string>
@@ -1421,7 +1399,6 @@ QPushButton {
       <property name="styleSheet">
        <string notr="true">QPushButton {
 	background-image: url('res/next-xx.png');
-	background-size: 10px;    
     background-repeat: no-repeat;
     background-position: center center;
 }</string>
@@ -1442,7 +1419,6 @@ QPushButton {
       <property name="styleSheet">
        <string notr="true">QPushButton {
 	background-image: url('res/back-xx.png');
-	background-size: 10px;    
     background-repeat: no-repeat;
     background-position: center center;
 }</string>
@@ -1518,7 +1494,6 @@ QPushButton {
       <property name="styleSheet">
        <string notr="true">QPushButton {
 	background-image: url('res/back-xx.png');
-	background-size: 10px;    
     background-repeat: no-repeat;
     background-position: center center;
 }</string>
@@ -1571,10 +1546,9 @@ QPushButton {
       <property name="styleSheet">
        <string notr="true">QPushButton {
 	background-image: url('res/next-xx.png');
-	background-size: 10px;    
     background-repeat: no-repeat;
     background-position: center center;
-}</string>
+}		</string>
       </property>
       <property name="text">
        <string/>
@@ -1839,7 +1813,6 @@ QPushButton:hover {
       <property name="styleSheet">
        <string notr="true">QPushButton {
 	background-image: url('res/back-xx.png');
-	background-size: 10px;    
     background-repeat: no-repeat;
     background-position: center center;
 }</string>

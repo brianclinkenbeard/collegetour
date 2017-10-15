@@ -60,7 +60,7 @@ QLabel {
     </rect>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QLabel" name="startingCampus_label">
@@ -213,7 +213,7 @@ QLabel {
     <widget class="QLabel" name="label">
      <property name="geometry">
       <rect>
-       <x>40</x>
+       <x>30</x>
        <y>10</y>
        <width>801</width>
        <height>61</height>
@@ -455,7 +455,7 @@ QLabel:hover {
       <string>MICHIGAN TOUR</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_MICHIGAN_2">
+    <widget class="QPushButton" name="purchaseTour_pushButton">
      <property name="geometry">
       <rect>
        <x>730</x>
