@@ -4,12 +4,15 @@
 #include "QModelIndex"
 #include <QMessageBox>
 
+/**
+ * @brief tourCampuses::tourCampuses
+ * @param parent
+ */
 tourCampuses::tourCampuses(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::tourCampuses)
 {
     ui->setupUi(this);
-
     populate();
 
     ui->startingCampus_table->setRowCount(0);
@@ -67,11 +70,17 @@ tourCampuses::tourCampuses(QWidget *parent) :
     }
 }
 
+/**
+ * @brief tourCampuses::~tourCampuses
+ */
 tourCampuses::~tourCampuses()
 {
     delete ui;
 }
 
+/**
+ * @brief tourCampuses::on_back_to_main_clicked
+ */
 void tourCampuses::on_back_to_main_clicked()
 {
     MainWindow *main_window = new MainWindow;
@@ -79,6 +88,9 @@ void tourCampuses::on_back_to_main_clicked()
     this->close();
 }
 
+/**
+ * @brief tourCampuses::populate
+ */
 void tourCampuses::populate()
 {
     // reading from the SQL database into the College vector
@@ -89,10 +101,21 @@ void tourCampuses::populate()
         collegeList.push_back(College(colleges_qry.record().value("ID").toInt(),
                                 colleges_qry.record().value("Universities").toString()));
     }
-    while (colleges_qry.next()) {
-        // push back College
-        collegeList.push_back(College(colleges_qry.record().value("ID").toInt(),
-                                colleges_qry.record().value("Universities").toString()));
+//    while (colleges_qry.next()) {
+//        // push back College
+//        collegeList.push_back(College(colleges_qry.record().value("ID").toInt(),
+//                                colleges_qry.record().value("Universities").toString()));
+//    }
+
+    // read from the SQL Database into the Souvenir vector
+    QSqlQuery souvenirs_qry("SELECT * FROM colleges_souvenirs");
+
+    while (souvenirs_qry.next()) {
+        // push back Souvenir
+        souvenirsList.push_back(Souvenir(College(souvenirs_qry.record().value("ID").toInt(),
+                                                 souvenirs_qry.record().value("Universities").toString()),
+                                                 souvenirs_qry.record().value("souvenir").toString(),
+                                                 souvenirs_qry.record().value("price").toDouble()));
     }
 
     // reading from the SQL Database into the Distance vector
@@ -109,6 +132,9 @@ void tourCampuses::populate()
     }
 }
 
+/**
+ * @brief tourCampuses::on_pushButton_startColleges_clicked
+ */
 void tourCampuses::on_pushButton_startColleges_clicked()
 {
     QModelIndex current = ui->startingCampus_table->currentIndex();
@@ -123,6 +149,9 @@ void tourCampuses::on_endingCollege_pushButton_clicked()
     findDistanceTwoCollege();
 }
 
+/**
+ * @brief tourCampuses::findDistanceTwoCollege
+ */
 void tourCampuses::findDistanceTwoCollege()
 {
     double distance;
@@ -150,16 +179,25 @@ void tourCampuses::findDistanceTwoCollege()
     ui->distance_table->item(0,0)->setTextAlignment(Qt::AlignCenter);
 }
 
+/**
+ * @brief tourCampuses::on_distanceMode_pushButton_clicked
+ */
 void tourCampuses::on_distanceMode_pushButton_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
 }
 
+/**
+ * @brief tourCampuses::on_tripMode_pushButton_clicked
+ */
 void tourCampuses::on_tripMode_pushButton_clicked()
 {
     ui->stackedWidget->setCurrentIndex(1);
 }
 
+/**
+ * @brief tourCampuses::on_addColleges_button_clicked
+ */
 void tourCampuses::on_addColleges_button_clicked()
 {
     College obj;
@@ -175,6 +213,9 @@ void tourCampuses::on_addColleges_button_clicked()
     }
 }
 
+/**
+ * @brief tourCampuses::on_deleteColleges_button_clicked
+ */
 void tourCampuses::on_deleteColleges_button_clicked()
 {
     if(selectedColleges.empty()) {
@@ -185,6 +226,9 @@ void tourCampuses::on_deleteColleges_button_clicked()
     }
 }
 
+/**
+ * @brief tourCampuses::displaySelectedColleges
+ */
 void tourCampuses::displaySelectedColleges()
 {
     ui->selectedVisitColleges_table->setRowCount(0);
@@ -216,6 +260,9 @@ void tourCampuses::displaySelectedColleges()
     }
 }
 
+/**
+ * @brief tourCampuses::on_beginTrip_pushButton_clicked
+ */
 void tourCampuses::on_beginTrip_pushButton_clicked()
 {
     if(selectedColleges.empty()) {
@@ -225,18 +272,28 @@ void tourCampuses::on_beginTrip_pushButton_clicked()
     }
 }
 
+/**
+ * @brief tourCampuses::findTrip
+ * @param count
+ * @param visitedCollege
+ * @param totalDistance
+ */
 void tourCampuses::findTrip(int count, int visitedCollege, double totalDistance)
 {
     if(count == 0) {
         ui->trip_table->setRowCount(0);
-        ui->trip_table->setColumnCount(2);
+        ui->trip_table->setColumnCount(3);
         ui->trip_table->setHorizontalHeaderItem(0, new QTableWidgetItem("Visiting Colleges"));
         ui->trip_table->setHorizontalHeaderItem(1, new QTableWidgetItem("Distance"));
+        ui->trip_table->setHorizontalHeaderItem(2, new QTableWidgetItem("IDs"));
         ui->trip_table->setColumnHidden(1,true);
+      //  ui->trip_table->setColumnHidden(2,true);
         ui->trip_table->verticalHeader()->hide();
         ui->trip_table->insertRow(ui->trip_table->rowCount());
         ui->trip_table->setItem(ui->trip_table->rowCount() - 1, 0,
                                            new QTableWidgetItem(selectedColleges.at(0).getCollegeName()));
+        ui->trip_table->setItem(ui->trip_table->rowCount() - 1, 2,
+                                           new QTableWidgetItem(QString::number(selectedColleges.at(0).getCollegeID())));
         ui->trip_table->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Stretch);
     }
 
@@ -287,7 +344,9 @@ void tourCampuses::findTrip(int count, int visitedCollege, double totalDistance)
         }
         ui->trip_table->insertRow(ui->trip_table->rowCount());
         ui->trip_table->setItem(ui->trip_table->rowCount() - 1, 0,
-        new QTableWidgetItem(tourDistanceColleges.at(0).getEndCollege().getCollegeName()));
+                                new QTableWidgetItem(tourDistanceColleges.at(0).getEndCollege().getCollegeName()));
+        ui->trip_table->setItem(ui->trip_table->rowCount() - 1, 2,
+                                new QTableWidgetItem(QString::number(tourDistanceColleges.at(0).getEndCollege().getCollegeID())));
         int r = 0;
         while(tourDistanceColleges.at(0).getEndCollege().getCollegeID() != selectedColleges.at(r).getCollegeID()) {
             r++;
@@ -306,7 +365,9 @@ void tourCampuses::findTrip(int count, int visitedCollege, double totalDistance)
     }
 }
 
-
+/**
+ * @brief tourCampuses::on_pushButton_UCI_clicked
+ */
 void tourCampuses::on_pushButton_UCI_clicked()
 {
     ui->stackedWidget->setCurrentIndex(2);
@@ -326,6 +387,11 @@ void tourCampuses::on_pushButton_UCI_clicked()
     findUciTrip(0,0);
 }
 
+/**
+ * @brief tourCampuses::findUciTrip
+ * @param count
+ * @param uciVisitedColleges
+ */
 void tourCampuses::findUciTrip(int count, int uciVisitedColleges)
 {
 
@@ -398,6 +464,9 @@ void tourCampuses::findUciTrip(int count, int uciVisitedColleges)
     }
 }
 
+/**
+ * @brief tourCampuses::on_pushButton_MICHIGAN_clicked
+ */
 void tourCampuses::on_pushButton_MICHIGAN_clicked()
 {
     ui->stackedWidget->setCurrentIndex(3);
@@ -416,6 +485,11 @@ void tourCampuses::on_pushButton_MICHIGAN_clicked()
     findMichiganTrip(0,0);
 }
 
+/**
+ * @brief tourCampuses::findMichiganTrip
+ * @param count
+ * @param miVisitedColleges
+ */
 void tourCampuses::findMichiganTrip(int count, int miVisitedColleges)
 {
     if(count == 0) {
@@ -487,6 +561,9 @@ void tourCampuses::findMichiganTrip(int count, int miVisitedColleges)
     }
 }
 
+/**
+ * @brief tourCampuses::on_pushButton_SADDLEBACK_clicked
+ */
 void tourCampuses::on_pushButton_SADDLEBACK_clicked()
 {
     ui->stackedWidget->setCurrentIndex(4);
@@ -505,6 +582,11 @@ void tourCampuses::on_pushButton_SADDLEBACK_clicked()
 
 }
 
+/**
+ * @brief tourCampuses::findSaddlebackTrip
+ * @param count
+ * @param saVisitedColleges
+ */
 void tourCampuses::findSaddlebackTrip(int count, int saVisitedColleges)
 {
     if(count == 0) {
@@ -575,3 +657,56 @@ void tourCampuses::findSaddlebackTrip(int count, int saVisitedColleges)
         findSaddlebackTrip(count + 1, 0);
     }
 }
+
+/**
+ * @brief tourCampuses::on_purchaseTour_pushButton_clicked
+ */
+void tourCampuses::on_purchaseTour_pushButton_clicked()
+{
+    tourpurchase *p = new tourpurchase;
+    p->show();
+    this->close();
+
+    //********************************************************************
+    qDebug() << "***********************" << ui->trip_table->rowCount();
+    //********************************************************************
+    QVector<int> selectedTourCampuses;
+    QVector<int> keys;
+
+    for(int row = 0; row < ui->trip_table->rowCount(); row++) {
+        int collegeId = ui->trip_table->item(row, 2)->text().toInt();
+
+        if(collegeId == 1018) {           // ARIZONA
+            keys.append(1);
+        } else if(collegeId == 1314) {    // UCI
+            keys.append(2);
+        } else if(collegeId == 2178) {
+            keys.append(3);
+        } else if(collegeId == 1739) {
+            keys.append(4);
+        } else if(collegeId == 3090) {
+            keys.append(5);
+        } else if(collegeId == 8918) {
+            keys.append(6);
+        } else if(collegeId == 1137) {
+            keys.append(7);
+        } else if(collegeId == 2325) {
+            keys.append(8);
+        } else if(collegeId == 1315) {
+            keys.append(9);
+        } else if(collegeId == 3193) {
+            keys.append(10);
+        } else if(collegeId == 3658) {
+            keys.append(11);
+        } else if(collegeId == 1329) {
+            keys.append(12);
+        } else if(collegeId == 3897) {
+            keys.append(13);
+        }
+        selectedTourCampuses.append(collegeId);
+    }
+
+    qDebug() << "DDDDDDDDDDDDDDDDDDDdd: " << souvenirsList.size();
+    tourpurchase t(keys, selectedTourCampuses, souvenirsList);
+}
+
