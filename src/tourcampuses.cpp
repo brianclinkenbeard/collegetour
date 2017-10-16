@@ -330,7 +330,7 @@ void tourCampuses::findTrip(int count, int visitedCollege, double totalDistance)
         }
         // creating the vector for all the visiting colleges
         for(int counter = 1; counter < selectedColleges.size(); counter++) {
-            for(int i = index; i < collegeList.size() - 1 + index; i++) {
+            for(int i = index; i < distanceList.size()/*collegeList.size() - 1 + index*/; i++) {
                 if(selectedColleges.at(counter).getCollegeID() == distanceList.at(i).getEndCollege().getCollegeID()) {
                     initCollegeObj.setCollege(selectedColleges.at(visitedCollege).getCollegeName(),
                                               selectedColleges.at(visitedCollege).getCollegeID());
@@ -387,11 +387,18 @@ void tourCampuses::on_pushButton_UCI_clicked()
         uciTourColleges.push_back(collegeList.at(i));
     }
 
-    //switching uci with the first element
-     College temp1 = uciTourColleges.at(0);
-     College temp2 = uciTourColleges.at(1);
-     uciTourColleges.replace(1, temp1);
-     uciTourColleges.replace(0, temp2);
+    int k;
+     for(int i=0; i< uciTourColleges.size(); i++) {
+         if(uciTourColleges.at(i).getCollegeID() == 1314) {
+             k = i;
+         }
+     }
+
+     //switching uci with the first element
+      College temp1 = uciTourColleges.at(0);
+      College temp2 = uciTourColleges.at(k);
+      uciTourColleges.replace(k, temp1);
+      uciTourColleges.replace(0, temp2);
 
     findUciTrip(0,0);
 
@@ -442,7 +449,7 @@ void tourCampuses::findUciTrip(int count, int uciVisitedColleges)
         }
         // creating the vector for all the visiting colleges
         for(int counter = 1; counter < uciTourColleges.size(); counter++) {
-            for(int i = index; i < collegeList.size() - 1 + index; i++) {
+            for(int i = index; i < distanceList.size()/*collegeList.size() - 1 + index*/; i++) {
                 if(uciTourColleges.at(counter).getCollegeID() == distanceList.at(i).getEndCollege().getCollegeID()) {
                     initCollegeObj.setCollege(uciTourColleges.at(uciVisitedColleges).getCollegeName(),
                                               uciTourColleges.at(uciVisitedColleges).getCollegeID());
@@ -522,11 +529,23 @@ void tourCampuses::on_pushButton_startMiTour_clicked()
         miTourColleges.push_back(collegeList.at(i));
     }
 
-    //switching uci with the first element
-     College temp1 = miTourColleges.at(0);
-     College temp2 = miTourColleges.at(6);
-     miTourColleges.replace(6, temp1);
-     miTourColleges.replace(0, temp2);
+
+     int k;
+      for(int i=0; i< miTourColleges.size(); i++) {
+          if(miTourColleges.at(i).getCollegeID() == 2325) {
+              k = i;
+          }
+      }
+
+      //switching uci with the first element
+       College temp1 = miTourColleges.at(0);
+       College temp2 = miTourColleges.at(k);
+       miTourColleges.replace(k, temp1);
+       miTourColleges.replace(0, temp2);
+
+      for(int index = 0; index < miTourColleges.size(); index++) {
+          qDebug() << miTourColleges.at(index).getCollegeName();
+      }
 
      if(ui->lineEdit_collegeNum->text().isEmpty())
      {
@@ -537,9 +556,9 @@ void tourCampuses::on_pushButton_startMiTour_clicked()
          collegeNum = ui->lineEdit_collegeNum->text().toInt();
      }
 
-
+    qDebug() << "Here 1";
     findMichiganTrip(0,0);
-
+    qDebug() << "Here 2";
 
     ui->distance_table_mi->setRowCount(1);
     ui->distance_table_mi->setColumnCount(1);
@@ -594,7 +613,7 @@ void tourCampuses::findMichiganTrip(int count, int miVisitedColleges)
         }
         // creating the vector for all the visiting colleges
         for(int counter = 1; counter < miTourColleges.size(); counter++) {
-            for(int i = index; i < collegeList.size() - 1 + index; i++) {
+            for(int i = index; i < distanceList.size()/*collegeList.size() - 1 + index*/; i++) {
                 if(miTourColleges.at(counter).getCollegeID() == distanceList.at(i).getEndCollege().getCollegeID()) {
                     initCollegeObj.setCollege(miTourColleges.at(miVisitedColleges).getCollegeName(),
                                               miTourColleges.at(miVisitedColleges).getCollegeID());
@@ -652,10 +671,18 @@ void tourCampuses::on_pushButton_SADDLEBACK_clicked()
     for(int i=0; i<collegeList.size(); i++) {
         saTourColleges.push_back(collegeList.at(i));
     }
+
+    int k;
+     for(int i=0; i< saTourColleges.size(); i++) {
+         if(saTourColleges.at(i).getCollegeID() == 8918) {
+             k = i;
+         }
+     }
+
     //switching uci with the first element
      College temp1 = saTourColleges.at(0);
-     College temp2 = saTourColleges.at(10);
-     saTourColleges.replace(10, temp1);
+     College temp2 = saTourColleges.at(k);
+     saTourColleges.replace(k, temp1);
      saTourColleges.replace(0, temp2);
 
     findSaddlebackTrip(0,0);
@@ -706,7 +733,7 @@ void tourCampuses::findSaddlebackTrip(int count, int saVisitedColleges)
         }
         // creating the vector for all the visiting colleges
         for(int counter = 1; counter < saTourColleges.size(); counter++) {
-            for(int i = index; i < collegeList.size() - 1 + index; i++) {
+            for(int i = index; i < distanceList.size()/*collegeList.size() - 1 + index*/; i++) {
                 if(saTourColleges.at(counter).getCollegeID() == distanceList.at(i).getEndCollege().getCollegeID()) {
                     initCollegeObj.setCollege(saTourColleges.at(saVisitedColleges).getCollegeName(),
                                               saTourColleges.at(saVisitedColleges).getCollegeID());
