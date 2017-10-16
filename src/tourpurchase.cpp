@@ -140,20 +140,15 @@ void tourpurchase::on_shopping_button_clicked()
 void tourpurchase::displaySouvenirs(int count)
 {
     tempSouvenirs.clear();
-    qDebug() << "In DisplaySouvenir Function 1";
-    qDebug() << "Sovenir Size  " << souvenirList.size();
 
       for(int index = 0; index < souvenirList.size(); index++) {
           if(selectedTourColleges.at(count) == souvenirList.at(index).getSouvenirCollege().getCollegeID()) {
-            qDebug() << "Here6";
             tempSouvenirs.push_back(souvenirList.at(index));
           }
       }
       for(int i = 0; i < tempSouvenirs.size(); i++) {
           qDebug() << tempSouvenirs.at(i).getSouvenirName();
       }
-      qDebug() << "In DisplaySouvenir Function 1";
-      qDebug() << "count is: " << count;
       tourPurchasesTable(keys.at(count));
 
       if(count < keys.size()-1) {
@@ -172,7 +167,6 @@ void tourpurchase::displaySouvenirs(int count)
  */
 void tourpurchase::findPage(int index)
 {
-    qDebug() << "In findPage Function" << index;
     switch (index) {
     case 1:  ui->purchase_stackedWidget->setCurrentIndex(index);
         break;
@@ -209,7 +203,6 @@ void tourpurchase::findPage(int index)
  */
 void tourpurchase::tourPurchasesTable(int count)
 {
-    qDebug() << "In tour PurchasesTable Function 1";
     switch(count) {
     case 1:
         ui->tableWidget_arizona->setRowCount(0);
@@ -218,7 +211,6 @@ void tourpurchase::tourPurchasesTable(int count)
         ui->tableWidget_arizona->setHorizontalHeaderItem(1, new QTableWidgetItem("Price $"));
         ui->tableWidget_arizona->verticalHeader()->hide();
         ui->tableWidget_arizona->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Stretch);
-        qDebug() << "tempSouvenirs Size: " << tempSouvenirs.size();
 
         for(int index = 0; index < tempSouvenirs.size(); index++) {
             ui->tableWidget_arizona->insertRow(ui->tableWidget_arizona->rowCount());
@@ -237,7 +229,6 @@ void tourpurchase::tourPurchasesTable(int count)
         ui->tableWidget_irvine->setHorizontalHeaderItem(1, new QTableWidgetItem("Price $"));
         ui->tableWidget_irvine->verticalHeader()->hide();
         ui->tableWidget_irvine->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Stretch);
-        qDebug() << "tempSouvenirs Size: " << tempSouvenirs.size();
 
         for(int index = 0; index < tempSouvenirs.size(); index++) {
             ui->tableWidget_irvine->insertRow(ui->tableWidget_irvine->rowCount());
@@ -256,7 +247,6 @@ void tourpurchase::tourPurchasesTable(int count)
         ui->tableWidget_Mit->setHorizontalHeaderItem(1, new QTableWidgetItem("Price $"));
         ui->tableWidget_Mit->verticalHeader()->hide();
         ui->tableWidget_Mit->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Stretch);
-        qDebug() << "tempSouvenirs Size: " << tempSouvenirs.size();
 
         for(int index = 0; index < tempSouvenirs.size(); index++) {
             ui->tableWidget_Mit->insertRow(ui->tableWidget_Mit->rowCount());
@@ -275,7 +265,6 @@ void tourpurchase::tourPurchasesTable(int count)
         ui->tableWidget_northwestern->setHorizontalHeaderItem(1, new QTableWidgetItem("Price $"));
         ui->tableWidget_northwestern->verticalHeader()->hide();
         ui->tableWidget_northwestern->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Stretch);
-        qDebug() << "tempSouvenirs Size: " << tempSouvenirs.size();
 
         for(int index = 0; index < tempSouvenirs.size(); index++) {
             ui->tableWidget_northwestern->insertRow(ui->tableWidget_northwestern->rowCount());
@@ -294,7 +283,6 @@ void tourpurchase::tourPurchasesTable(int count)
         ui->tableWidget_ohio->setHorizontalHeaderItem(1, new QTableWidgetItem("Price $"));
         ui->tableWidget_ohio->verticalHeader()->hide();
         ui->tableWidget_ohio->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Stretch);
-        qDebug() << "tempSouvenirs Size: " << tempSouvenirs.size();
 
         for(int index = 0; index < tempSouvenirs.size(); index++) {
             ui->tableWidget_ohio->insertRow(ui->tableWidget_ohio->rowCount());
@@ -313,7 +301,6 @@ void tourpurchase::tourPurchasesTable(int count)
         ui->tableWidget_saddleback->setHorizontalHeaderItem(1, new QTableWidgetItem("Price $"));
         ui->tableWidget_saddleback->verticalHeader()->hide();
         ui->tableWidget_saddleback->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Stretch);
-        qDebug() << "tempSouvenirs Size: " << tempSouvenirs.size();
 
         for(int index = 0; index < tempSouvenirs.size(); index++) {
             ui->tableWidget_saddleback->insertRow(ui->tableWidget_saddleback->rowCount());
@@ -332,7 +319,6 @@ void tourpurchase::tourPurchasesTable(int count)
         ui->tableWidget_csuf->setHorizontalHeaderItem(1, new QTableWidgetItem("Price $"));
         ui->tableWidget_csuf->verticalHeader()->hide();
         ui->tableWidget_csuf->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Stretch);
-        qDebug() << "tempSouvenirs Size: " << tempSouvenirs.size();
 
         for(int index = 0; index < tempSouvenirs.size(); index++) {
             ui->tableWidget_csuf->insertRow(ui->tableWidget_csuf->rowCount());
@@ -351,7 +337,6 @@ void tourpurchase::tourPurchasesTable(int count)
         ui->tableWidget_michigan->setHorizontalHeaderItem(1, new QTableWidgetItem("Price $"));
         ui->tableWidget_michigan->verticalHeader()->hide();
         ui->tableWidget_michigan->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Stretch);
-        qDebug() << "tempSouvenirs Size: " << tempSouvenirs.size();
 
         for(int index = 0; index < tempSouvenirs.size(); index++) {
             ui->tableWidget_michigan->insertRow(ui->tableWidget_michigan->rowCount());
@@ -370,7 +355,6 @@ void tourpurchase::tourPurchasesTable(int count)
         ui->tableWidget_ucla->setHorizontalHeaderItem(1, new QTableWidgetItem("Price $"));
         ui->tableWidget_ucla->verticalHeader()->hide();
         ui->tableWidget_ucla->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Stretch);
-        qDebug() << "tempSouvenirs Size: " << tempSouvenirs.size();
 
         for(int index = 0; index < tempSouvenirs.size(); index++) {
             ui->tableWidget_ucla->insertRow(ui->tableWidget_ucla->rowCount());
@@ -389,7 +373,6 @@ void tourpurchase::tourPurchasesTable(int count)
         ui->tableWidget_oregon->setHorizontalHeaderItem(1, new QTableWidgetItem("Price $"));
         ui->tableWidget_oregon->verticalHeader()->hide();
         ui->tableWidget_oregon->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Stretch);
-        qDebug() << "tempSouvenirs Size: " << tempSouvenirs.size();
 
         for(int index = 0; index < tempSouvenirs.size(); index++) {
             ui->tableWidget_oregon->insertRow(ui->tableWidget_oregon->rowCount());
@@ -408,7 +391,6 @@ void tourpurchase::tourPurchasesTable(int count)
         ui->tableWidget_texas->setHorizontalHeaderItem(1, new QTableWidgetItem("Price $"));
         ui->tableWidget_texas->verticalHeader()->hide();
         ui->tableWidget_texas->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Stretch);
-        qDebug() << "tempSouvenirs Size: " << tempSouvenirs.size();
 
         for(int index = 0; index < tempSouvenirs.size(); index++) {
             ui->tableWidget_texas->insertRow(ui->tableWidget_texas->rowCount());
@@ -427,7 +409,6 @@ void tourpurchase::tourPurchasesTable(int count)
         ui->tableWidget_Pacific->setHorizontalHeaderItem(1, new QTableWidgetItem("Price $"));
         ui->tableWidget_Pacific->verticalHeader()->hide();
         ui->tableWidget_Pacific->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Stretch);
-        qDebug() << "tempSouvenirs Size: " << tempSouvenirs.size();
 
         for(int index = 0; index < tempSouvenirs.size(); index++) {
             ui->tableWidget_Pacific->insertRow(ui->tableWidget_Pacific->rowCount());
@@ -446,7 +427,6 @@ void tourpurchase::tourPurchasesTable(int count)
         ui->tableWidget_Wisconsin->setHorizontalHeaderItem(1, new QTableWidgetItem("Price $"));
         ui->tableWidget_Wisconsin->verticalHeader()->hide();
         ui->tableWidget_Wisconsin->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Stretch);
-        qDebug() << "tempSouvenirs Size: " << tempSouvenirs.size();
 
         for(int index = 0; index < tempSouvenirs.size(); index++) {
             ui->tableWidget_Wisconsin->insertRow(ui->tableWidget_Wisconsin->rowCount());
@@ -485,10 +465,6 @@ void tourpurchase::on_pushButton_selectPurchase_asu_clicked()
     prices.append(ui->tableWidget_arizona->item(current.row(),1)->text().toDouble());
     souvenirName.append(ui->tableWidget_arizona->item(current.row(),0)->text());
     collegeName.append(tempSouvenirs.at(0).getSouvenirCollege().getCollegeName());
-
-    qDebug() << "In on_pushButton_selectPurchase_asu_clicked Function";
-    qDebug() << "souvenirCount is: " << souvenirCount;
-    qDebug() << "Price:  " << prices.at(souvenirCount);
 }
 
 /**
@@ -503,7 +479,6 @@ void tourpurchase::on_pushButton_quantityAsu_clicked()
     quantity.push_back(quantityChosen);
 
     total[pageIndicator] = total[pageIndicator] + (quantity.at(souvenirCount) * prices.at(souvenirCount));
-    qDebug() << "total is: " << total[pageIndicator];
 
     ui->tableWidget_totalAsu->setRowCount(1);
     ui->tableWidget_totalAsu->setColumnCount(1);
@@ -528,10 +503,6 @@ void tourpurchase::on_pushButton_selectPurchase_uci_clicked()
     prices.append(ui->tableWidget_irvine->item(current.row(),1)->text().toDouble());
     souvenirName.append(ui->tableWidget_irvine->item(current.row(),0)->text());
     collegeName.append(tempSouvenirs.at(0).getSouvenirCollege().getCollegeName());
-
-    qDebug() << "In on_pushButton_selectPurchase_uci_clicked Function";
-    qDebug() << "souvenirCount: " << souvenirCount;
-    qDebug() << "Price: " << prices.at(souvenirCount);
 }
 
 /**
@@ -1054,7 +1025,6 @@ void tourpurchase::on_next_10_clicked() //MICHIGAN
  */
 void tourpurchase::on_next_11_clicked() //UCLA
 {
-    qDebug() << "////////////////: here: " << pageIndicator;
     findPage(pageIndicator);
     displaySouvenirs(tempCount);
 }
@@ -1133,9 +1103,19 @@ void tourpurchase::on_print_receipt_clicked()
         ui->tableWidget_receipt->item(ui->tableWidget_receipt->rowCount() - 1, 2)->setTextAlignment(Qt::AlignCenter);
         ui->tableWidget_receipt->item(ui->tableWidget_receipt->rowCount() - 1, 3)->setTextAlignment(Qt::AlignCenter);
     }
+
+    double totalPurchase = 0;
+    for(int index = 0; index < 20; index++) {
+        totalPurchase += total[index];
+    }
+    ui->tableWidget_totalPurchase->setRowCount(1);
+    ui->tableWidget_totalPurchase->setColumnCount(1);
+    ui->tableWidget_totalPurchase->setHorizontalHeaderItem(0, new QTableWidgetItem("Total Purchase"));
+    ui->tableWidget_totalPurchase->verticalHeader()->hide();
+    ui->tableWidget_totalPurchase->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Stretch);
+    ui->tableWidget_totalPurchase->setItem(0, 0, new QTableWidgetItem("$" + QString::number(totalPurchase)));
+    ui->tableWidget_totalPurchase->item(0,0)->setTextAlignment(Qt::AlignCenter);
 }
-
-
 
 void tourpurchase::on_back_pushbutton_clicked()
 {

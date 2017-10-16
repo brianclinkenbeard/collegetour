@@ -825,7 +825,5 @@ void tourCampuses::on_purchaseTour_pushButton_clicked()
         }
         selectedTourCampuses.append(collegeId);
     }
-
-    qDebug() << "DDDDDDDDDDDDDDDDDDDdd: " << souvenirsList.size();
     tourpurchase t(keys, selectedTourCampuses, souvenirsList);
 }
