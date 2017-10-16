@@ -60,7 +60,7 @@ QLabel {
     </rect>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>3</number>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QLabel" name="startingCampus_label">
@@ -113,6 +113,9 @@ QLabel {
        <pointsize>10</pointsize>
       </font>
      </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
      <property name="text">
       <string>Select Starting Campus</string>
      </property>
@@ -144,7 +147,8 @@ QLabel {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-	border-radius: 150px;
+	border-style: inset;
+	border-radius: 10px;
 }</string>
      </property>
      <property name="text">
@@ -547,7 +551,7 @@ QLabel:hover {
     <widget class="QLabel" name="distance_label_3">
      <property name="geometry">
       <rect>
-       <x>700</x>
+       <x>670</x>
        <y>650</y>
        <width>141</width>
        <height>21</height>
@@ -742,7 +746,7 @@ QLabel:hover {
      <property name="geometry">
       <rect>
        <x>850</x>
-       <y>630</y>
+       <y>620</y>
        <width>211</width>
        <height>61</height>
       </rect>
@@ -751,8 +755,8 @@ QLabel:hover {
     <widget class="QLabel" name="distance_label_5">
      <property name="geometry">
       <rect>
-       <x>720</x>
-       <y>650</y>
+       <x>690</x>
+       <y>640</y>
        <width>141</width>
        <height>21</height>
       </rect>
