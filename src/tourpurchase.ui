@@ -48,7 +48,7 @@ QTableWidget {
     <string notr="true"/>
    </property>
    <property name="currentIndex">
-    <number>14</number>
+    <number>10</number>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QLabel" name="label">
