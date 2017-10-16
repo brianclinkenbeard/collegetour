@@ -11,7 +11,7 @@ Window {
 
     id: page
 
-    swipeView {
+    swipView {
         id: swipeView
         anchors.fill: parent
         currentIndex: 0

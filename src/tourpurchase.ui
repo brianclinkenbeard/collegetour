@@ -52,7 +52,7 @@ QTableWidget {
 }</string>
    </property>
    <property name="currentIndex">
-    <number>3</number>
+    <number>14</number>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QLabel" name="label">
@@ -2351,7 +2351,7 @@ QPushButton:hover {
        <x>35</x>
        <y>60</y>
        <width>711</width>
-       <height>471</height>
+       <height>431</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -2411,6 +2411,16 @@ QLabel:hover {
      </property>
      <property name="text">
       <string>RECEIPT </string>
+     </property>
+    </widget>
+    <widget class="QTableWidget" name="tableWidget_totalPurchase">
+     <property name="geometry">
+      <rect>
+       <x>260</x>
+       <y>500</y>
+       <width>256</width>
+       <height>51</height>
+      </rect>
      </property>
     </widget>
    </widget>
