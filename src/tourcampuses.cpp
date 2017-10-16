@@ -549,6 +549,12 @@ void tourCampuses::on_pushButton_startMiTour_clicked()
     ui->distance_table_mi->setItem(0,0, new QTableWidgetItem(QString::number(totalMiDistance)));
     ui->distance_table_mi->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Stretch);
     ui->distance_table_mi->item(0,0)->setTextAlignment(Qt::AlignCenter);
+
+    miTourColleges.clear();
+    miTourDistanceColleges.clear();
+    ui->lineEdit_collegeNum->clear();
+    counter = 0;
+    totalMiDistance = 0;
 }
 
 /**
