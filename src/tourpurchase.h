@@ -175,6 +175,8 @@ private slots:
 
     void on_pushButton_quantityWisconsin_clicked();
 
+    void on_back_pushbutton_clicked();
+
 private:
     Ui::tourpurchase *ui;
      QVector<Souvenir> tempSouvenirs;

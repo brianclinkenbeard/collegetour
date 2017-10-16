@@ -296,7 +296,7 @@ void tourCampuses::findTrip(int count, int visitedCollege, double totalDistance)
         ui->trip_table->setHorizontalHeaderItem(1, new QTableWidgetItem("Distance"));
         ui->trip_table->setHorizontalHeaderItem(2, new QTableWidgetItem("IDs"));
         ui->trip_table->setColumnHidden(1,true);
-      //  ui->trip_table->setColumnHidden(2,true);
+        ui->trip_table->setColumnHidden(2,true);
         ui->trip_table->verticalHeader()->hide();
         ui->trip_table->insertRow(ui->trip_table->rowCount());
         ui->trip_table->setItem(ui->trip_table->rowCount() - 1, 0,

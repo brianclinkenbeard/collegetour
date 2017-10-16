@@ -62,7 +62,6 @@ private slots:
     void on_nextPage_14_clicked();
     void on_backPage_13_clicked();
     void on_nextPage_15_clicked();
-    void on_backPage_14_clicked();
     void on_visitCampuses_button_clicked();
 
     void on_colleges_table_button_clicked();

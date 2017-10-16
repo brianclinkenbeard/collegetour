@@ -37,6 +37,8 @@
      <string notr="true">QPushButton {
 	background: gray;
 	color: white;
+	border-style: inset;
+	border-radius: 10px;
 }
 
 QPushButton:hover {
@@ -53,7 +55,7 @@ QPushButton:hover {
      <rect>
       <x>20</x>
       <y>50</y>
-      <width>1191</width>
+      <width>1201</width>
       <height>561</height>
      </rect>
     </property>
@@ -177,7 +179,7 @@ QPushButton {
      <widget class="QLabel" name="asu_title">
       <property name="geometry">
        <rect>
-        <x>360</x>
+        <x>380</x>
         <y>-10</y>
         <width>421</width>
         <height>61</height>
@@ -459,7 +461,7 @@ QPushButton {
      <widget class="QLabel" name="northwestern_title">
       <property name="geometry">
        <rect>
-        <x>530</x>
+        <x>520</x>
         <y>-10</y>
         <width>221</width>
         <height>61</height>
@@ -786,7 +788,7 @@ QPushButton {
      <widget class="QLabel" name="saddleback_title">
       <property name="geometry">
        <rect>
-        <x>470</x>
+        <x>480</x>
         <y>10</y>
         <width>279</width>
         <height>36</height>
@@ -860,7 +862,7 @@ QPushButton {
      <widget class="QLabel" name="fullerton_title">
       <property name="geometry">
        <rect>
-        <x>360</x>
+        <x>370</x>
         <y>11</y>
         <width>501</width>
         <height>35</height>
@@ -1014,7 +1016,7 @@ QPushButton {
      <widget class="QLabel" name="michigan_title">
       <property name="geometry">
        <rect>
-        <x>440</x>
+        <x>450</x>
         <y>10</y>
         <width>501</width>
         <height>35</height>
@@ -1296,7 +1298,7 @@ QPushButton {
      <widget class="QLabel" name="texas_title">
       <property name="geometry">
        <rect>
-        <x>470</x>
+        <x>480</x>
         <y>10</y>
         <width>301</width>
         <height>35</height>
@@ -1599,9 +1601,9 @@ QPushButton {
      <widget class="QTableWidget" name="display_college_table">
       <property name="geometry">
        <rect>
-        <x>100</x>
+        <x>20</x>
         <y>20</y>
-        <width>801</width>
+        <width>871</width>
         <height>531</height>
        </rect>
       </property>
@@ -1801,26 +1803,6 @@ QPushButton:hover {
        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
       </property>
      </widget>
-     <widget class="QPushButton" name="backPage_14">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>240</y>
-        <width>81</width>
-        <height>70</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	background-image: url('res/back-xx.png');
-    background-repeat: no-repeat;
-    background-position: center center;
-}</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
     </widget>
    </widget>
    <widget class="QPushButton" name="colleges_table_button">
@@ -1836,6 +1818,8 @@ QPushButton:hover {
      <string notr="true">QPushButton {
 	background: gray;
 	color: white;
+	border-style: inset;
+	border-radius: 10px;
 }
 
 QPushButton:hover {
@@ -1860,6 +1844,8 @@ QPushButton:hover {
      <string notr="true">QPushButton {
 	background: gray;
 	color: white;
+	border-style: inset;
+	border-radius: 10px;
 }
 
 QPushButton:hover {

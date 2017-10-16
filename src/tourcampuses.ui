@@ -25,7 +25,6 @@
 QPushButton {
 	background-color: darkgray;
 	color: black;
-	border-radius: 100%;
 	border-style: groove;
 	border-radius: 10px;
 }
@@ -60,7 +59,7 @@ QLabel {
     </rect>
    </property>
    <property name="currentIndex">
-    <number>3</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QLabel" name="startingCampus_label">
@@ -245,7 +244,7 @@ QLabel:hover {
        <x>850</x>
        <y>50</y>
        <width>331</width>
-       <height>631</height>
+       <height>521</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -294,10 +293,18 @@ QLabel:hover {
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">QPushButton:hover {
-	background: lightgreen;
-	color: darkred;
-}</string>
+      <string notr="true">QPushButton {
+	background: #EFE3EA;
+	color: black;
+}
+
+
+QPushButton:hover {
+	background: #8C888A;
+	color: white;
+}
+
+</string>
      </property>
      <property name="text">
       <string>BEGIN TRIP</string>
@@ -368,7 +375,7 @@ QLabel:hover {
     <widget class="QLabel" name="distance_label_2">
      <property name="geometry">
       <rect>
-       <x>20</x>
+       <x>860</x>
        <y>640</y>
        <width>141</width>
        <height>21</height>
@@ -392,7 +399,7 @@ QLabel:hover {
     <widget class="QTableWidget" name="totalDistanceTraveled_table">
      <property name="geometry">
       <rect>
-       <x>170</x>
+       <x>1010</x>
        <y>620</y>
        <width>161</width>
        <height>61</height>
@@ -420,9 +427,9 @@ QLabel:hover {
     <widget class="QPushButton" name="pushButton_UCI">
      <property name="geometry">
       <rect>
-       <x>350</x>
+       <x>20</x>
        <y>622</y>
-       <width>101</width>
+       <width>121</width>
        <height>51</height>
       </rect>
      </property>
@@ -441,9 +448,9 @@ QLabel:hover {
     <widget class="QPushButton" name="pushButton_MICHIGAN">
      <property name="geometry">
       <rect>
-       <x>470</x>
+       <x>160</x>
        <y>620</y>
-       <width>101</width>
+       <width>121</width>
        <height>51</height>
       </rect>
      </property>
@@ -483,7 +490,7 @@ QLabel:hover {
     <widget class="QPushButton" name="pushButton_SADDLEBACK">
      <property name="geometry">
       <rect>
-       <x>590</x>
+       <x>300</x>
        <y>620</y>
        <width>121</width>
        <height>51</height>

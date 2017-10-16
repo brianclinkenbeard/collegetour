@@ -518,15 +518,7 @@ void MainWindow::on_backPage_13_clicked()
  */
 void MainWindow::on_nextPage_15_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(14);
-}
-
-/**
- * @brief MainWindow::on_backPage_14_clicked
- */
-void MainWindow::on_backPage_14_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(13);
+    ui->stackedWidget->setCurrentIndex(1);
 }
 
 /**

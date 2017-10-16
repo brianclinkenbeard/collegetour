@@ -45,10 +45,14 @@ QTableWidget {
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">QLineEdit {
+	border-style: inset;
+	border-radius: 10px;
+
+}</string>
    </property>
    <property name="currentIndex">
-    <number>10</number>
+    <number>3</number>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QLabel" name="label">
@@ -2345,7 +2349,7 @@ QPushButton:hover {
      <property name="geometry">
       <rect>
        <x>35</x>
-       <y>31</y>
+       <y>60</y>
        <width>711</width>
        <height>471</height>
       </rect>
@@ -2357,6 +2361,56 @@ QPushButton:hover {
      </property>
      <property name="editTriggers">
       <set>QAbstractItemView::NoEditTriggers</set>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="back_pushbutton">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>61</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+	background: rgba(110,140,112, 0.3);
+	border-style: inset;
+	border-radius: 10px;
+	color: white;;
+	font-weight: bold;
+}
+
+QPushButton:hover {
+	background: rgba(110,140,112, 0.7);
+	color: beige;
+}</string>
+     </property>
+     <property name="text">
+      <string>Back</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_receipt">
+     <property name="geometry">
+      <rect>
+       <x>340</x>
+       <y>10</y>
+       <width>91</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel {
+	color: rgba(110,140,112, 0.3);
+	font-weight: bold;
+}
+
+QLabel:hover {
+	color: rgba(110,140,112, 0.8);
+}</string>
+     </property>
+     <property name="text">
+      <string>RECEIPT </string>
      </property>
     </widget>
    </widget>
