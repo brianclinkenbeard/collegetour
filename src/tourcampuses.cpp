@@ -14,6 +14,10 @@ tourCampuses::tourCampuses(QWidget *parent) :
 {
     ui->setupUi(this);
     populate();
+    totalUciDistance = 0;
+    totalMiDistance = 0;
+    totalSaDistance = 0;
+    counter = 0;
 
     ui->startingCampus_table->setRowCount(0);
     ui->startingCampus_table->setColumnCount(2);
@@ -385,6 +389,16 @@ void tourCampuses::on_pushButton_UCI_clicked()
      uciTourColleges.replace(0, temp2);
 
     findUciTrip(0,0);
+
+
+    ui->distance_table_uci->setRowCount(1);
+    ui->distance_table_uci->setColumnCount(1);
+    ui->distance_table_uci->verticalHeader()->hide();
+    ui->distance_table_uci->setHorizontalHeaderItem(0, new QTableWidgetItem("Miles"));
+    ui->distance_table_uci->verticalHeader()->hide();
+    ui->distance_table_uci->setItem(0,0, new QTableWidgetItem(QString::number(totalUciDistance)));
+    ui->distance_table_uci->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Stretch);
+    ui->distance_table_uci->item(0,0)->setTextAlignment(Qt::AlignCenter);
 }
 
 /**
@@ -447,6 +461,10 @@ void tourCampuses::findUciTrip(int count, int uciVisitedColleges)
         ui->trip_table_uci->insertRow(ui->trip_table_uci->rowCount());
         ui->trip_table_uci->setItem(ui->trip_table_uci->rowCount() - 1, 0,
         new QTableWidgetItem(uciTourDistanceColleges.at(0).getEndCollege().getCollegeName()));
+        //----------------------------
+        //calculating the total distance
+        totalUciDistance = totalUciDistance + uciTourDistanceColleges.at(0).getDistance();
+        //----------------------------
         int r = 0;
         while(uciTourDistanceColleges.at(0).getEndCollege().getCollegeID() != uciTourColleges.at(r).getCollegeID()) {
             r++;
@@ -471,6 +489,29 @@ void tourCampuses::on_pushButton_MICHIGAN_clicked()
 {
     ui->stackedWidget->setCurrentIndex(3);
 
+    //display all the colleges in trip_table_michigan_2
+    ui->trip_table_michigan_2->setRowCount(0);
+    ui->trip_table_michigan_2->setColumnCount(2);
+    ui->trip_table_michigan_2->setHorizontalHeaderItem(0, new QTableWidgetItem("College Campuses"));
+    ui->trip_table_michigan_2->setHorizontalHeaderItem(1, new QTableWidgetItem("Distance"));
+    ui->trip_table_michigan_2->setColumnHidden(1,true);
+    ui->trip_table_michigan_2->verticalHeader()->hide();
+    ui->trip_table_michigan_2->insertRow(ui->trip_table_michigan_2->rowCount());
+    ui->trip_table_michigan_2->setItem(ui->trip_table_michigan_2->rowCount() - 1, 0,
+                                       new QTableWidgetItem(collegeList.at(0).getCollegeName()));
+    ui->trip_table_michigan_2->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Stretch);
+    for(int k = 1; k< collegeList.size(); k++)
+    {
+        ui->trip_table_michigan_2->insertRow(ui->trip_table_michigan_2->rowCount());
+        ui->trip_table_michigan_2->setItem(ui->trip_table_michigan_2->rowCount() - 1, 0,
+        new QTableWidgetItem(collegeList.at(k).getCollegeName()));
+    }
+}
+
+
+void tourCampuses::on_pushButton_startMiTour_clicked()
+{
+
     //store all the colleges into the uciTourColleges
     for(int i=0; i<collegeList.size(); i++) {
         miTourColleges.push_back(collegeList.at(i));
@@ -482,7 +523,28 @@ void tourCampuses::on_pushButton_MICHIGAN_clicked()
      miTourColleges.replace(6, temp1);
      miTourColleges.replace(0, temp2);
 
+     if(ui->lineEdit_collegeNum->text().isEmpty())
+     {
+         collegeNum = 1;
+     }
+     else
+     {
+         collegeNum = ui->lineEdit_collegeNum->text().toInt();
+     }
+
+
     findMichiganTrip(0,0);
+
+    ui->pushButton_startMiTour->hide();
+
+    ui->distance_table_mi->setRowCount(1);
+    ui->distance_table_mi->setColumnCount(1);
+    ui->distance_table_mi->verticalHeader()->hide();
+    ui->distance_table_mi->setHorizontalHeaderItem(0, new QTableWidgetItem("Miles"));
+    ui->distance_table_mi->verticalHeader()->hide();
+    ui->distance_table_mi->setItem(0,0, new QTableWidgetItem(QString::number(totalMiDistance)));
+    ui->distance_table_mi->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Stretch);
+    ui->distance_table_mi->item(0,0)->setTextAlignment(Qt::AlignCenter);
 }
 
 /**
@@ -492,6 +554,7 @@ void tourCampuses::on_pushButton_MICHIGAN_clicked()
  */
 void tourCampuses::findMichiganTrip(int count, int miVisitedColleges)
 {
+    if(counter < collegeNum) {
     if(count == 0) {
         ui->trip_table_michigan->setRowCount(0);
         ui->trip_table_michigan->setColumnCount(2);
@@ -503,6 +566,7 @@ void tourCampuses::findMichiganTrip(int count, int miVisitedColleges)
         ui->trip_table_michigan->setItem(ui->trip_table_michigan->rowCount() - 1, 0,
                                            new QTableWidgetItem(miTourColleges.at(0).getCollegeName()));
         ui->trip_table_michigan->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Stretch);
+        counter = 1;
     }
 
     if(miTourColleges.empty()) {
@@ -543,7 +607,11 @@ void tourCampuses::findMichiganTrip(int count, int miVisitedColleges)
         }
         ui->trip_table_michigan->insertRow(ui->trip_table_michigan->rowCount());
         ui->trip_table_michigan->setItem(ui->trip_table_michigan->rowCount() - 1, 0,
-                                        new QTableWidgetItem(miTourDistanceColleges.at(0).getEndCollege().getCollegeName()));
+        new QTableWidgetItem(miTourDistanceColleges.at(0).getEndCollege().getCollegeName()));
+        //----------------------------
+        //calculating the total distance
+        totalMiDistance = totalMiDistance + miTourDistanceColleges.at(0).getDistance();
+        //----------------------------
         int r = 0;
         while(miTourDistanceColleges.at(0).getEndCollege().getCollegeID() != miTourColleges.at(r).getCollegeID()) {
             r++;
@@ -557,7 +625,9 @@ void tourCampuses::findMichiganTrip(int count, int miVisitedColleges)
             miTourColleges.replace(r - 1, tempObj);
         }
         miTourDistanceColleges.clear();
+        counter++;
         findMichiganTrip(count + 1, 0);
+    }
     }
 }
 
@@ -579,6 +649,15 @@ void tourCampuses::on_pushButton_SADDLEBACK_clicked()
      saTourColleges.replace(0, temp2);
 
     findSaddlebackTrip(0,0);
+
+    ui->distance_table_sa->setRowCount(1);
+    ui->distance_table_sa->setColumnCount(1);
+    ui->distance_table_sa->verticalHeader()->hide();
+    ui->distance_table_sa->setHorizontalHeaderItem(0, new QTableWidgetItem("Miles"));
+    ui->distance_table_sa->verticalHeader()->hide();
+    ui->distance_table_sa->setItem(0,0, new QTableWidgetItem(QString::number(totalSaDistance)));
+    ui->distance_table_sa->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Stretch);
+    ui->distance_table_sa->item(0,0)->setTextAlignment(Qt::AlignCenter);
 
 }
 
@@ -641,6 +720,10 @@ void tourCampuses::findSaddlebackTrip(int count, int saVisitedColleges)
         ui->trip_table_saddleback->insertRow(ui->trip_table_saddleback->rowCount());
         ui->trip_table_saddleback->setItem(ui->trip_table_saddleback->rowCount() - 1, 0,
         new QTableWidgetItem(saTourDistanceColleges.at(0).getEndCollege().getCollegeName()));
+        //----------------------------
+        //calculating the total distance
+        totalSaDistance = totalSaDistance + saTourDistanceColleges.at(0).getDistance();
+        //----------------------------
         int r = 0;
         while(saTourDistanceColleges.at(0).getEndCollege().getCollegeID() != saTourColleges.at(r).getCollegeID()) {
             r++;
@@ -709,4 +792,7 @@ void tourCampuses::on_purchaseTour_pushButton_clicked()
     qDebug() << "DDDDDDDDDDDDDDDDDDDdd: " << souvenirsList.size();
     tourpurchase t(keys, selectedTourCampuses, souvenirsList);
 }
+
+
+
 

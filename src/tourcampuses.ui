@@ -60,7 +60,7 @@ QLabel {
     </rect>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QLabel" name="startingCampus_label">
@@ -534,14 +534,48 @@ QLabel:hover {
       <string>UCI TOUR</string>
      </property>
     </widget>
+    <widget class="QTableWidget" name="distance_table_uci">
+     <property name="geometry">
+      <rect>
+       <x>830</x>
+       <y>630</y>
+       <width>211</width>
+       <height>61</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="distance_label_3">
+     <property name="geometry">
+      <rect>
+       <x>700</x>
+       <y>650</y>
+       <width>141</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>MV Boli</family>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">label_4 {
+	font-color: white;
+}</string>
+     </property>
+     <property name="text">
+      <string>Distance Traveled</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="page_4">
     <widget class="QTableWidget" name="trip_table_michigan">
      <property name="geometry">
       <rect>
-       <x>80</x>
+       <x>730</x>
        <y>80</y>
-       <width>1011</width>
+       <width>411</width>
        <height>521</height>
       </rect>
      </property>
@@ -570,6 +604,95 @@ QLabel:hover {
      <property name="text">
       <string>MICHIGAN TOUR</string>
      </property>
+    </widget>
+    <widget class="QTableWidget" name="distance_table_mi">
+     <property name="geometry">
+      <rect>
+       <x>860</x>
+       <y>630</y>
+       <width>201</width>
+       <height>61</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="distance_label_4">
+     <property name="geometry">
+      <rect>
+       <x>740</x>
+       <y>650</y>
+       <width>141</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>MV Boli</family>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">label_4 {
+	font-color: white;
+}</string>
+     </property>
+     <property name="text">
+      <string>Distance Traveled</string>
+     </property>
+    </widget>
+    <widget class="QTableWidget" name="trip_table_michigan_2">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>190</y>
+       <width>431</width>
+       <height>451</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">tableWidget_3 {
+	font-color: white;
+}</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_startMiTour">
+     <property name="geometry">
+      <rect>
+       <x>350</x>
+       <y>120</y>
+       <width>111</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Start the Tour</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>80</y>
+       <width>531</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLabel" name="label_collegeNum">
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Number of college campuses to visit starting at University of Michigan:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_collegeNum"/>
+      </item>
+     </layout>
     </widget>
    </widget>
    <widget class="QWidget" name="page_5">
@@ -606,6 +729,40 @@ QLabel:hover {
       <string notr="true">tableWidget_3 {
 	font-color: white;
 }</string>
+     </property>
+    </widget>
+    <widget class="QTableWidget" name="distance_table_sa">
+     <property name="geometry">
+      <rect>
+       <x>850</x>
+       <y>630</y>
+       <width>211</width>
+       <height>61</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="distance_label_5">
+     <property name="geometry">
+      <rect>
+       <x>720</x>
+       <y>650</y>
+       <width>141</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>MV Boli</family>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">label_4 {
+	font-color: white;
+}</string>
+     </property>
+     <property name="text">
+      <string>Distance Traveled</string>
      </property>
     </widget>
    </widget>

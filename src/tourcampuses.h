@@ -122,6 +122,11 @@ private slots:
      */
     void on_purchaseTour_pushButton_clicked();
 
+    /**
+     * @brief on_pushButton_startMiTour_clicked
+     */
+    void on_pushButton_startMiTour_clicked();
+
 private:
     Ui::tourCampuses *ui;
     QVector<College>  collegeList;
@@ -133,10 +138,16 @@ private:
 
     QVector<College> uciTourColleges;
     QVector<Distance> uciTourDistanceColleges;
+    double totalUciDistance;
     QVector<College> miTourColleges;
     QVector<Distance> miTourDistanceColleges;
+    double totalMiDistance;
+    int collegeNum;
     QVector<College> saTourColleges;
     QVector<Distance> saTourDistanceColleges;
+    double totalSaDistance;
+    int counter;
+
 };
 
 #endif // TOURCAMPUSES_H
