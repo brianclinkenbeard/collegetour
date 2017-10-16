@@ -48,14 +48,14 @@ QTableWidget {
     <string notr="true"/>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QLabel" name="label">
      <property name="geometry">
       <rect>
-       <x>210</x>
-       <y>20</y>
+       <x>240</x>
+       <y>0</y>
        <width>331</width>
        <height>71</height>
       </rect>
@@ -73,7 +73,7 @@ QTableWidget {
      <property name="geometry">
       <rect>
        <x>310</x>
-       <y>280</y>
+       <y>500</y>
        <width>151</width>
        <height>81</height>
       </rect>
@@ -94,6 +94,42 @@ QPushButton:hover {
      </property>
      <property name="text">
       <string>Start Shopping</string>
+     </property>
+    </widget>
+    <widget class="QGraphicsView" name="graphicsView_2">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>60</y>
+       <width>521</width>
+       <height>431</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QGraphicsView {
+	background-image: url(&quot;res/shop_store.png&quot;);
+    background-repeat: no-repeat;
+    background-position: center center;
+	border: none;
+}</string>
+     </property>
+    </widget>
+    <widget class="QGraphicsView" name="graphicsView_3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>0</y>
+       <width>241</width>
+       <height>591</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QGraphicsView {
+	background-image: url(&quot;res/side_page.png&quot;);
+    background-repeat: no-repeat;
+    background-position: center center;
+	border: none;
+}</string>
      </property>
     </widget>
    </widget>
@@ -2343,9 +2379,23 @@ QPushButton:hover {
     <rect>
      <x>10</x>
      <y>10</y>
-     <width>93</width>
+     <width>111</width>
      <height>28</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+	background: gray;
+	color: white;
+	border-style: inset;
+	border-radius: 10px;
+	font-weight: bold;
+}
+
+QPushButton:hover {
+	background: red;
+	color: yellow;
+}</string>
    </property>
    <property name="text">
     <string>Back</string>
@@ -2378,11 +2428,6 @@ QPushButton:hover {
     <string>Print Receipt</string>
    </property>
   </widget>
-  <zorder>purchase_stackedWidget</zorder>
-  <zorder>line</zorder>
-  <zorder>pushButton</zorder>
-  <zorder>print_receipt</zorder>
-  <zorder>tableWidget_irvine</zorder>
  </widget>
  <resources/>
  <connections/>
