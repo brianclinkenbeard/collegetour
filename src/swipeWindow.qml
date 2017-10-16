@@ -7,7 +7,7 @@ Window {
     visible: true
     width: 200
     height: 400
-    title: qsTr("Hello World")
+    title: qsTr("project")
 
     id: page
 

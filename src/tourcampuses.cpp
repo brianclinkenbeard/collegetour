@@ -13,7 +13,10 @@ tourCampuses::tourCampuses(QWidget *parent) :
     ui(new Ui::tourCampuses)
 {
     ui->setupUi(this);
+
+    ui->stackedWidget->setCurrentIndex(0);
     populate();
+    ui->purchaseTour_pushButton->hide();
 
     ui->startingCampus_table->setRowCount(0);
     ui->startingCampus_table->setColumnCount(2);
@@ -265,6 +268,7 @@ void tourCampuses::displaySelectedColleges()
  */
 void tourCampuses::on_beginTrip_pushButton_clicked()
 {
+    ui->purchaseTour_pushButton->show();
     if(selectedColleges.empty()) {
         return;
     } else {

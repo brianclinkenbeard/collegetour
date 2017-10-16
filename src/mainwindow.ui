@@ -85,7 +85,7 @@ QPushButton {
 </string>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>14</number>
     </property>
     <widget class="QWidget" name="page_10">
      <widget class="QFrame" name="michigan_flag">
@@ -1624,6 +1624,9 @@ QPushButton {
       </property>
       <property name="midLineWidth">
        <number>2</number>
+      </property>
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
       </property>
      </widget>
      <widget class="QPushButton" name="purchase_button">
