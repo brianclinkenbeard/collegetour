@@ -1,4 +1,10 @@
 #include "college.h"
+#include <QSqlRecord>
+#include <QSqlQuery>
+#include <QString>
+#include <QVector>
+#include <QDir>
+#include <QDebug>
 
 /**
  * @brief College::College
@@ -59,3 +65,21 @@ void College::setCollege(QString name, int id)
     collegeName = name;
 }
 
+QVector<College> College::getColleges()
+{
+    QVector<College> collegeVec;
+
+    QSqlQuery query("SELECT * FROM College_Touring ORDER BY Name");
+
+    int collegeID1 = query.record().indexOf("ID");
+    int collegeName1 = query.record().indexOf("Universities");
+
+    while(query.next())
+    {
+        College newCollege = College(query.value(collegeID1).toInt(), query.value(collegeName1).toString());
+
+        collegeVec.push_back(newCollege);
+    }
+
+    return collegeVec;
+}

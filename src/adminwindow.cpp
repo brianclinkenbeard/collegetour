@@ -3,6 +3,7 @@
 #include "ui_adminwindow.h"
 #include "collegeeditwindow.h"
 #include "souvenireditwindow.h"
+#include "souvenirchangeprice.h"
 
 AdminWindow::AdminWindow(QWidget *parent) :
     QDialog(parent),
@@ -34,5 +35,12 @@ void AdminWindow::on_pushButton_3_clicked()
 {
     SouvenirEditWindow *souvenirNew = new SouvenirEditWindow();
     souvenirNew->show();
+    this->close();
+}
+
+void AdminWindow::on_pushButton_clicked()
+{
+    SouvenirChangePrice *priceNew = new SouvenirChangePrice();
+    priceNew->show();
     this->close();
 }
