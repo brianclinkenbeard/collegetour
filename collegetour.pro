@@ -35,7 +35,8 @@ SOURCES += \
     src/souvenir.cpp \
     src/souvenireditwindow.cpp \
     src/tourcampuses.cpp \
-    src/tourpurchase.cpp
+    src/tourpurchase.cpp \
+    src/souvenirchangeprice.cpp
 
 HEADERS += \
     src/mainwindow.h \
@@ -48,7 +49,8 @@ HEADERS += \
     src/souvenir.h \
     src/souvenireditwindow.h \
     src/tourcampuses.h \
-    src/tourpurchase.h
+    src/tourpurchase.h \
+    src/souvenirchangeprice.h
 
 FORMS += \
     src/mainwindow.ui \
@@ -58,7 +60,8 @@ FORMS += \
     src/purchasesouvenirs.ui \
     src/souvenireditwindow.ui \
     src/tourcampuses.ui \
-    src/tourpurchase.ui
+    src/tourpurchase.ui \
+    src/souvenirchangeprice.ui
 
 DISTFILES += \
     src/swipeWindow.qml
