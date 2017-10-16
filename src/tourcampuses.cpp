@@ -13,6 +13,10 @@ tourCampuses::tourCampuses(QWidget *parent) :
     ui(new Ui::tourCampuses)
 {
     ui->setupUi(this);
+
+    ui->stackedWidget->setCurrentIndex(0);
+    ui->purchaseTour_pushButton->hide();
+
     populate();
     totalUciDistance = 0;
     totalMiDistance = 0;
@@ -273,6 +277,7 @@ void tourCampuses::on_beginTrip_pushButton_clicked()
         return;
     } else {
         findTrip(0,0,0);
+        ui->purchaseTour_pushButton->show();
     }
 }
 
@@ -535,7 +540,6 @@ void tourCampuses::on_pushButton_startMiTour_clicked()
 
     findMichiganTrip(0,0);
 
-    ui->pushButton_startMiTour->hide();
 
     ui->distance_table_mi->setRowCount(1);
     ui->distance_table_mi->setColumnCount(1);
@@ -792,7 +796,3 @@ void tourCampuses::on_purchaseTour_pushButton_clicked()
     qDebug() << "DDDDDDDDDDDDDDDDDDDdd: " << souvenirsList.size();
     tourpurchase t(keys, selectedTourCampuses, souvenirsList);
 }
-
-
-
-

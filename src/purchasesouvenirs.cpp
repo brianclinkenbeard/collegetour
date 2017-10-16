@@ -1,7 +1,10 @@
 #include "purchasesouvenirs.h"
 #include "ui_purchasesouvenirs.h"
 
-
+/**
+ * @brief purchaseSouvenirs::purchaseSouvenirs
+ * @param parent
+ */
 purchaseSouvenirs::purchaseSouvenirs(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::purchaseSouvenirs)
@@ -59,11 +62,17 @@ purchaseSouvenirs::purchaseSouvenirs(QWidget *parent) :
 
 }
 
+/**
+ * @brief purchaseSouvenirs::~purchaseSouvenirs
+ */
 purchaseSouvenirs::~purchaseSouvenirs()
 {
     delete ui;
 }
 
+/**
+ * @brief purchaseSouvenirs::populate
+ */
 void purchaseSouvenirs::populate()
 {
 
@@ -88,7 +97,10 @@ void purchaseSouvenirs::populate()
     }
 }
 
-
+/**
+ * @brief purchaseSouvenirs::on_comboBox_college_currentIndexChanged
+ * @param index
+ */
 void purchaseSouvenirs::on_comboBox_college_currentIndexChanged(int index)
 {
     ui->comboBox_souvenir->clear();
@@ -118,6 +130,10 @@ void purchaseSouvenirs::on_comboBox_college_currentIndexChanged(int index)
     }
 }
 
+/**
+ * @brief purchaseSouvenirs::on_comboBox_souvenir_currentIndexChanged
+ * @param index
+ */
 void purchaseSouvenirs::on_comboBox_souvenir_currentIndexChanged(int index)
 {
     if(index > 0) {
@@ -127,6 +143,9 @@ void purchaseSouvenirs::on_comboBox_souvenir_currentIndexChanged(int index)
     }
 }
 
+/**
+ * @brief purchaseSouvenirs::on_pushButton_add_clicked
+ */
 void purchaseSouvenirs::on_pushButton_add_clicked()
 {
     //if lineEdit is empty, push 1 to vector
@@ -148,6 +167,9 @@ void purchaseSouvenirs::on_pushButton_add_clicked()
     }
 }
 
+/**
+ * @brief purchaseSouvenirs::on_pushButton_receipt_clicked
+ */
 void purchaseSouvenirs::on_pushButton_receipt_clicked()
 {
    ui->tableWidget_receipt->show();

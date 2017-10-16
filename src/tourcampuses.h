@@ -147,7 +147,6 @@ private:
     QVector<Distance> saTourDistanceColleges;
     double totalSaDistance;
     int counter;
-
 };
 
 #endif // TOURCAMPUSES_H

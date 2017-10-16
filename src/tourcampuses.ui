@@ -618,7 +618,7 @@ QLabel:hover {
     <widget class="QLabel" name="distance_label_4">
      <property name="geometry">
       <rect>
-       <x>740</x>
+       <x>700</x>
        <y>650</y>
        <width>141</width>
        <height>21</height>
@@ -667,13 +667,13 @@ QLabel:hover {
       <string>Start the Tour</string>
      </property>
     </widget>
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
-       <x>160</x>
+       <x>70</x>
        <y>80</y>
-       <width>531</width>
-       <height>22</height>
+       <width>630</width>
+       <height>24</height>
       </rect>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout">
@@ -690,7 +690,14 @@ QLabel:hover {
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineEdit_collegeNum"/>
+       <widget class="QLineEdit" name="lineEdit_collegeNum">
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+	border-style: inset;
+	border-radius: 5px;
+}</string>
+        </property>
+       </widget>
       </item>
      </layout>
     </widget>

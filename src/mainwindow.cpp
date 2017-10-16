@@ -4,11 +4,17 @@
 #include "tourcampuses.h"
 #include "purchasesouvenirs.h"
 
+/**
+ * @brief MainWindow::MainWindow
+ * @param parent
+ */
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    ui->stackedWidget->setCurrentIndex(0);
 
     // populate vectors
     populate();
@@ -36,11 +42,17 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->display_college_table->verticalHeader()->hide();
 }
 
+/**
+ * @brief MainWindow::~MainWindow
+ */
 MainWindow::~MainWindow()
 {
     delete ui;
 }
 
+/**
+ * @brief MainWindow::populate
+ */
 void MainWindow::populate()
 {
     // default connection
@@ -90,6 +102,11 @@ void MainWindow::populate()
     }
 }
 
+/**
+ * @brief MainWindow::distance_by_ID
+ * @param ID
+ * @return
+ */
 int MainWindow::distance_by_ID(int ID)
 {
     // find Distance object that starts at Saddleback and ends at our College
@@ -112,6 +129,10 @@ int MainWindow::distance_by_ID(int ID)
     return distance;
 }
 
+/**
+ * @brief MainWindow::on_display_comboBox_currentIndexChanged
+ * @param index
+ */
 void MainWindow::on_display_comboBox_currentIndexChanged(int index)
 {
     ui->purchase_button->hide();
@@ -194,6 +215,9 @@ void MainWindow::on_display_comboBox_currentIndexChanged(int index)
     }
 }
 
+/**
+ * @brief MainWindow::on_login_button_clicked
+ */
 void MainWindow::on_login_button_clicked()
 {
     AdminLogin *login_window = new AdminLogin;
@@ -201,12 +225,19 @@ void MainWindow::on_login_button_clicked()
     this->close();
 }
 
+/**
+ * @brief MainWindow::on_purchase_button_clicked
+ */
 void MainWindow::on_purchase_button_clicked()
 {
     purchaseSouvenirs *purchase_souvenirs = new purchaseSouvenirs;
     purchase_souvenirs->show();
 }
 
+/**
+ * @brief MainWindow::on_search_edit_textEdited
+ * @param arg1
+ */
 void MainWindow::on_search_edit_textEdited(const QString &arg1)
 {
     if (arg1.length() == 0) {
@@ -263,6 +294,9 @@ void MainWindow::on_search_edit_textEdited(const QString &arg1)
     }
 }
 
+/**
+ * @brief MainWindow::on_tour_button_clicked
+ */
 void MainWindow::on_tour_button_clicked()
 {
     tourCampuses *tourWindow = new tourCampuses;
@@ -270,147 +304,242 @@ void MainWindow::on_tour_button_clicked()
     this->close();
 }
 
+/**
+ * @brief MainWindow::on_nextPage_2_clicked
+ */
 void MainWindow::on_nextPage_2_clicked()
 {
     ui->stackedWidget->setCurrentIndex(1);
 }
 
+/**
+ * @brief MainWindow::on_backPage_1_clicked
+ */
 void MainWindow::on_backPage_1_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
 }
 
+/**
+ * @brief MainWindow::on_nextPage_3_clicked
+ */
 void MainWindow::on_nextPage_3_clicked()
 {
     ui->stackedWidget->setCurrentIndex(2);
 }
 
+/**
+ * @brief MainWindow::on_backPage_2_clicked
+ */
 void MainWindow::on_backPage_2_clicked()
 {
     ui->stackedWidget->setCurrentIndex(1);
 }
+
+/**
+ * @brief MainWindow::on_nextPage_4_clicked
+ */
 void MainWindow::on_nextPage_4_clicked()
 {
     ui->stackedWidget->setCurrentIndex(3);
 }
 
+/**
+ * @brief MainWindow::on_backPage_3_clicked
+ */
 void MainWindow::on_backPage_3_clicked()
 {
     ui->stackedWidget->setCurrentIndex(2);
 }
+
+/**
+ * @brief MainWindow::on_nextPage_5_clicked
+ */
 void MainWindow::on_nextPage_5_clicked()
 {
     ui->stackedWidget->setCurrentIndex(4);
 }
 
+/**
+ * @brief MainWindow::on_backPage_4_clicked
+ */
 void MainWindow::on_backPage_4_clicked()
 {
     ui->stackedWidget->setCurrentIndex(3);
 }
+
+/**
+ * @brief MainWindow::on_nextPage_6_clicked
+ */
 void MainWindow::on_nextPage_6_clicked()
 {
     ui->stackedWidget->setCurrentIndex(5);
 }
 
+/**
+ * @brief MainWindow::on_backPage_5_clicked
+ */
 void MainWindow::on_backPage_5_clicked()
 {
     ui->stackedWidget->setCurrentIndex(4);
 }
+
+/**
+ * @brief MainWindow::on_nextPage_7_clicked
+ */
 void MainWindow::on_nextPage_7_clicked()
 {
     ui->stackedWidget->setCurrentIndex(6);
 }
 
+/**
+ * @brief MainWindow::on_backPage_6_clicked
+ */
 void MainWindow::on_backPage_6_clicked()
 {
     ui->stackedWidget->setCurrentIndex(5);
 }
 
+/**
+ * @brief MainWindow::on_nextPage_8_clicked
+ */
 void MainWindow::on_nextPage_8_clicked()
 {
     ui->stackedWidget->setCurrentIndex(7);
 }
 
+
+/**
+ * @brief MainWindow::on_backPage_7_clicked
+ */
 void MainWindow::on_backPage_7_clicked()
 {
     ui->stackedWidget->setCurrentIndex(6);
 }
+
+/**
+ * @brief MainWindow::on_nextPage_9_clicked
+ */
 void MainWindow::on_nextPage_9_clicked()
 {
     ui->stackedWidget->setCurrentIndex(8);
 }
 
+/**
+ * @brief MainWindow::on_backPage_8_clicked
+ */
 void MainWindow::on_backPage_8_clicked()
 {
     ui->stackedWidget->setCurrentIndex(7);
 }
 
+/**
+ * @brief MainWindow::on_nextPage_10_clicked
+ */
 void MainWindow::on_nextPage_10_clicked()
 {
     ui->stackedWidget->setCurrentIndex(9);
 }
 
+/**
+ * @brief MainWindow::on_backPage_9_clicked
+ */
 void MainWindow::on_backPage_9_clicked()
 {
     ui->stackedWidget->setCurrentIndex(8);
 }
 
+/**
+ * @brief MainWindow::on_nextPage_11_clicked
+ */
 void MainWindow::on_nextPage_11_clicked()
 {
     ui->stackedWidget->setCurrentIndex(10);
 }
 
+/**
+ * @brief MainWindow::on_backPage_10_clicked
+ */
 void MainWindow::on_backPage_10_clicked()
 {
     ui->stackedWidget->setCurrentIndex(9);
 }
 
+/**
+ * @brief MainWindow::on_nextPage_12_clicked
+ */
 void MainWindow::on_nextPage_12_clicked()
 {
     ui->stackedWidget->setCurrentIndex(11);
 }
 
+/**
+ * @brief MainWindow::on_backPage_11_clicked
+ */
 void MainWindow::on_backPage_11_clicked()
 {
     ui->stackedWidget->setCurrentIndex(10);
 }
 
+/**
+ * @brief MainWindow::on_nextPage_13_clicked
+ */
 void MainWindow::on_nextPage_13_clicked()
 {
     ui->stackedWidget->setCurrentIndex(12);
 }
 
+/**
+ * @brief MainWindow::on_backPage_12_clicked
+ */
 void MainWindow::on_backPage_12_clicked()
 {
     ui->stackedWidget->setCurrentIndex(11);
 }
 
+/**
+ * @brief MainWindow::on_nextPage_14_clicked
+ */
 void MainWindow::on_nextPage_14_clicked()
 {
     ui->stackedWidget->setCurrentIndex(13);
 }
 
+/**
+ * @brief MainWindow::on_backPage_13_clicked
+ */
 void MainWindow::on_backPage_13_clicked()
 {
     ui->stackedWidget->setCurrentIndex(12);
 }
 
+/**
+ * @brief MainWindow::on_nextPage_15_clicked
+ */
 void MainWindow::on_nextPage_15_clicked()
 {
     ui->stackedWidget->setCurrentIndex(14);
 }
 
+/**
+ * @brief MainWindow::on_backPage_14_clicked
+ */
 void MainWindow::on_backPage_14_clicked()
 {
     ui->stackedWidget->setCurrentIndex(13);
 }
 
-
+/**
+ * @brief MainWindow::on_visitCampuses_button_clicked
+ */
 void MainWindow::on_visitCampuses_button_clicked()
 {
     ui->stackedWidget->setCurrentIndex(1);
 }
 
+/**
+ * @brief MainWindow::on_colleges_table_button_clicked
+ */
 void MainWindow::on_colleges_table_button_clicked()
 {
     ui->stackedWidget->setCurrentIndex(14);

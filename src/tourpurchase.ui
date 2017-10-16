@@ -48,16 +48,16 @@ QTableWidget {
     <string notr="true"/>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>2</number>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QLabel" name="label">
      <property name="geometry">
       <rect>
-       <x>120</x>
-       <y>170</y>
-       <width>401</width>
-       <height>141</height>
+       <x>210</x>
+       <y>20</y>
+       <width>331</width>
+       <height>71</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -66,20 +66,31 @@ QTableWidget {
 }</string>
      </property>
      <property name="text">
-      <string>Welcome to the shop</string>
+      <string>Welcome to the Shop</string>
      </property>
     </widget>
     <widget class="QPushButton" name="shopping_button">
      <property name="geometry">
       <rect>
-       <x>160</x>
-       <y>300</y>
-       <width>131</width>
-       <height>121</height>
+       <x>310</x>
+       <y>280</y>
+       <width>151</width>
+       <height>81</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true"/>
+      <string notr="true">QPushButton {
+	background: cyan;
+	border-style: inset;
+	border-radius: 40px;
+	color: blue;
+	font-weight: bold;
+}
+
+QPushButton:hover {
+	background: green;
+	color: white;
+}</string>
      </property>
      <property name="text">
       <string>Start Shopping</string>
@@ -214,7 +225,7 @@ QPushButton:hover {
       </rect>
      </property>
     </widget>
-    <widget class="QLabel" name="label_3">
+    <widget class="QLabel" name="label_totalAsu">
      <property name="geometry">
       <rect>
        <x>420</x>
@@ -251,7 +262,7 @@ QPushButton:hover {
 }</string>
      </property>
      <property name="text">
-      <string>Confitm</string>
+      <string>Confirm</string>
      </property>
     </widget>
    </widget>
@@ -371,6 +382,56 @@ QPushButton:hover {
      </property>
      <property name="editTriggers">
       <set>QAbstractItemView::NoEditTriggers</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_quantity_uci">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>490</y>
+       <width>61</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_quantityUci">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>490</y>
+       <width>61</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+	background-color: gray;
+	border-style: inset;
+	color: white;
+	font-weight: bold;
+	border-radius: 10px;
+}
+
+QPushButton:hover {
+	background-color: lightgray;
+	color: black;	
+}</string>
+     </property>
+     <property name="text">
+      <string>Confirm</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_QUci">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>490</y>
+       <width>91</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Quantity</string>
      </property>
     </widget>
    </widget>
@@ -502,6 +563,56 @@ QPushButton:hover {
       <string>Total</string>
      </property>
     </widget>
+    <widget class="QLineEdit" name="lineEdit_quantity_Mit">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>490</y>
+       <width>61</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_quantityMit">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>490</y>
+       <width>61</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+	background-color: gray;
+	border-style: inset;
+	color: white;
+	font-weight: bold;
+	border-radius: 10px;
+}
+
+QPushButton:hover {
+	background-color: lightgray;
+	color: black;	
+}</string>
+     </property>
+     <property name="text">
+      <string>Confirm</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_QMit">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>490</y>
+       <width>91</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Quantity</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="page_7">
     <widget class="QLabel" name="northwestern_title">
@@ -619,6 +730,56 @@ QPushButton:hover {
      </property>
      <property name="text">
       <string/>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_quantity_northwestern">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>490</y>
+       <width>61</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_quantityNorthwestern">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>490</y>
+       <width>61</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+	background-color: gray;
+	border-style: inset;
+	color: white;
+	font-weight: bold;
+	border-radius: 10px;
+}
+
+QPushButton:hover {
+	background-color: lightgray;
+	color: black;	
+}</string>
+     </property>
+     <property name="text">
+      <string>Confirm</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_QNorthwestern">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>490</y>
+       <width>91</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Quantity</string>
      </property>
     </widget>
    </widget>
@@ -740,6 +901,56 @@ QPushButton:hover {
       <string>Total</string>
      </property>
     </widget>
+    <widget class="QLineEdit" name="lineEdit_quantity_Ohio">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>490</y>
+       <width>61</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_quantityOhio">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>490</y>
+       <width>61</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+	background-color: gray;
+	border-style: inset;
+	color: white;
+	font-weight: bold;
+	border-radius: 10px;
+}
+
+QPushButton:hover {
+	background-color: lightgray;
+	color: black;	
+}</string>
+     </property>
+     <property name="text">
+      <string>Confirm</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_QOhio">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>490</y>
+       <width>91</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Quantity</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="page_9">
     <widget class="QTableWidget" name="tableWidget_saddleback">
@@ -750,6 +961,9 @@ QPushButton:hover {
        <width>411</width>
        <height>271</height>
       </rect>
+     </property>
+     <property name="editTriggers">
+      <set>QAbstractItemView::NoEditTriggers</set>
      </property>
     </widget>
     <widget class="QPushButton" name="next_8">
@@ -856,6 +1070,56 @@ QPushButton:hover {
       <string>Total</string>
      </property>
     </widget>
+    <widget class="QLineEdit" name="lineEdit_quantity_saddleback">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>490</y>
+       <width>61</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_quantitySaddleback">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>490</y>
+       <width>61</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+	background-color: gray;
+	border-style: inset;
+	color: white;
+	font-weight: bold;
+	border-radius: 10px;
+}
+
+QPushButton:hover {
+	background-color: lightgray;
+	color: black;	
+}</string>
+     </property>
+     <property name="text">
+      <string>Confirm</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_QSaddleback">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>490</y>
+       <width>91</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Quantity</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="page_10">
     <widget class="QGraphicsView" name="csuf_view">
@@ -908,6 +1172,9 @@ QPushButton:hover {
        <width>411</width>
        <height>261</height>
       </rect>
+     </property>
+     <property name="editTriggers">
+      <set>QAbstractItemView::NoEditTriggers</set>
      </property>
     </widget>
     <widget class="QLabel" name="label_totalcsuf">
@@ -970,6 +1237,56 @@ QPushButton:hover {
      </property>
      <property name="text">
       <string/>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_quantity_fullerton">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>490</y>
+       <width>61</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_quantityFullerton">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>490</y>
+       <width>61</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+	background-color: gray;
+	border-style: inset;
+	color: white;
+	font-weight: bold;
+	border-radius: 10px;
+}
+
+QPushButton:hover {
+	background-color: lightgray;
+	color: black;	
+}</string>
+     </property>
+     <property name="text">
+      <string>Confirm</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_QFullerton">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>490</y>
+       <width>91</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Quantity</string>
      </property>
     </widget>
    </widget>
@@ -1087,6 +1404,59 @@ QPushButton:hover {
        <height>271</height>
       </rect>
      </property>
+     <property name="editTriggers">
+      <set>QAbstractItemView::NoEditTriggers</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_quantity_michigan">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>490</y>
+       <width>61</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_quantityMichigan">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>490</y>
+       <width>61</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+	background-color: gray;
+	border-style: inset;
+	color: white;
+	font-weight: bold;
+	border-radius: 10px;
+}
+
+QPushButton:hover {
+	background-color: lightgray;
+	color: black;	
+}</string>
+     </property>
+     <property name="text">
+      <string>Confirm</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_QMichigan">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>490</y>
+       <width>91</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Quantity</string>
+     </property>
     </widget>
    </widget>
    <widget class="QWidget" name="page_12">
@@ -1130,6 +1500,9 @@ QPushButton:hover {
        <width>391</width>
        <height>261</height>
       </rect>
+     </property>
+     <property name="editTriggers">
+      <set>QAbstractItemView::NoEditTriggers</set>
      </property>
     </widget>
     <widget class="QPushButton" name="pushButton_selectPurchase_ucla_2">
@@ -1202,6 +1575,56 @@ QPushButton:hover {
      </property>
      <property name="text">
       <string/>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_quantity_ucla">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>490</y>
+       <width>61</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_quantityUcla">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>490</y>
+       <width>61</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+	background-color: gray;
+	border-style: inset;
+	color: white;
+	font-weight: bold;
+	border-radius: 10px;
+}
+
+QPushButton:hover {
+	background-color: lightgray;
+	color: black;	
+}</string>
+     </property>
+     <property name="text">
+      <string>Confirm</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_QUcla">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>490</y>
+       <width>91</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Quantity</string>
      </property>
     </widget>
    </widget>
@@ -1319,6 +1742,59 @@ QPushButton:hover {
        <height>261</height>
       </rect>
      </property>
+     <property name="editTriggers">
+      <set>QAbstractItemView::NoEditTriggers</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_quantity_Oregon">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>490</y>
+       <width>61</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_quantityOregon">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>490</y>
+       <width>61</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+	background-color: gray;
+	border-style: inset;
+	color: white;
+	font-weight: bold;
+	border-radius: 10px;
+}
+
+QPushButton:hover {
+	background-color: lightgray;
+	color: black;	
+}</string>
+     </property>
+     <property name="text">
+      <string>Confirm</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_QOregon">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>490</y>
+       <width>91</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Quantity</string>
+     </property>
     </widget>
    </widget>
    <widget class="QWidget" name="page_2">
@@ -1353,6 +1829,9 @@ QPushButton:hover {
        <width>341</width>
        <height>261</height>
       </rect>
+     </property>
+     <property name="editTriggers">
+      <set>QAbstractItemView::NoEditTriggers</set>
      </property>
     </widget>
     <widget class="QPushButton" name="pushButton_selectPurchase_texas">
@@ -1434,6 +1913,56 @@ QPushButton:hover {
      </property>
      <property name="text">
       <string>University of Texas</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_quantity_texas">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>490</y>
+       <width>61</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_quantityTexas">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>490</y>
+       <width>61</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+	background-color: gray;
+	border-style: inset;
+	color: white;
+	font-weight: bold;
+	border-radius: 10px;
+}
+
+QPushButton:hover {
+	background-color: lightgray;
+	color: black;	
+}</string>
+     </property>
+     <property name="text">
+      <string>Confirm</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_QTexas">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>490</y>
+       <width>91</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Quantity</string>
      </property>
     </widget>
    </widget>
@@ -1538,6 +2067,9 @@ QPushButton:hover {
        <height>261</height>
       </rect>
      </property>
+     <property name="editTriggers">
+      <set>QAbstractItemView::NoEditTriggers</set>
+     </property>
     </widget>
     <widget class="QLabel" name="texas_title_2">
      <property name="geometry">
@@ -1550,6 +2082,56 @@ QPushButton:hover {
      </property>
      <property name="text">
       <string>University of Pacific</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_quantity_pacific">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>490</y>
+       <width>61</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_quantityPacific">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>490</y>
+       <width>61</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+	background-color: gray;
+	border-style: inset;
+	color: white;
+	font-weight: bold;
+	border-radius: 10px;
+}
+
+QPushButton:hover {
+	background-color: lightgray;
+	color: black;	
+}</string>
+     </property>
+     <property name="text">
+      <string>Confirm</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_QPacific">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>490</y>
+       <width>91</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Quantity</string>
      </property>
     </widget>
    </widget>
@@ -1591,6 +2173,9 @@ QPushButton:hover {
        <width>361</width>
        <height>291</height>
       </rect>
+     </property>
+     <property name="editTriggers">
+      <set>QAbstractItemView::NoEditTriggers</set>
      </property>
     </widget>
     <widget class="QPushButton" name="next_15">
@@ -1668,8 +2253,77 @@ QPushButton:hover {
       <string>Add to Cart</string>
      </property>
     </widget>
+    <widget class="QLineEdit" name="lineEdit_quantity_Wisconsin">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>490</y>
+       <width>61</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_quantityWisconsin">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>490</y>
+       <width>61</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+	background-color: gray;
+	border-style: inset;
+	color: white;
+	font-weight: bold;
+	border-radius: 10px;
+}
+
+QPushButton:hover {
+	background-color: lightgray;
+	color: black;	
+}</string>
+     </property>
+     <property name="text">
+      <string>Confirm</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_QWisconsin">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>490</y>
+       <width>91</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Quantity</string>
+     </property>
+    </widget>
    </widget>
-   <widget class="QWidget" name="page_29"/>
+   <widget class="QWidget" name="page_29">
+    <widget class="QTableWidget" name="tableWidget_receipt">
+     <property name="geometry">
+      <rect>
+       <x>35</x>
+       <y>31</y>
+       <width>711</width>
+       <height>471</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QTableWidget {
+	font-size: 18px;
+}</string>
+     </property>
+     <property name="editTriggers">
+      <set>QAbstractItemView::NoEditTriggers</set>
+     </property>
+    </widget>
+   </widget>
   </widget>
   <widget class="Line" name="line">
    <property name="geometry">
@@ -1697,6 +2351,38 @@ QPushButton:hover {
     <string>Back</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="print_receipt">
+   <property name="geometry">
+    <rect>
+     <x>602</x>
+     <y>10</y>
+     <width>201</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+	background: darkblue;
+	border-style: inset;
+	border-radius: 10px;
+	color: white;;
+	font-weight: bold;
+}
+
+QPushButton:hover {
+	background: green;
+	color: white;
+}</string>
+   </property>
+   <property name="text">
+    <string>Print Receipt</string>
+   </property>
+  </widget>
+  <zorder>purchase_stackedWidget</zorder>
+  <zorder>line</zorder>
+  <zorder>pushButton</zorder>
+  <zorder>print_receipt</zorder>
+  <zorder>tableWidget_irvine</zorder>
  </widget>
  <resources/>
  <connections/>
