@@ -49,3 +49,10 @@ void SouvenirChangePrice::on_pushChange_clicked()
         qDebug() << "Failed";
     }
 }
+
+void SouvenirChangePrice::on_pushButton_clicked()
+{
+    AdminWindow *admin = new AdminWindow;
+    admin->show();
+    this->close();
+}

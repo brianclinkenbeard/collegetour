@@ -19,6 +19,8 @@ public:
 private slots:
     void on_pushChange_clicked();
 
+    void on_pushButton_clicked();
+
 private:
     Ui::SouvenirChangePrice *ui;
     QVector<QString> souvenirs1;
