@@ -52,7 +52,7 @@ QTableWidget {
 }</string>
    </property>
    <property name="currentIndex">
-    <number>14</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QLabel" name="label">
@@ -2419,7 +2419,7 @@ QLabel:hover {
        <x>260</x>
        <y>500</y>
        <width>256</width>
-       <height>51</height>
+       <height>81</height>
       </rect>
      </property>
     </widget>

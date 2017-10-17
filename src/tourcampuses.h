@@ -127,6 +127,12 @@ private slots:
      */
     void on_pushButton_startMiTour_clicked();
 
+    void on_purchaseTour_uciTour_clicked();
+
+    void on_purchaseTour_saddlebackTour_clicked();
+
+    void on_purchaseTour_MichiganTour_clicked();
+
 private:
     Ui::tourCampuses *ui;
     QVector<College>  collegeList;

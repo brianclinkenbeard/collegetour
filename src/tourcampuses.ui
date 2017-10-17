@@ -59,7 +59,7 @@ QLabel {
     </rect>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>3</number>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QLabel" name="startingCampus_label">
@@ -528,7 +528,7 @@ QPushButton:hover {
     <widget class="QLabel" name="label_uciTour">
      <property name="geometry">
       <rect>
-       <x>510</x>
+       <x>490</x>
        <y>20</y>
        <width>191</width>
        <height>41</height>
@@ -577,6 +577,27 @@ QPushButton:hover {
      </property>
      <property name="text">
       <string>Distance Traveled</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="purchaseTour_uciTour">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>630</y>
+       <width>151</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton:hover {
+	border-style: outset;
+	border-radius: 20px;
+	background-color: darkgreen;
+	color: white;
+}</string>
+     </property>
+     <property name="text">
+      <string>Purchase</string>
      </property>
     </widget>
    </widget>
@@ -712,12 +733,33 @@ QPushButton:hover {
       </item>
      </layout>
     </widget>
+    <widget class="QPushButton" name="purchaseTour_MichiganTour">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>630</y>
+       <width>111</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton:hover {
+	border-style: outset;
+	border-radius: 20px;
+	background-color: darkgreen;
+	color: white;
+}</string>
+     </property>
+     <property name="text">
+      <string>Purchase</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="page_5">
     <widget class="QLabel" name="label_saddlebackTour">
      <property name="geometry">
       <rect>
-       <x>420</x>
+       <x>400</x>
        <y>20</y>
        <width>401</width>
        <height>31</height>
@@ -781,6 +823,27 @@ QPushButton:hover {
      </property>
      <property name="text">
       <string>Distance Traveled</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="purchaseTour_saddlebackTour">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>630</y>
+       <width>151</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton:hover {
+	border-style: outset;
+	border-radius: 20px;
+	background-color: darkgreen;
+	color: white;
+}</string>
+     </property>
+     <property name="text">
+      <string>Purchase</string>
      </property>
     </widget>
    </widget>
