@@ -296,7 +296,7 @@ void tourCampuses::findTrip(int count, int visitedCollege, double totalDistance)
         ui->trip_table->setHorizontalHeaderItem(1, new QTableWidgetItem("Distance"));
         ui->trip_table->setHorizontalHeaderItem(2, new QTableWidgetItem("IDs"));
         ui->trip_table->setColumnHidden(1,true);
-        ui->trip_table->setColumnHidden(2,true);
+       // ui->trip_table->setColumnHidden(2,true);
         ui->trip_table->verticalHeader()->hide();
         ui->trip_table->insertRow(ui->trip_table->rowCount());
         ui->trip_table->setItem(ui->trip_table->rowCount() - 1, 0,
@@ -846,8 +846,8 @@ void tourCampuses::on_purchaseTour_pushButton_clicked()
 
 void tourCampuses::on_purchaseTour_uciTour_clicked()
 {
-    tourpurchase *o = new tourpurchase;
-    o->show();
+    tourpurchase *l = new tourpurchase;
+    l->show();
     this->close();
 
     QVector<int> selectedTourCampuses;
@@ -890,8 +890,8 @@ void tourCampuses::on_purchaseTour_uciTour_clicked()
 
 void tourCampuses::on_purchaseTour_saddlebackTour_clicked()
 {
-    tourpurchase *o = new tourpurchase;
-    o->show();
+    tourpurchase *m = new tourpurchase;
+    m->show();
     this->close();
 
     QVector<int> selectedTourCampuses;
@@ -929,7 +929,7 @@ void tourCampuses::on_purchaseTour_saddlebackTour_clicked()
         }
         selectedTourCampuses.append(collegeId);
     }
-    tourpurchase c(keys, selectedTourCampuses, souvenirsList);
+    tourpurchase n(keys, selectedTourCampuses, souvenirsList);
 }
 
 void tourCampuses::on_purchaseTour_MichiganTour_clicked()
@@ -973,6 +973,6 @@ void tourCampuses::on_purchaseTour_MichiganTour_clicked()
         }
         selectedTourCampuses.append(collegeId);
     }
-    tourpurchase c(keys, selectedTourCampuses, souvenirsList);
+    tourpurchase v(keys, selectedTourCampuses, souvenirsList);
 
 }

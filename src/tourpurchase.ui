@@ -226,7 +226,8 @@ QPushButton:hover {
 QPushButton:hover {
 	background-color: lightgray;
 	color: black;	
-}</string>
+}
+</string>
      </property>
      <property name="text">
       <string>Add to Cart</string>

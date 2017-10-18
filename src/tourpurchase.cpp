@@ -108,12 +108,17 @@ tourpurchase::~tourpurchase()
  */
 tourpurchase::tourpurchase(QVector<int> tour_keys, QVector<int> chosenTour, QVector<Souvenir> souvenirs)
 {
+    selectedTourColleges.clear();
+    souvenirList.clear();
+    keys.clear();
+
     selectedTourColleges = chosenTour;
     souvenirList = souvenirs;
     keys = tour_keys;
 
     qDebug() << "Souvenir List: " << souvenirList.size();
     qDebug() << "Key Size" << keys.size();
+    qDebug() << "Key Size" << selectedTourColleges.size();
 
     for(int index = 0; index < keys.size(); index++)
     {
@@ -146,9 +151,9 @@ void tourpurchase::displaySouvenirs(int count)
             tempSouvenirs.push_back(souvenirList.at(index));
           }
       }
-      for(int i = 0; i < tempSouvenirs.size(); i++) {
-          qDebug() << tempSouvenirs.at(i).getSouvenirName();
-      }
+//      for(int i = 0; i < tempSouvenirs.size(); i++) {
+//          qDebug() << tempSouvenirs.at(i).getSouvenirName();
+//      }
       tourPurchasesTable(keys.at(count));
 
       if(count < keys.size()-1) {
