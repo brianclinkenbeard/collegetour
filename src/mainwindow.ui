@@ -1613,6 +1613,7 @@ QPushButton {
 	color: white;
 	font-size: 18px;
 	font-weight: bold;
+	border: none;
 }</string>
       </property>
       <property name="frameShape">

@@ -23,6 +23,7 @@ tourCampuses::tourCampuses(QWidget *parent) :
     totalSaDistance = 0;
     counter = 0;
 
+    ui->purchaseTour_MichiganTour->hide();
     ui->startingCampus_table->setRowCount(0);
     ui->startingCampus_table->setColumnCount(2);
     ui->startingCampus_table->setHorizontalHeaderItem(0, new QTableWidgetItem("IDs"));
@@ -538,6 +539,7 @@ void tourCampuses::on_pushButton_MICHIGAN_clicked()
 
 void tourCampuses::on_pushButton_startMiTour_clicked()
 {
+    ui->purchaseTour_MichiganTour->show();
 
     //store all the colleges into the uciTourColleges
     for(int i=0; i<collegeList.size(); i++) {
