@@ -3,6 +3,8 @@ CS1D Project 1
 
 ## Coding Standards
 
+Use [Linux kernel coding style](https://www.kernel.org/doc/html/latest/process/coding-style.html) standards that are applicable to C++.
+
 ### Namespaces
 * Use scope resolution operator (no `using namespace std`)
 
